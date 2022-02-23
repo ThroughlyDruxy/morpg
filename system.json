@@ -1,0 +1,25 @@
+{
+  "name": "foundryvtt-marching-order",
+  "title": "Marching Order",
+  "description": "A minimalist game system which provides a way to play Marching Order in Foundry VTT",
+  "version": "0.1.0",
+  "minimumCoreVersion": "0.9.0",
+  "compatibleCoreVersion": "9",
+  "author": "ThroughlyDruxy",
+  "esmodules": ["module/main.js"],
+  "styles": ["styles/main.css"],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "luck",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": ""
+}

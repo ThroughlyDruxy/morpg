@@ -1,0 +1,30 @@
+{
+  "Actor": {
+    "types": ["rogue"],
+    "rogue": {
+      "biography": "",
+      "health": {
+        "value": 10,
+        "min": 0,
+        "max": 10
+      },
+      "luck": {
+        "value": 0,
+        "min": 0,
+        "max": 5
+      },
+      "attributes": {},
+      "groups": {}
+    }
+  },
+  "Item": {
+    "types": ["item"],
+    "item": {
+      "description": "",
+      "quantity": 1,
+      "weight": 0,
+      "attributes": {},
+      "groups": {}
+    }
+  }
+}
