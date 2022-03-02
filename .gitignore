@@ -1,9 +1,8 @@
-# IDE
-.idea/
-.vs/
+.vscode/
 .zip
 .prettierrc
+jsconfig.json
+foundryvtt-marching-order.lock
 
-# Node Modules
 node_modules/
-package-lock.json
+TODO.txt
