@@ -1,13 +1,14 @@
 // IDE stuff
 .prettierrc
+.prettierignore
 jsconfig.json
 node_modules/
 
 // Releases
-marching-order.zip
+morpg.zip
 
 // Dev stuff that doesn't need included
-foundryvtt-marching-order.lock
+morpg.lock
 
 
 TODO.txt

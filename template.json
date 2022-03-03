@@ -168,9 +168,8 @@
     "item": {
       "description": "",
       "quantity": 1,
-      "weight": 0,
-      "attributes": {},
-      "groups": {}
+      "slots": 0,
+      "cost": 0
     }
   }
 }
