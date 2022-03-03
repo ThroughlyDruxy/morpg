@@ -1,20 +1,166 @@
 {
   "Actor": {
-    "types": ["rogue"],
-    "rogue": {
-      "biography": "",
-      "health": {
-        "value": 10,
-        "min": 0,
-        "max": 10
+    "types": ["Rogue", "Monster"],
+    "templates": {
+      "base": {
+        "defense": { "value": 0, "min": 0, "max": 10 },
+        "health": { "value": 0, "min": 0, "max": 10 },
+        "magic": { "value": 0, "min": 0, "max": 10 },
+        "physical": { "value": 0, "min": 0, "max": 10 },
+        "resolve": { "value": 0, "min": 0, "max": 10 }
       },
-      "luck": {
-        "value": 0,
-        "min": 0,
-        "max": 5
+      "conditions": {
+        "conditionOne": {
+          "name": "",
+          "description": "",
+          "cooldown": { "value": 0, "min": 0, "max": 10 }
+        },
+        "conditionTwo": {
+          "name": "",
+          "description": "",
+          "cooldown": { "value": 0, "min": 0, "max": 10 }
+        },
+        "conditionThree": {
+          "name": "",
+          "description": "",
+          "cooldown": { "value": 0, "min": 0, "max": 10 }
+        }
+      },
+      "bullshit": {
+        "one": { "name": "", "description": "" },
+        "two": { "name": "", "description": "" },
+        "three": { "name": "", "description": "" },
+        "four": { "name": "", "description": "" },
+        "five": { "name": "", "description": "" },
+        "six": { "name": "", "description": "" }
+      }
+    },
+    "rogue": {
+      "templates": ["base", "bullshit", "conditions"],
+      "name": "",
+      "biography": "",
+      "price": 0,
+      "tinker": { "value": 0, "min": 0, "max": 10 },
+      "aware": { "value": 0, "min": 0, "max": 10 },
+      "escape": { "value": 0, "min": 0, "max": 10 },
+      "luck": { "value": 0, "min": 0, "max": 10 },
+      "torches": { "value": 0, "min": 0, "max": 10 },
+      "actions": {
+        "basicAttack": {
+          "name": "",
+          "description": "",
+          "hasCountdown": false,
+          "cooldown": { "value": 0, "min": 0, "max": 6 }
+        },
+        "secondAttack": {
+          "name": "",
+          "description": "",
+          "hasCountdown": false,
+          "cooldown": { "value": 0, "min": 0, "max": 6 }
+        },
+        "thirdAttack": {
+          "name": "",
+          "description": "",
+          "hasCountdown": false,
+          "cooldown": { "value": 0, "min": 0, "max": 6 }
+        },
+        "fourthAttack": {
+          "name": "",
+          "description": "",
+          "hasCountdown": false,
+          "cooldown": { "value": 0, "min": 0, "max": 6 }
+        },
+        "fifthAttack": {
+          "name": "",
+          "description": "",
+          "hasCountdown": false,
+          "cooldown": { "value": 0, "min": 0, "max": 6 }
+        },
+        "sixthAttack": {
+          "name": "",
+          "description": "",
+          "hasCountdown": false,
+          "cooldown": { "value": 0, "min": 0, "max": 6 }
+        },
+        "seventhAttack": {
+          "name": "",
+          "description": "",
+          "hasCountdown": false,
+          "cooldown": { "value": 0, "min": 0, "max": 6 }
+        },
+        "eighthAttack": {
+          "name": "",
+          "description": "",
+          "hasCountdown": false,
+          "cooldown": { "value": 0, "min": 0, "max": 6 }
+        },
+        "ninthAttack": {
+          "name": "",
+          "description": "",
+          "hasCountdown": false,
+          "cooldown": { "value": 0, "min": 0, "max": 6 }
+        },
+        "tenthAttack": {
+          "name": "",
+          "description": "",
+          "hasCountdown": false,
+          "cooldown": { "value": 0, "min": 0, "max": 6 }
+        }
+      },
+      "qualities": {
+        "one": { "name": "", "description": "" },
+        "two": { "name": "", "description": "" },
+        "three": { "name": "", "description": "" },
+        "four": { "name": "", "description": "" },
+        "five": { "name": "", "description": "" },
+        "six": { "name": "", "description": "" }
+      },
+      "flaws": {
+        "one": { "name": "", "description": "" },
+        "two": { "name": "", "description": "" },
+        "three": { "name": "", "description": "" },
+        "four": { "name": "", "description": "" },
+        "five": { "name": "", "description": "" },
+        "six": { "name": "", "description": "" }
       },
       "attributes": {},
       "groups": {}
+    },
+    "monster": {
+      "tempaltes": ["base", "bullshit", "conditions"],
+      "name": "",
+      "actions": {
+        "one": {
+          "name": "",
+          "description": "",
+          "weight": 0
+        },
+        "two": {
+          "name": "",
+          "description": "",
+          "weight": 0
+        },
+        "three": {
+          "name": "",
+          "description": "",
+          "weight": 0
+        },
+        "four": {
+          "name": "",
+          "description": "",
+          "weight": 0
+        },
+        "five": {
+          "name": "",
+          "description": "",
+          "weight": 0
+        },
+        "six": {
+          "name": "",
+          "description": "",
+          "weight": 0
+        }
+      }
     }
   },
   "Item": {

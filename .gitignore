@@ -1,8 +1,13 @@
-.vscode/
-.zip
+// IDE stuff
 .prettierrc
 jsconfig.json
+node_modules/
+
+// Releases
+marching-order.zip
+
+// Dev stuff that doesn't need included
 foundryvtt-marching-order.lock
 
-node_modules/
+
 TODO.txt
