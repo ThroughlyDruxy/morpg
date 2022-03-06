@@ -5,7 +5,7 @@ const less = require('gulp-less');
 /*  Compile LESS
 /* ----------------------------------------- */
 
-const SIMPLE_LESS = ['styles/*.less'];
+const MORPG_LESS = ['styles/*.less'];
 function compileLESS() {
   return gulp
     .src('styles/morpg.less')
@@ -19,7 +19,7 @@ const css = gulp.series(compileLESS);
 /* ----------------------------------------- */
 
 function watchUpdates() {
-  gulp.watch(SIMPLE_LESS, css);
+  gulp.watch(MORPG_LESS, css);
 }
 
 /* ----------------------------------------- */

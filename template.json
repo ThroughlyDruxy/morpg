@@ -40,11 +40,11 @@
       "name": "",
       "biography": "",
       "price": 0,
-      "tinker": { "value": 0, "min": 0, "max": 10 },
-      "aware": { "value": 0, "min": 0, "max": 10 },
-      "escape": { "value": 0, "min": 0, "max": 10 },
+      "tinker": 0,
+      "aware": 0,
+      "escape": 0,
       "luck": { "value": 0, "min": 0, "max": 10 },
-      "torches": { "value": 0, "min": 0, "max": 10 },
+      "torches": 0,
       "actions": {
         "basicAttack": {
           "name": "",
