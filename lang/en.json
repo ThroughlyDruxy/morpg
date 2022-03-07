@@ -3,7 +3,7 @@
     "placeholder": "Placeholder",
     "items": {
       "cost": "Cost",
-      "slots": " slots"
+      "slots": "Slots"
     }
   }
 }

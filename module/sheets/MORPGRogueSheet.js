@@ -2,7 +2,7 @@ export default class MORPGRogueSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       template: `systems/morpg/templates/sheets/rogue-sheet.hbs`,
-      class: ['morpg', 'sheet', 'rogue'],
+      classes: ['morpg', 'sheet', 'rogue'],
     });
   }
 

@@ -4,7 +4,12 @@ import MORPGItemSheet from './module/sheets/MORPGItemSheet.js';
 import MORPGMonsterSheet from './module/sheets/MORPGMonsterSheet.js';
 
 async function preloadHandlebarsTemplates() {
-  const templatePaths = ['systems/morpg/templates/partials/monster-stats.hbs'];
+  const templatePaths = [
+    'systems/morpg/templates/partials/monster-stats.hbs',
+    'systems/morpg/templates/partials/monster-actions.hbs',
+    'systems/morpg/templates/partials/monster-bullshit.hbs',
+    'systems/morpg/templates/partials/monster-special.hbs',
+  ];
 
   return loadTemplates(templatePaths);
 }

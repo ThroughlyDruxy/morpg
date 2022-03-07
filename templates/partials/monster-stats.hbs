@@ -4,32 +4,17 @@
   </style>
   <div>
     <table>
-      <tr>
-        <th>Physical</th>
-        <th><input name='' type='' value='' data-dtype='Number' /></th>
-      </tr>
-      <tr>
-        <th>Defense</th>
-        <th><input name='' type='' value='' data-dtype='Number' /></th>
-      </tr>
-      <tr>
-        <th>Health</th><th><input
-            name=''
-            type=''
-            value=''
-            data-dtype='Number'
-          /></th></tr>
-      <tr>
-        <th>Magic</th><th><input
-            name=''
-            type=''
-            value=''
-            data-dtype='Number'
-          /></th></tr>
-      <tr>
-        <th>Resolve</th>
-        <th><input name='' type='' value='' data-dtype='Number' /></th>
-      </tr>
+      {{#each config.monsterStats as |name type|}}
+        <tr>
+          <th>{{name}}</th>
+          <th><input
+              name='{{type}}'
+              type=''
+              value=''
+              data-dtype='Number'
+            /></th>
+        </tr>
+      {{/each}}
     </table>
   </div>
 </section>

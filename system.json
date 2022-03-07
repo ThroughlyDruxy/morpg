@@ -7,7 +7,7 @@
   "compatibleCoreVersion": "9.249",
   "author": "ThroughlyDruxy",
   "esmodules": ["morpg.js"],
-  "styles": ["css/morpg.css"],
+  "styles": ["styles/morpg.css"],
   "packs": [],
   "languages": [
     {
