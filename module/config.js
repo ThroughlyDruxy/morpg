@@ -5,10 +5,16 @@ morpg.items = {
   slots: 'morpg.items.slots',
 };
 
-morpg.monsterStats = {
-  physical: 'Physical',
-  defense: 'Defense',
-  health: 'Health',
-  magic: 'Magic',
-  resolve: 'Resolve',
+morpg.stats = {
+  physical: 'morpg.baseStats.physical',
+  defense: 'morpg.baseStats.defense',
+  health: 'morpg.baseStats.health',
+  magic: 'morpg.baseStats.magic',
+  resolve: 'morpg.baseStats.resolve',
+};
+
+morpg.headers = {
+  special: 'morpg.special',
+  actions: 'morpg.actions',
+  bullshit: 'morpg.bullshit',
 };

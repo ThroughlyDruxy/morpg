@@ -129,6 +129,10 @@
     "monster": {
       "tempaltes": ["base", "bullshit", "conditions"],
       "name": "",
+      "special": {
+        "description": "",
+        "hasSpecial": false
+      },
       "actions": {
         "one": {
           "name": "",

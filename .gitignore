@@ -1,6 +1,7 @@
 // IDE stuff
 .prettierrc
 .prettierignore
+.vscode/
 jsconfig.json
 node_modules/
 

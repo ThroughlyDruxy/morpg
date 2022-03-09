@@ -1,4 +1,12 @@
-<section><div>
-    <p>Special</p>
+<section class='special-section'>
+  <div class='sheet-content'>
+    <h1>{{localize config.headers.special}}</h1>
+    {{editor
+      content=data.special.description
+      target='data.special.description'
+      button=true
+      owner=owner
+      editable=editable
+    }}
   </div>
 </section>

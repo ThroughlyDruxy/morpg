@@ -1,24 +1,28 @@
 <form class="actor-sheet {{cssClass}}" autocomplete="off">
   <link rel="stylesheet" href="systems/morpg/styles/morpg.css">
     <header class="sheet-header">
-        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
         <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'Name' }}"/></h1>
     </header>
-    <div>
-      <div class="stats">
-        {{> "systems/morpg/templates/partials/monster-stats.hbs"}}
-      </div>
-      <div class="special">
-       {{> "systems/morpg/templates/partials/monster-special.hbs"}}
-      </div>
-      <div class="stats">
-        {{> "systems/morpg/templates/partials/monster-actions.hbs"}}
-      </div>
-      <div class="stats">
-       {{> "systems/morpg/templates/partials/monster-bullshit.hbs"}}
+    <div class="body">
+      <div class="row">
+        <div class="left-column">
+          <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+          {{> "systems/morpg/templates/partials/monster-stats.hbs"}}
+        </div>
+        <div class="right-column">
+          {{#if data.special.hasSpecial}}
+          <div class="special">
+          {{> "systems/morpg/templates/partials/monster-special.hbs"}}
+          </div>
+          {{/if}}
+          <div class="actions">
+            {{> "systems/morpg/templates/partials/monster-actions.hbs"}}
+          </div>
+          <div class="bullshit">
+           {{> "systems/morpg/templates/partials/monster-bullshit.hbs"}}
+          </div>
+        </div>
       </div>
     </div>
-
-
 </form>
 

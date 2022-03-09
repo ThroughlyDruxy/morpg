@@ -1,3 +1,12 @@
 <section>
-  <p>Actions</p>
+  <div>
+    <h1>{{localize config.headers.actions}}</h1>
+    {{editor
+      content=data.actions.description
+      target='data.actions.description'
+      button=true
+      owner=owner
+      editable=editable
+    }}
+  </div>
 </section>

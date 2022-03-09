@@ -1,5 +1,12 @@
 <section>
   <div>
-    <p>Bullshit</p>
+    <h1>{{localize config.headers.bullshit}}</h1>
+    {{editor
+      content=data.bullshit.description
+      target='data.bullshit.description'
+      button=true
+      owner=owner
+      editable=editable
+    }}
   </div>
 </section>

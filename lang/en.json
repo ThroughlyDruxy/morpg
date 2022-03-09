@@ -4,6 +4,16 @@
     "items": {
       "cost": "Cost",
       "slots": "Slots"
-    }
+    },
+    "baseStats": {
+      "physical": "Physical",
+      "defense": "Defense",
+      "health": "Health",
+      "magic": "Magic",
+      "resolve": "Resolve"
+    },
+    "special": "SPECIAL",
+    "actions": "ACTIONS",
+    "bullshit": "BULLSHIT"
   }
 }
