@@ -3,48 +3,59 @@
     <table>
       <tr>
         <th>{{localize config.stats.physical}}</th>
-        <th><input
+        <td><input
+            class='input'
             name='data.physical.value'
             type='Number'
             value='{{data.physical.value}}'
             data-dtype='Number'
-          /></th>
+          /></td>
       </tr>
       <tr>
         <th>{{localize config.stats.defense}}</th>
-        <th><input
-            name='data.defense.value'
+        <td><input
+            class='input'
+            name='data.defense'
             type='Number'
-            value='{{data.defense.value}}'
+            value='{{data.defense}}'
             data-dtype='Number'
-          /></th>
+          /></td>
       </tr>
       <tr>
         <th>{{localize config.stats.health}}</th>
-        <th><input
+        <td class='health'><input
+            class='health-value'
             name='data.health.value'
             type='Number'
             value='{{data.health.value}}'
             data-dtype='Number'
-          /></th>
+          />/<input
+            class='health-max'
+            name='data.health.max'
+            type='Number'
+            value='{{data.health.max}}'
+            data-dtype='Number'
+          /></td>
       </tr>
       <tr>
         <th>{{localize config.stats.magic}}</th>
-        <th><input
-            name='data.magic.value'
+        <td><input
+            class='input'
+            name='data.magic'
             type='Number'
-            value='{{data.magic.value}}'
+            value='{{data.magic}}'
             data-dtype='Number'
-          /></th>
+          /></td>
       </tr>
       <tr>
         <th>{{localize config.stats.resolve}}</th>
-        <th><input
-            name='data.resolve.value'
+        <td><input
+            class='input'
+            name='data.resolve'
             type='Number'
-            value='{{data.resolve.value}}'
+            value='{{data.resolve}}'
             data-dtype='Number'
-          /></th>
+          /></td>
       </tr>
     </table>
   </div>

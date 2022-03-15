@@ -1,8 +1,20 @@
 export const morpg = {};
 
 morpg.items = {
-  cost: 'morpg.items.cost',
-  slots: 'morpg.items.slots',
+  equipment: {
+    cost: 'morpg.items.equipment.cost',
+    slots: 'morpg.items.equipment.slots',
+    quantity: 'morpg.items.equipment.quantity',
+  },
+  bullshit: {
+    type: {
+      none: 'morpg.items.bullshit.type.none',
+      quality: 'morpg.items.bullshit.type.quality',
+      flaw: 'morpg.items.bullshit.type.flaw',
+    },
+    trigger: 'morpg.items.bullshit.trigger',
+    isAttack: 'morpg.items.bullshit.isAttack',
+  },
 };
 
 morpg.stats = {

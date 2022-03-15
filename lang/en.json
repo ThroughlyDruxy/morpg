@@ -2,8 +2,23 @@
   "morpg": {
     "placeholder": "Placeholder",
     "items": {
-      "cost": "Cost",
-      "slots": "Slots"
+      "equipment": {
+        "cost": "Cost",
+        "slots": "Slots",
+        "quantity": "Quantity"
+      },
+      "bullshit": {
+        "type": {
+          "label": "Type",
+          "none": "None",
+          "flaw": "Flaw",
+          "quality": "Quality"
+        },
+        "isAttack": "Includes roll",
+        "trigger": "Trigger",
+        "quality": "Quality",
+        "flaw": "Flaw"
+      }
     },
     "baseStats": {
       "physical": "Physical",

@@ -9,7 +9,7 @@
       text-align: center;
     }
     .body {
-      height: calc(100% - 60px);
+      height: 100%;
       display: flex;
       flex-direction: column;
       .row {
@@ -23,24 +23,11 @@
           height: 100%;
           width: 200px;
           border-style: solid;
-          margin-right: 5px;
+          margin-right: 2px;
           img {
             border: none;
             width: 100%;
             height: 50%;
-          }
-          .stats {
-            font-size: 20px;
-            width: 100%;
-            table {
-              border: 0px;
-              width: 100%;
-              margin: 5px;
-              background-color: transparent;
-              input {
-                width: 50%;
-              }
-            }
           }
         }
         .right-column {
@@ -50,24 +37,11 @@
           height: 100%;
           width: calc(100% - 205px);
           border-style: solid;
-          h1 {
-            text-align: center;
-          }
-          div {
-            height: 100%;
-            section {
-              height: 100%;
-              div {
-                height: 80%;
-                .tox-editor-header {
-                  height: auto;
-                }
-                .editor {
-                  height: 100%;
-                  background-color: rgba(85, 85, 85, 0.2);
-                }
-              }
-            }
+          margin-left: 2px;
+          .special,
+          .actions,
+          .bullshit {
+            height: 33%;
           }
         }
       }

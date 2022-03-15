@@ -5,7 +5,11 @@ const less = require('gulp-less');
 /*  Compile LESS
 /* ----------------------------------------- */
 
-const MORPG_LESS = ['styles/*.less'];
+const MORPG_LESS = [
+  'styles/*.less',
+  'styles/sheets/actors/*.less',
+  'styles/sheets/items/*.less',
+];
 function compileLESS() {
   return gulp
     .src('styles/morpg.less')

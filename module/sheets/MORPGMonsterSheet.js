@@ -2,7 +2,7 @@ export default class MORPGMonsterSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       width: 800,
-      height: 800,
+      height: 700,
       template: `systems/morpg/templates/sheets/monster-sheet.hbs`,
       classes: ['morpg', 'sheet', 'monster'],
     });
