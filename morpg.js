@@ -1,7 +1,9 @@
 import { morpg } from './module/config.js';
 import MORPGRogueSheet from './module/sheets/MORPGRogueSheet.js';
 import MORPGItemSheet from './module/sheets/MORPGItemSheet.js';
+import MORPGItem from './module/MORPGItem.js';
 import MORPGMonsterSheet from './module/sheets/MORPGMonsterSheet.js';
+import MORPGActor from './module/MORPGActor.js';
 
 async function preloadHandlebarsTemplates() {
   const templatePaths = [
@@ -16,7 +18,10 @@ async function preloadHandlebarsTemplates() {
 
 Hooks.once('init', function () {
   console.log(`MARCHING ORDER | Initialising Marching Order system`);
+
   CONFIG.morpg = morpg;
+  CONFIG.Item.documentClass = MORPGItem;
+  CONFIG.Actor.documentClass = MORPGActor;
 
   // Tells system to use custom classes for actors and items
   Items.unregisterSheet('core', ItemSheet);
