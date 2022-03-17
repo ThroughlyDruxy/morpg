@@ -7,12 +7,28 @@
   display: flex;
   flex-direction: column;
 }
-.morpg.sheet.item form .sheet-content table {
+.morpg.sheet.item form .sheet-content .details {
+  display: flex;
+  flex-direction: row;
   border: 0px;
-  background: none;
+  background-color: transparent;
 }
-.morpg.sheet.item form .sheet-content table input {
-  width: 50px;
+.morpg.sheet.item form .sheet-content .details h3 {
+  font-weight: bold;
+}
+.morpg.sheet.item form .sheet-content .details h3 input {
+  width: 40px;
+}
+.morpg.sheet.item form .sheet-content .details .label {
+  vertical-align: middle;
+  width: auto;
+  margin-left: 15px;
+  margin-right: 3px;
+}
+.morpg.sheet.item form .sheet-content .details .quantity-label {
+  vertical-align: middle;
+  width: auto;
+  margin-right: 3px;
 }
 .morpg.sheet.item form .sheet-content .editor {
   height: 100%;
@@ -27,21 +43,68 @@
   display: flex;
   flex-direction: column;
 }
-.morpg.sheet.item form .sheet-content .type {
+.morpg.sheet.item form .sheet-content .details {
   display: flex;
   flex-direction: row;
+  border: 0px;
+  background-color: transparent;
 }
-.morpg.sheet.item form .sheet-content .type h3 {
-  margin-right: 5px;
-}
-.morpg.sheet.item form .sheet-content .type input,
-.morpg.sheet.item form .sheet-content .type select {
-  margin-right: 20px;
-}
-.morpg.sheet.item form .sheet-content .type h3 {
-  height: 100%;
+.morpg.sheet.item form .sheet-content .details h3 {
   font-weight: bold;
+}
+.morpg.sheet.item form .sheet-content .details .label {
   vertical-align: middle;
+  width: auto;
+  margin-left: 15px;
+  margin-right: 3px;
+}
+.morpg.sheet.item form .sheet-content .details .type-label {
+  vertical-align: middle;
+  width: auto;
+  margin-right: 3px;
+}
+.morpg.sheet.item form .sheet-content .details .trigger {
+  width: 30px;
+}
+.morpg.sheet.item form .sheet-content .editor {
+  height: 100%;
+  background-color: rgba(85, 85, 85, 0.2);
+}
+.morpg.sheet.item form {
+  display: flex;
+  flex-direction: column;
+}
+.morpg.sheet.item form .sheet-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.morpg.sheet.item form .sheet-content .details {
+  display: flex;
+  flex-direction: row;
+  border: 0px;
+  background-color: transparent;
+}
+.morpg.sheet.item form .sheet-content .details h3 {
+  font-weight: bold;
+}
+.morpg.sheet.item form .sheet-content .details h3 .label {
+  vertical-align: middle;
+  width: auto;
+  margin-left: 15px;
+  margin-right: 3px;
+}
+.morpg.sheet.item form .sheet-content .details h3 .cooldown-label {
+  vertical-align: middle;
+  width: auto;
+  margin-right: 3px;
+}
+.morpg.sheet.item form .sheet-content .details h3 .cooldown,
+.morpg.sheet.item form .sheet-content .details h3 .triggerRange {
+  width: 30px;
+}
+.morpg.sheet.item form .sheet-content .details h3 .isAttack {
+  margin-left: 0px;
 }
 .morpg.sheet.item form .sheet-content .editor {
   height: 100%;

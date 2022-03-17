@@ -1,1 +1,73 @@
-<p>Action Sheet</p>
+<form class='bullshit-sheet {{cssClass}}' autocomplete='off'>
+  <link rel='stylesheet' href='systems/morpg/styles/morpg.css' />
+  <header class='sheet-header'>
+    <img
+      src='{{item.img}}'
+      data-edit='img'
+      title='{{item.name}}'
+      height='64'
+      width='64'
+    />
+    <h1>
+      <input
+        name='name'
+        type='text'
+        value='{{item.name}}'
+        placeholder={{localize 'morpg.placeholder'}}
+      />
+    </h1>
+  </header>
+  <div class='sheet-content'>
+    <table class='details'>
+      <th><h3 class='cooldown-label'>{{localize
+            'morpg.items.actions.cooldown'
+          }}:</h3></th>
+      <th><h3>
+          <input
+            class='cooldown'
+            name='data.cooldown.value'
+            type='Number'
+            value='{{data.cooldown.value}}'
+            data-dtype='Number'
+          />/<input
+            class='cooldown'
+            name='data.cooldown.max'
+            type='Number'
+            value='{{data.cooldown.max}}'
+            data-dtype='Number'
+          /></h3></th>
+      <th><h3 class='label'>{{localize
+            'morpg.items.bullshit.isAttack'
+          }}:</h3></th>
+      <th><h3><input
+            class='isAttack'
+            name='data.isAttack'
+            type='checkbox'
+            {{checked data.isAttack}}
+          /></h3></th>
+      <th><h3 class='label'>{{localize
+            'morpg.items.actions.triggerRange'
+          }}:</h3></th>
+      <th><h3><input
+            class='triggerRange'
+            name='data.triggerRange.min'
+            type='number'
+            value='{{data.triggerRange.min}}'
+            data-dtype='Number'
+          />—<input
+            class='triggerRange'
+            name='data.triggerRange.max'
+            type='number'
+            value='{{data.triggerRange.max}}'
+            data-dtype='Number'
+          /></h3></th>
+    </table>
+    {{editor
+      content=data.description
+      target='data.description'
+      button=true
+      owner=owner
+      editable=editable
+    }}
+  </div>
+</form>

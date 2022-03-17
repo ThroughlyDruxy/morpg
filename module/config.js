@@ -15,6 +15,10 @@ morpg.items = {
     trigger: 'morpg.items.bullshit.trigger',
     isAttack: 'morpg.items.bullshit.isAttack',
   },
+  actions: {
+    cooldown: 'morpg.items.actions.cooldown',
+    triggerRange: 'morpg.items.actions.triggerRange',
+  },
 };
 
 morpg.stats = {

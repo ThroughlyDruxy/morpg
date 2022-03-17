@@ -1,6 +1,13 @@
 <form class='bullshit-sheet {{cssClass}}' autocomplete='off'>
   <link rel='stylesheet' href='systems/morpg/styles/morpg.css' />
   <header class='sheet-header'>
+    <img
+      src='{{item.img}}'
+      data-edit='img'
+      title='{{item.name}}'
+      height='64'
+      width='64'
+    />
     <h1>
       <input
         name='name'
@@ -11,24 +18,36 @@
     </h1>
   </header>
   <div class='sheet-content'>
-    <div class='type'>
-      <h3>{{localize 'morpg.items.bullshit.type.label'}}</h3>
-      <select name='data.type'>
-        {{#select data.type}}
-          {{#each config.items.bullshit.type as |name type|}}
-            <option value='{{type}}'>{{localize name}}</option>
-            {{!-- <option value='data.type'>{{localize
-              'morpg.items.bullshit.quality'
-            }}</option>
-          <option value='data.type'>{{localize
-              'morpg.items.bullshit.flaw'
-            }}</option> --}}
-          {{/each}}
-        {{/select}}
-      </select>
-      <h3>{{localize 'morpg.items.bullshit.isAttack'}}</h3>
-      <input name='data.isAttack' type='checkbox' {{checked data.isAttack}} />
-    </div>
+    <table class='details'>
+      <th><h3 class='type-label'>{{localize
+            'morpg.items.bullshit.type.label'
+          }}:</h3></th>
+      <th><select name='data.type'>
+          {{#select data.type}}
+            {{#each config.items.bullshit.type as |name type|}}
+              <option value='{{type}}'>{{localize name}}</option>
+            {{/each}}
+          {{/select}}
+        </select></th>
+      <th><h3 class='label'>{{localize
+            'morpg.items.bullshit.isAttack'
+          }}:</h3></th>
+      <th><h3><input
+            name='data.isAttack'
+            type='checkbox'
+            {{checked data.isAttack}}
+          /></h3></th>
+      <th><h3 class='label'>{{localize
+            'morpg.items.bullshit.trigger'
+          }}:</h3></th>
+      <th><h3><input
+            class='trigger'
+            name='data.trigger'
+            type='Number'
+            value='{{data.trigger}}'
+            data-dtype='Number'
+          /></h3></th>
+    </table>
     {{editor
       content=data.description
       target='data.description'

@@ -31,7 +31,7 @@
     }
   },
   "Item": {
-    "types": ["Equipment", "Bullshit", "Actions"],
+    "types": ["Actions", "Bullshit", "Equipment"],
     "equipment": {
       "description": "",
       "quantity": 1,

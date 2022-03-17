@@ -18,28 +18,32 @@
     </h1>
   </header>
   <div class='sheet-content'>
-    <table>
-      <th class='quantity'>{{localize 'morpg.items.equipment.quantity'}}:</th>
-      <th><input
-          name='data.quantity'
-          type='text'
-          value='{{data.quantity}}'
-          data-dtype='Number'
-        /></th>
-      <th class='cost'>{{localize 'morpg.items.equipment.cost'}}:</th>
-      <th><input
-          name='data.cost'
-          type='text'
-          value='{{data.cost}}'
-          data-dtype='Number'
-        /></th>
-      <th class='slots'>{{localize 'morpg.items.equipment.slots'}}:</th>
-      <th><input
-          name='data.slots'
-          type='text'
-          value='{{data.slots}}'
-          data-dtype='Number'
-        /></th>
+    <table class='details'>
+      <th><h3 class='quantity-label'>{{localize
+            'morpg.items.equipment.quantity'
+          }}:</h3></th>
+      <th><h3><input
+            name='data.quantity'
+            type='text'
+            value='{{data.quantity}}'
+            data-dtype='Number'
+          /></h3></th>
+      <th><h3 class='label'>{{localize 'morpg.items.equipment.cost'}}:</h3></th>
+      <th><h3><input
+            name='data.cost'
+            type='text'
+            value='{{data.cost}}'
+            data-dtype='Number'
+          /></h3></th>
+      <th><h3 class='label'>{{localize
+            'morpg.items.equipment.slots'
+          }}:</h3></th>
+      <th><h3><input
+            name='data.slots'
+            type='text'
+            value='{{data.slots}}'
+            data-dtype='Number'
+          /></h3></th>
     </table>
     {{editor
       content=data.description

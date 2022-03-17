@@ -18,6 +18,10 @@
         "trigger": "Trigger",
         "quality": "Quality",
         "flaw": "Flaw"
+      },
+      "actions": {
+        "cooldown": "Cooldown",
+        "triggerRange": "Trigger range"
       }
     },
     "baseStats": {

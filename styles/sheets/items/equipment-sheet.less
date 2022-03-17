@@ -6,11 +6,27 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      table {
+      .details {
+        display: flex;
+        flex-direction: row;
         border: 0px;
-        background: none;
-        input {
-          width: 50px;
+        background-color: transparent;
+        h3 {
+          font-weight: bold;
+          input {
+            width: 40px;
+          }
+        }
+        .label {
+          vertical-align: middle;
+          width: auto;
+          margin-left: 15px;
+          margin-right: 3px;
+        }
+        .quantity-label {
+          vertical-align: middle;
+          width: auto;
+          margin-right: 3px;
         }
       }
       .editor {
