@@ -1,12 +1,34 @@
-<section class='inventory-item-section'>
-  <li class='inventory-content'>
-    <p>{{name}}</p>
-    <div>
-      {{!-- <button
-      class='range-button'
-      type='button'
-    >{{data.data.triggerRange.min}}-{{data.data.triggerRange.max}}</button>
-    <p>{{name}}</p> --}}
+<ul class='item'>
+  <li class='item-content'>
+    {{#if data.data.triggerRange}}
+      <button
+        class='range-button'
+        type='button'
+      >{{data.data.triggerRange.min}}-{{data.data.triggerRange.max}}:</button>
+    {{else}}
+      <button class='range-button' type='button'>{{data.data.trigger}}:</button>
+    {{/if}}
+    <p class='name' id='{{data._id}}'>{{name}}</p>
+    <div class='delete-edit-actions'>
+      <a
+        class='item-edit action'
+        data-type='edit'
+        title={{localize 'morpg.sheet.edit'}}
+      >
+        <i class='fas fa-edit'></i>
+      </a>
+      <a class='item-delete action' title={{localize 'morpg.sheet.delete'}}>
+        <i class='fas fa-trash'></i>
+      </a>
     </div>
   </li>
-</section>
+  <div class='toggle-editor'>
+    {{editor
+      content=data.data.description
+      target='data.data.description'
+      button=true
+      owner=isOwner
+      editable=false
+    }}
+  </div>
+</ul>
