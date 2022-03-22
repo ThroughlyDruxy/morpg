@@ -39,9 +39,9 @@ export default class MORPGMonsterSheet extends ActorSheet {
   _collapseDescription(event) {
     event.preventDefault();
     let element = event.currentTarget;
-    let editorWrapper = $(element).closest('li').children('.actions-editor');
+    let editorWrapper = $(element).closest('ul').children('.actions-editor');
     $(editorWrapper).toggleClass('active');
-    // $(editorWrapper).find('.editor-content').show();
-    // $(editorWrapper).find('.tox-tinymce').hide();
+    $(editorWrapper).find('.editor-content').show();
+    $(editorWrapper).find('.tox-tinymce').hide();
   }
 }

@@ -195,6 +195,10 @@
   flex-direction: row;
   margin: 0px;
 }
+.morpg.sheet.monster .actions-section .actions-content .actions-block .item .item-content .header {
+  background-color: aqua;
+  width: 100%;
+}
 .morpg.sheet.monster .actions-section .actions-content .actions-block .item .item-content .range-button {
   text-align: center;
   background-color: transparent;
