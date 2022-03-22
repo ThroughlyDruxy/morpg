@@ -24,14 +24,3 @@ export default class MORPGItemSheet extends ItemSheet {
     return sheetData;
   }
 }
-
-// Hooks.on('preCreateItem', function (data) {
-//   const itemData = data.data;
-//   console.log(itemData);
-
-//   if (itemData.type === 'Actions') {
-//     data.update([{ id: 'data.id', 'data.img': 'icons/svg/sword.svg' }]);
-//   } else if (itemData.type === 'Bullshit') {
-//     data.update([{ 'itemData.img': 'icons/svg/hazard.svg' }]);
-//   }
-// });

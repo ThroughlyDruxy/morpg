@@ -1,8 +1,8 @@
 export default class MORPGMonsterSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      width: 800,
-      height: 700,
+      width: 650,
+      height: 600,
       template: `systems/morpg/templates/sheets/monster-sheet.hbs`,
       classes: ['morpg', 'sheet', 'monster'],
     });
@@ -19,5 +19,29 @@ export default class MORPGMonsterSheet extends ActorSheet {
     };
 
     return sheetData;
+  }
+
+  activateListeners(html) {
+    // html.find(cssSelector).event(this._someCallBack.bind(this)); // template
+
+    // deletes item from sheet
+    html.find('.item-delete').click(this._deleteItem.bind(this));
+    html.find('.name').click(this._collapseDescription.bind(this));
+
+    super.activateListeners(html);
+  }
+
+  _deleteItem(event) {
+    event.preventDefault();
+    let element = event.currentTarget;
+  }
+
+  _collapseDescription(event) {
+    event.preventDefault();
+    let element = event.currentTarget;
+    let editorWrapper = $(element).closest('li').children('.actions-editor');
+    $(editorWrapper).toggleClass('active');
+    // $(editorWrapper).find('.editor-content').show();
+    // $(editorWrapper).find('.tox-tinymce').hide();
   }
 }

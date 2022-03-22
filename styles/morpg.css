@@ -159,6 +159,7 @@
 .morpg.sheet.monster form .body .row .right-column .special,
 .morpg.sheet.monster form .body .row .right-column .actions,
 .morpg.sheet.monster form .body .row .right-column .bullshit {
+  overflow-y: auto;
   height: 33%;
 }
 .morpg.sheet.monster .actions-section {
@@ -169,7 +170,7 @@
   border-top: solid black 3px;
 }
 .morpg.sheet.monster .actions-section .actions-content .actions-button {
-  font-size: 32px;
+  font-size: 18px;
   text-align: center;
   background-color: transparent;
   border: none;
@@ -181,6 +182,43 @@
   outline: none;
   box-shadow: 0 0 10px black;
 }
+.morpg.sheet.monster .actions-section .actions-content .actions-block {
+  height: 75%;
+}
+.morpg.sheet.monster .actions-section .actions-content .actions-block .item {
+  background-color: #c0c0c0;
+  list-style: none;
+  padding-left: 0px;
+}
+.morpg.sheet.monster .actions-section .actions-content .actions-block .item .item-content {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+}
+.morpg.sheet.monster .actions-section .actions-content .actions-block .item .item-content .range-button {
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  margin-right: 5px;
+  width: auto;
+}
+.morpg.sheet.monster .actions-section .actions-content .actions-block .item .item-content .range-button:hover {
+  outline: none;
+  box-shadow: 0 0 5px black;
+}
+.morpg.sheet.monster .actions-section .actions-content .actions-block .item .item-content .name {
+  width: 80%;
+  font-size: 16px;
+}
+.morpg.sheet.monster .actions-section .actions-content .actions-block .item .item-content .delete-action {
+  align-self: center;
+}
+.morpg.sheet.monster .actions-section .actions-content .actions-block .item .actions-editor {
+  display: none;
+}
+.morpg.sheet.monster .actions-section .actions-content .actions-block .item .active {
+  display: initial;
+}
 .morpg.sheet.monster .bullshit-section {
   height: 100%;
 }
@@ -189,7 +227,7 @@
   border-top: solid black 3px;
 }
 .morpg.sheet.monster .bullshit-section .bullshit-content .bullshit-button {
-  font-size: 32px;
+  font-size: 18px;
   text-align: center;
   background-color: transparent;
   border: none;
@@ -208,10 +246,11 @@
   height: 75%;
 }
 .morpg.sheet.monster .special-section .special-content .special-header {
+  font-size: 18px;
   text-align: center;
   border-bottom: solid;
 }
-.morpg.sheet.monster .special-section .special-content .editor {
+.morpg.sheet.monster .special-section .editor {
   background-color: lightgray;
   height: 100%;
 }

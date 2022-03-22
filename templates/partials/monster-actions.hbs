@@ -3,8 +3,37 @@
     <button class='actions-button' type='button'>{{localize
         config.headers.actions
       }}</button>
-    <div class='actions'>
-
+    <div class='actions-block'>
+      {{#each actor.items}}
+        {{#ifEquals data.type 'Action'}}
+          <ul class='item'>
+            <li class='item-content'>
+              <button
+                class='range-button'
+                type='button'
+              >{{data.data.triggerRange.min}}-{{data.data.triggerRange.max}}:</button>
+              <p class='name'>{{name}}</p>
+              <div class='delete-action'>
+                <a
+                  class="'item-delete action"
+                  title={{localize 'morpg.sheet.delete'}}
+                >
+                  <i class='fas fa-trash'></i>
+                </a>
+              </div>
+            </li>
+            <div class='actions-editor'>
+              {{editor
+                content=data.data.description
+                target='data.description'
+                button=true
+                owner=isOwner
+                editable=true
+              }}
+            </div>
+          </ul>
+        {{/ifEquals}}
+      {{/each}}
     </div>
   </div>
 </section>

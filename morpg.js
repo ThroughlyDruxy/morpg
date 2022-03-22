@@ -2,8 +2,8 @@ import { morpg } from './module/config.js';
 import MORPGRogueSheet from './module/sheets/MORPGRogueSheet.js';
 import MORPGItemSheet from './module/sheets/MORPGItemSheet.js';
 import MORPGItem from './module/MORPGItem.js';
-import MORPGMonsterSheet from './module/sheets/MORPGMonsterSheet.js';
 import MORPGActor from './module/MORPGActor.js';
+import MORPGMonsterSheet from './module/sheets/MORPGMonsterSheet.js';
 
 async function preloadHandlebarsTemplates() {
   const templatePaths = [
@@ -11,6 +11,7 @@ async function preloadHandlebarsTemplates() {
     'systems/morpg/templates/partials/monster-actions.hbs',
     'systems/morpg/templates/partials/monster-bullshit.hbs',
     'systems/morpg/templates/partials/monster-special.hbs',
+    'systems/morpg/templates/partials/inventory-item.hbs',
   ];
 
   return loadTemplates(templatePaths);
@@ -34,4 +35,8 @@ Hooks.once('init', function () {
   Actors.registerSheet('morpg', MORPGMonsterSheet, { makeDefault: true });
 
   preloadHandlebarsTemplates();
+
+  Handlebars.registerHelper('ifEquals', function (arg1, arg2, options) {
+    return arg1 == arg2 ? options.fn(this) : options.inverse(this);
+  });
 });

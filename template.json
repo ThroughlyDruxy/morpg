@@ -31,7 +31,7 @@
     }
   },
   "Item": {
-    "types": ["Actions", "Bullshit", "Equipment"],
+    "types": ["Action", "Bullshit", "Equipment"],
     "equipment": {
       "description": "",
       "quantity": 1,
@@ -44,7 +44,7 @@
       "isAttack": false,
       "trigger": 0
     },
-    "actions": {
+    "action": {
       "description": "",
       "cooldown": {
         "min": 0,

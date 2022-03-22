@@ -1,5 +1,8 @@
 {
   "morpg": {
+    "sheet": {
+      "delete": "Delete"
+    },
     "placeholder": "Placeholder",
     "items": {
       "equipment": {
