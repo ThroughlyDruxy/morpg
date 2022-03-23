@@ -1,0 +1,32 @@
+<form class='chat-card stat-roll-card'>
+  <div class='card-header'>
+    <img
+      src='{{img}}'
+      data-edit='img'
+      title='{{name}}'
+      height='40'
+      width='40'
+    />
+    {{#if data.triggerRange}}
+      <p class='range'>{{data.triggerRange.min}}-{{data.triggerRange.max}}:</p>
+    {{else}}
+      <p class='range'>{{data.trigger}}:</p>
+    {{/if}}
+    <p class='name'>{{name}}</p>
+  </div>
+  <div class='card-body'>
+    {{editor
+      content=data.description
+      target='data.description'
+      button=false
+      owner=false
+      editable=false
+    }}</div>
+  {{#if data.isAttack}}
+    <div class='attack-roll'>
+      <button class='attack-button rollable' type='button'>Attack</button>
+    </div>
+  {{/if}}
+  <div class='card-type'>Action type:
+    <span style='font-weight: bold;'>{{type}}</span></div>
+</form>

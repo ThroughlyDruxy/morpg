@@ -1,1 +1,3 @@
-export default class MORPGActor extends Actor {}
+export default class MORPGActor extends Actor {
+  chatTemplate = {};
+}

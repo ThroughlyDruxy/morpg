@@ -31,8 +31,14 @@ Hooks.once('init', function () {
   });
 
   Actors.unregisterSheet('core', ActorSheet);
-  Actors.registerSheet('morpg', MORPGRogueSheet, { makeDefault: true });
-  Actors.registerSheet('morpg', MORPGMonsterSheet, { makeDefault: true });
+  Actors.registerSheet('morpg', MORPGRogueSheet, {
+    types: ['Rogue'],
+    makeDefault: true,
+  });
+  Actors.registerSheet('morpg', MORPGMonsterSheet, {
+    types: ['Monster'],
+    makeDefault: true,
+  });
 
   preloadHandlebarsTemplates();
 

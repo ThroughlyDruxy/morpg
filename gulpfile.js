@@ -9,6 +9,7 @@ const MORPG_LESS = [
   'styles/*.less',
   'styles/sheets/actors/*.less',
   'styles/sheets/items/*.less',
+  'styles/chat/*.less',
 ];
 function compileLESS() {
   return gulp

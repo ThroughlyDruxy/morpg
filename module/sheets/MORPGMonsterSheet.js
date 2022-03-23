@@ -1,8 +1,11 @@
+import { morpgUtilities } from '../utils.js';
+import * as Dice from '../dice.js';
+
 export default class MORPGMonsterSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       width: 650,
-      height: 600,
+      height: 650,
       template: `systems/morpg/templates/sheets/monster-sheet.hbs`,
       classes: ['morpg', 'sheet', 'monster'],
     });
@@ -24,40 +27,45 @@ export default class MORPGMonsterSheet extends ActorSheet {
   activateListeners(html) {
     // html.find(cssSelector).event(this._someCallBack.bind(this)); // template
 
-    // deletes item from sheet
-    html.find('.item-edit').click(this._editItem.bind(this));
-    html.find('.item-delete').click(this._deleteItem.bind(this));
-    html.find('.name').click(this._collapseDescription.bind(this));
+    html
+      .find('.item-edit')
+      .click(morpgUtilities.itemManagement.editItem.bind(this));
+    html
+      .find('.item-delete')
+      .click(morpgUtilities.itemManagement.deleteItem.bind(this));
+    html
+      .find('.name')
+      .click(morpgUtilities.itemManagement.collapseDescription.bind(this));
+
+    // Owner only
+    if (this.actor.isOwner) {
+      html.find('.range-button').click(this._onItemRoll.bind(this));
+      html.find('.stat-button').click(this._statRoll.bind(this));
+    }
 
     super.activateListeners(html);
   }
 
-  getItemId(element) {
-    return $(element).closest('.delete-edit-actions').siblings('.name')[0].id;
+  _statRoll(event) {
+    const statName = event.currentTarget.innerHTML.toLowerCase();
+    const rollFormula = '1d6 + @statModifier';
+
+    const rollData = {
+      statModifier: this.actor.data.data[statName],
+    };
+
+    const messageData = {
+      speaker: ChatMessage.getSpeaker(),
+    };
+    new Roll(rollFormula, rollData)
+      .roll({ async: false })
+      .toMessage(messageData);
   }
 
-  _editItem(event) {
-    event.preventDefault();
+  _onItemRoll(event) {
     const element = event.currentTarget;
-
-    const itemId = this.getItemId(element);
-    const item = this.actor.items.get(itemId);
-    item.sheet.render(true);
-  }
-
-  _deleteItem(event) {
-    event.preventDefault();
-    const element = event.currentTarget;
-
-    this.actor.deleteEmbeddedDocuments('Item', [this.getItemId(element)]);
-  }
-
-  _collapseDescription(event) {
-    event.preventDefault();
-    const element = event.currentTarget;
-    const editorWrapper = $(element).closest('ul').children('.toggle-editor');
-    $(editorWrapper).toggleClass('active');
-    $(editorWrapper).find('.editor-content').show();
-    $(editorWrapper).find('.tox-tinymce').hide();
+    const itemID = $(element).siblings('.name')[0].id;
+    const item = this.actor.getEmbeddedDocument('Item', itemID);
+    item.roll();
   }
 }
