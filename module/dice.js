@@ -1,14 +1,17 @@
-export function StatRoll({ statModifier = null, halfRoll = false } = {}) {
+export function StatRoll({
+  statModifier = null,
+  halfRoll = false,
+  maxHealth = false,
+} = {}) {
   let rollFormula = '1d6 + @statModifier';
-
-  let rollData = {
-    statModifier: statModifier,
-  };
 
   if (halfRoll) {
     rollFormula = 'ceil((1d6 + @statModifier)/2)';
   }
 
+  let rollData = {
+    statModifier: statModifier,
+  };
   const messageData = {
     speaker: ChatMessage.getSpeaker(),
   };
