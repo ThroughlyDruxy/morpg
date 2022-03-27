@@ -6,6 +6,19 @@ function getItemId(element) {
 
 morpgUtilities.itemManagement = {
   /**
+   * Toggle the visibility of the block show/hide
+   * @param event
+   * @returns {*}
+   */
+  collapseDescription: function (event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const editorWrapper = $(element).closest('ul').children('.toggle-editor');
+    $(editorWrapper).toggleClass('active');
+    $(editorWrapper).find('.editor-content').show();
+    $(editorWrapper).find('.tox-tinymce').hide();
+  },
+  /**
    * TDelete item from
    * @param event
    * @returns {*}
@@ -31,18 +44,37 @@ morpgUtilities.itemManagement = {
     item.sheet.render(true);
   },
   /**
-   * Toggle the visibility of the block show/hide
+   * Edit item sheet
    * @param event
    * @returns {*}
    */
-  collapseDescription: function (event) {
+  newItem: async function (event) {
     event.preventDefault();
     const element = event.currentTarget;
-    const editorWrapper = $(element).closest('ul').children('.toggle-editor');
-    $(editorWrapper).toggleClass('active');
-    $(editorWrapper).find('.editor-content').show();
-    $(editorWrapper).find('.tox-tinymce').hide();
+    const actor = game.actors.get(this.actor.id);
+    const html = await renderTemplate('systems/morpg/templates/dialog.hbs');
+
+    Item.createDialog(
+      {},
+      {
+        width: 320,
+        left: window.innerWidth - 630,
+        top: GamepadButton.offsetTop,
+        parent: actor,
+      }
+    );
+
+    // let dialog = new Dialog({
+    //   title: game.i18n.localize('morpg.sheet.newItemDialog'),
+    //   content: html,
+    //   buttons: {
+    //     createNewItem: {
+    //       icon: '<i class="fas fa-check"></i>',
+    //       label: game.i18n.localize('morpg.sheet.newItemDialog'),
+    //       callback: () => console.log(html),
+    //     },
+    //   },
+    // });
+    // dialog.render(true);
   },
 };
-
-morpgUtilities.rolls = {};

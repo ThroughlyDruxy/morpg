@@ -37,10 +37,16 @@ export default class MORPGMonsterSheet extends ActorSheet {
       .find('.name')
       .click(morpgUtilities.itemManagement.collapseDescription.bind(this));
 
+    html
+      .find('.item-new')
+      .click(morpgUtilities.itemManagement.newItem.bind(this));
+
     // Owner only
     if (this.actor.isOwner) {
       html.find('.range-button').click(this._onItemRoll.bind(this));
       html.find('.stat-button').click(this._statRoll.bind(this));
+      html.find('.actions-button').click(this._onActionRoll.bind(this));
+      html.find('.bullshit-button').click(this._onBullshitRoll.bind(this));
     }
 
     super.activateListeners(html);
@@ -53,6 +59,13 @@ export default class MORPGMonsterSheet extends ActorSheet {
       statModifier: this.actor.data.data[statName],
       halfRoll: event.shiftKey,
     });
+  }
+
+  _onActionRoll(event) {
+    console.log(`_onActionRoll triggered`);
+  }
+  _onBullshitRoll(event) {
+    console.log(`_onActionRoll triggered`);
   }
 
   _onItemRoll(event) {

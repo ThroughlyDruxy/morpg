@@ -2,7 +2,9 @@
   "morpg": {
     "sheet": {
       "delete": "Delete",
-      "edit": "Edit"
+      "edit": "Edit",
+      "new": "New Item",
+      "newItemDialog": "Create New Item"
     },
     "placeholder": "Placeholder",
     "items": {
