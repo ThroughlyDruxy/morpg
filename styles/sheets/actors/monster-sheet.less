@@ -38,11 +38,14 @@
           width: calc(100% - 205px);
           border-style: solid;
           margin-left: 2px;
-          .special,
+          .special {
+            overflow-y: auto;
+            min-height: 100px;
+          }
           .actions,
           .bullshit {
             overflow-y: auto;
-            height: 33%;
+            min-height: 150px;
           }
           .actions-block {
             height: 75%;

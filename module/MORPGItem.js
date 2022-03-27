@@ -8,6 +8,8 @@ export default class MORPGItem extends Item {
       updateData.img = 'icons/svg/sword.svg';
     } else if (createData.type === 'Bullshit') {
       updateData.img = 'icons/svg/hazard.svg';
+    } else if (createData.type === 'Special') {
+      updateData.img = 'icons/svg/explosion.svg';
     }
 
     await this.data.update(updateData);

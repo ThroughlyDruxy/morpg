@@ -31,19 +31,7 @@
     }
   },
   "Item": {
-    "types": ["Action", "Bullshit", "Equipment"],
-    "equipment": {
-      "description": "",
-      "quantity": 1,
-      "slots": 1,
-      "cost": 0
-    },
-    "bullshit": {
-      "description": "",
-      "type": "-",
-      "isAttack": false,
-      "trigger": 0
-    },
+    "types": ["Action", "Bullshit", "Equipment", "Special"],
     "action": {
       "description": "",
       "cooldown": {
@@ -55,6 +43,22 @@
         "min": null,
         "max": null
       },
+      "isAttack": false
+    },
+    "bullshit": {
+      "description": "",
+      "type": "-",
+      "isAttack": false,
+      "trigger": 0
+    },
+    "equipment": {
+      "description": "",
+      "quantity": 1,
+      "slots": 1,
+      "cost": 0
+    },
+    "special": {
+      "description": "",
       "isAttack": false
     }
   }

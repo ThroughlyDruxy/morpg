@@ -5,7 +5,7 @@ export default class MORPGMonsterSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       width: 650,
-      height: 650,
+      height: 600,
       template: `systems/morpg/templates/sheets/monster-sheet.hbs`,
       classes: ['morpg', 'sheet', 'monster'],
     });
@@ -48,18 +48,11 @@ export default class MORPGMonsterSheet extends ActorSheet {
 
   _statRoll(event) {
     const statName = event.currentTarget.innerHTML.toLowerCase();
-    const rollFormula = '1d6 + @statModifier';
 
-    const rollData = {
+    Dice.StatRoll({
       statModifier: this.actor.data.data[statName],
-    };
-
-    const messageData = {
-      speaker: ChatMessage.getSpeaker(),
-    };
-    new Roll(rollFormula, rollData)
-      .roll({ async: false })
-      .toMessage(messageData);
+      halfRoll: event.shiftKey,
+    });
   }
 
   _onItemRoll(event) {

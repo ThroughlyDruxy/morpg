@@ -193,11 +193,14 @@
   border-style: solid;
   margin-left: 2px;
 }
-.morpg.sheet.monster form.actor-sheet .body .row .right-column .special,
+.morpg.sheet.monster form.actor-sheet .body .row .right-column .special {
+  overflow-y: auto;
+  min-height: 100px;
+}
 .morpg.sheet.monster form.actor-sheet .body .row .right-column .actions,
 .morpg.sheet.monster form.actor-sheet .body .row .right-column .bullshit {
   overflow-y: auto;
-  height: 33%;
+  min-height: 150px;
 }
 .morpg.sheet.monster form.actor-sheet .body .row .right-column .actions-block {
   height: 75%;
@@ -264,13 +267,9 @@
   height: 75%;
 }
 .morpg.sheet.monster .special-section .special-content .special-header {
-  font-size: 18px;
+  font-size: 20.8px;
   text-align: center;
   border-bottom: solid;
-}
-.morpg.sheet.monster .special-section .editor {
-  background-color: #c0c0c0;
-  height: 100%;
 }
 .stats {
   width: 100%;

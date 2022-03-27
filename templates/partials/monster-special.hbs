@@ -1,12 +1,15 @@
 <section class='special-section'>
   <div class='special-content'>
     <h3 class='special-header'>{{localize config.headers.special}}</h3>
-    {{editor
-      content=data.special.description
-      target='data.special.description'
-      button=true
-      owner=owner
-      editable=editable
-    }}
+    <div class='actions-block'>
+      {{#each actor.items}}
+      {{#ifEquals data.type 'Special'}}
+        {{> 'systems/morpg/templates/partials/inventory-item.hbs'}}
+      {{/ifEquals}}
+      {{/each}}
+    </div>
   </div>
 </section>
+
+
+    
