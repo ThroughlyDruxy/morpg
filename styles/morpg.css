@@ -196,6 +196,7 @@
 .morpg.sheet.monster form.actor-sheet .body .row .right-column .special {
   overflow-y: auto;
   min-height: 100px;
+  max-height: 150px;
 }
 .morpg.sheet.monster form.actor-sheet .body .row .right-column .actions,
 .morpg.sheet.monster form.actor-sheet .body .row .right-column .bullshit {
@@ -203,7 +204,7 @@
   min-height: 150px;
 }
 .morpg.sheet.monster form.actor-sheet .body .row .right-column .actions-block {
-  height: 75%;
+  height: 70%;
 }
 .morpg.sheet.monster form.actor-sheet .body .row .right-column .actions-block .item {
   background-color: #c0c0c0;
