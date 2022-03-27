@@ -34,6 +34,8 @@
       "physical": "Physical",
       "defense": "Defense",
       "health": "Health",
+      "healthMax": "Max",
+      "healthCurrent": "Current",
       "magic": "Magic",
       "resolve": "Resolve"
     },

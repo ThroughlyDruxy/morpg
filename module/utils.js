@@ -63,18 +63,5 @@ morpgUtilities.itemManagement = {
         parent: actor,
       }
     );
-
-    // let dialog = new Dialog({
-    //   title: game.i18n.localize('morpg.sheet.newItemDialog'),
-    //   content: html,
-    //   buttons: {
-    //     createNewItem: {
-    //       icon: '<i class="fas fa-check"></i>',
-    //       label: game.i18n.localize('morpg.sheet.newItemDialog'),
-    //       callback: () => console.log(html),
-    //     },
-    //   },
-    // });
-    // dialog.render(true);
   },
 };

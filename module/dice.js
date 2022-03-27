@@ -16,5 +16,5 @@ export function StatRoll({ statModifier = null, halfRoll = false } = {}) {
 }
 
 export function ActionRoll() {
-  let rollFormula = '1d6 + @statModifier';
+  let rollFormula = '1d6';
 }

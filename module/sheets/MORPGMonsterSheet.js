@@ -54,18 +54,28 @@ export default class MORPGMonsterSheet extends ActorSheet {
 
   _statRoll(event) {
     const statName = event.currentTarget.innerHTML.toLowerCase();
+    console.log(statName);
 
-    Dice.StatRoll({
-      statModifier: this.actor.data.data[statName],
-      halfRoll: event.shiftKey,
-    });
+    if (statName === 'health') {
+      Dice.StatRoll({
+        statModifier: this.actor.data.data.health.value,
+        halfRoll: event.shiftKey,
+      });
+    } else {
+      Dice.StatRoll({
+        statModifier: this.actor.data.data[statName],
+        halfRoll: event.shiftKey,
+      });
+    }
   }
 
   _onActionRoll(event) {
     console.log(`_onActionRoll triggered`);
+    Dice.ActionRoll();
   }
+
   _onBullshitRoll(event) {
-    console.log(`_onActionRoll triggered`);
+    console.log(`_onBullshitRoll triggered`);
   }
 
   _onItemRoll(event) {
