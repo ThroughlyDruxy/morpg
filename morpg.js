@@ -7,11 +7,22 @@ import MORPGMonsterSheet from './module/sheets/MORPGMonsterSheet.js';
 
 async function preloadHandlebarsTemplates() {
   const templatePaths = [
+    // Chat
+    'systems/morpg/templates/chat/action.hbs',
+    'systems/morpg/templates/chat/stat-roll.hbs',
+    // Monster sheet
     'systems/morpg/templates/partials/monster-stats.hbs',
     'systems/morpg/templates/partials/monster-actions.hbs',
     'systems/morpg/templates/partials/monster-bullshit.hbs',
     'systems/morpg/templates/partials/monster-special.hbs',
+    // Inventory item
     'systems/morpg/templates/partials/inventory-item.hbs',
+    // Items
+    'systems/morpg/templates/sheets/action-sheet.hbs',
+    'systems/morpg/templates/sheets/bullshit-sheet.hbs',
+    'systems/morpg/templates/sheets/equipment-sheet.hbs',
+    'systems/morpg/templates/sheets/special-sheet.hbs',
+    //
   ];
 
   return loadTemplates(templatePaths);

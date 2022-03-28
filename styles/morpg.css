@@ -66,19 +66,23 @@
 .morpg.sheet.item form .sheet-content .details h3 {
   font-weight: bold;
 }
-.morpg.sheet.item form .sheet-content .details h3 input {
-  width: 40px;
-}
-.morpg.sheet.item form .sheet-content .details .label {
+.morpg.sheet.item form .sheet-content .details h3 .label {
   vertical-align: middle;
   width: auto;
   margin-left: 15px;
   margin-right: 3px;
 }
-.morpg.sheet.item form .sheet-content .details .quantity-label {
+.morpg.sheet.item form .sheet-content .details h3 .cooldown-label {
   vertical-align: middle;
   width: auto;
   margin-right: 3px;
+}
+.morpg.sheet.item form .sheet-content .details h3 .cooldown,
+.morpg.sheet.item form .sheet-content .details h3 .triggerRange {
+  width: 30px;
+}
+.morpg.sheet.item form .sheet-content .details h3 .isAttack {
+  margin-left: 0px;
 }
 .morpg.sheet.item form .sheet-content .editor {
   height: 100%;
@@ -138,23 +142,19 @@
 .morpg.sheet.item form .sheet-content .details h3 {
   font-weight: bold;
 }
-.morpg.sheet.item form .sheet-content .details h3 .label {
+.morpg.sheet.item form .sheet-content .details h3 input {
+  width: 40px;
+}
+.morpg.sheet.item form .sheet-content .details .label {
   vertical-align: middle;
   width: auto;
   margin-left: 15px;
   margin-right: 3px;
 }
-.morpg.sheet.item form .sheet-content .details h3 .cooldown-label {
+.morpg.sheet.item form .sheet-content .details .quantity-label {
   vertical-align: middle;
   width: auto;
   margin-right: 3px;
-}
-.morpg.sheet.item form .sheet-content .details h3 .cooldown,
-.morpg.sheet.item form .sheet-content .details h3 .triggerRange {
-  width: 30px;
-}
-.morpg.sheet.item form .sheet-content .details h3 .isAttack {
-  margin-left: 0px;
 }
 .morpg.sheet.item form .sheet-content .editor {
   height: 100%;
@@ -163,134 +163,101 @@
 .morpg.sheet.rogue {
   background-color: aqua;
 }
+.morpg.sheet.monster .special-content .special-header {
+  font-size: 18px;
+  text-align: center;
+  border-bottom: solid;
+  margin: 0px;
+}
+.morpg.sheet.monster .special-content .special-block {
+  overflow-y: scroll;
+  min-height: 100px;
+  max-height: 100px;
+}
+.morpg.sheet.monster .bullshit-content,
+.morpg.sheet.monster .actions-content {
+  height: 100%;
+}
+.morpg.sheet.monster .bullshit-content .bullshit-button,
+.morpg.sheet.monster .actions-content .bullshit-button,
+.morpg.sheet.monster .bullshit-content .actions-button,
+.morpg.sheet.monster .actions-content .actions-button {
+  font-size: 18px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  border-top: solid black 3px;
+  border-bottom: solid black 3px;
+  width: 100%;
+  margin: 0px;
+}
+.morpg.sheet.monster .bullshit-content .bullshit-button:hover,
+.morpg.sheet.monster .actions-content .bullshit-button:hover,
+.morpg.sheet.monster .bullshit-content .actions-button:hover,
+.morpg.sheet.monster .actions-content .actions-button:hover {
+  outline: none;
+  box-shadow: 0 0 10px black;
+}
+.morpg.sheet.monster .bullshit-content .actions-block,
+.morpg.sheet.monster .actions-content .actions-block {
+  overflow-y: scroll;
+  min-height: 175px;
+  max-height: 175px;
+}
+.morpg.sheet.monster .bullshit-content .bullshit-block,
+.morpg.sheet.monster .actions-content .bullshit-block {
+  overflow-y: scroll;
+  min-height: 100px;
+  max-height: 100px;
+}
+.morpg.sheet.monster .item {
+  background-color: #c0c0c0;
+  list-style: none;
+  padding-left: 0px;
+}
+.morpg.sheet.monster .item .item-content {
+  display: flex;
+  margin: 0px;
+}
+.morpg.sheet.monster .item .item-content .header {
+  width: 100%;
+}
+.morpg.sheet.monster .item .item-content .name {
+  width: 70%;
+  font-size: 16px;
+}
 .morpg.sheet.monster form.actor-sheet {
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 .morpg.sheet.monster form.actor-sheet .sheet-header {
-  width: 100%;
-  height: 60px;
   text-align: center;
 }
-.morpg.sheet.monster form.actor-sheet .body {
-  height: 100%;
+.morpg.sheet.monster form.actor-sheet .left-column {
+  float: left;
   display: flex;
   flex-direction: column;
-}
-.morpg.sheet.monster form.actor-sheet .body .row {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.morpg.sheet.monster form.actor-sheet .body .row .left-column {
-  float: left;
   height: 100%;
   width: 200px;
   border-style: solid;
   margin-right: 2px;
 }
-.morpg.sheet.monster form.actor-sheet .body .row .left-column img {
-  border: none;
-  width: 100%;
-  height: 50%;
+.morpg.sheet.monster form.actor-sheet .left-column img {
+  border-bottom: 2px solid black;
 }
-.morpg.sheet.monster form.actor-sheet .body .row .left-column .utility-buttons {
+.morpg.sheet.monster form.actor-sheet .left-column .utility-buttons {
   border-top: 2px solid black;
   display: flex;
 }
-.morpg.sheet.monster form.actor-sheet .body .row .left-column .utility-buttons h4 {
-  margin-right: 5px;
+.morpg.sheet.monster form.actor-sheet .left-column .utility-buttons h4,
+.morpg.sheet.monster form.actor-sheet .left-column .utility-buttons a {
+  margin: 5px 5px 0px 0px;
 }
-.morpg.sheet.monster form.actor-sheet .body .row .right-column {
-  float: left;
+.morpg.sheet.monster form.actor-sheet .right-column {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: calc(100% - 205px);
   border-style: solid;
   margin-left: 2px;
-}
-.morpg.sheet.monster form.actor-sheet .body .row .right-column .special {
-  overflow-y: auto;
-  min-height: 100px;
-  max-height: 150px;
-}
-.morpg.sheet.monster form.actor-sheet .body .row .right-column .actions,
-.morpg.sheet.monster form.actor-sheet .body .row .right-column .bullshit {
-  overflow-y: auto;
-  min-height: 150px;
-}
-.morpg.sheet.monster form.actor-sheet .body .row .right-column .actions-block {
-  height: 70%;
-}
-.morpg.sheet.monster form.actor-sheet .body .row .right-column .actions-block .item {
-  background-color: #c0c0c0;
-  list-style: none;
-  padding-left: 0px;
-}
-.morpg.sheet.monster form.actor-sheet .body .row .right-column .actions-block .item .item-content {
-  display: flex;
-  flex-direction: row;
-  margin: 0px;
-}
-.morpg.sheet.monster form.actor-sheet .body .row .right-column .actions-block .item .item-content .header {
-  width: 100%;
-}
-.morpg.sheet.monster form.actor-sheet .body .row .right-column .actions-block .item .item-content .name {
-  width: 70%;
-  font-size: 16px;
-}
-.morpg.sheet.monster .bullshit-section,
-.morpg.sheet.monster .actions-section {
-  height: 100%;
-}
-.morpg.sheet.monster .bullshit-section .bullshit-content,
-.morpg.sheet.monster .actions-section .bullshit-content,
-.morpg.sheet.monster .bullshit-section .actions-content,
-.morpg.sheet.monster .actions-section .actions-content {
-  height: 100%;
-  border-top: solid black 3px;
-}
-.morpg.sheet.monster .bullshit-section .bullshit-content .bullshit-button,
-.morpg.sheet.monster .actions-section .bullshit-content .bullshit-button,
-.morpg.sheet.monster .bullshit-section .actions-content .bullshit-button,
-.morpg.sheet.monster .actions-section .actions-content .bullshit-button,
-.morpg.sheet.monster .bullshit-section .bullshit-content .actions-button,
-.morpg.sheet.monster .actions-section .bullshit-content .actions-button,
-.morpg.sheet.monster .bullshit-section .actions-content .actions-button,
-.morpg.sheet.monster .actions-section .actions-content .actions-button {
-  font-size: 18px;
-  text-align: center;
-  background-color: transparent;
-  border: none;
-  border-bottom: solid black 3px;
-  width: 100%;
-  margin: 0px;
-}
-.morpg.sheet.monster .bullshit-section .bullshit-content .bullshit-button:hover,
-.morpg.sheet.monster .actions-section .bullshit-content .bullshit-button:hover,
-.morpg.sheet.monster .bullshit-section .actions-content .bullshit-button:hover,
-.morpg.sheet.monster .actions-section .actions-content .bullshit-button:hover,
-.morpg.sheet.monster .bullshit-section .bullshit-content .actions-button:hover,
-.morpg.sheet.monster .actions-section .bullshit-content .actions-button:hover,
-.morpg.sheet.monster .bullshit-section .actions-content .actions-button:hover,
-.morpg.sheet.monster .actions-section .actions-content .actions-button:hover {
-  outline: none;
-  box-shadow: 0 0 10px black;
-}
-.morpg.sheet.monster .special-section {
-  height: 100%;
-}
-.morpg.sheet.monster .special-section .special-content {
-  height: 75%;
-}
-.morpg.sheet.monster .special-section .special-content .special-header {
-  font-size: 20.8px;
-  text-align: center;
-  border-bottom: solid;
 }
 .stats {
   width: 100%;
@@ -314,10 +281,10 @@
   width: 50%;
 }
 .stats table .health-value {
-  width: 47%;
+  width: 45%;
 }
 .stats table .health-max {
-  width: 47%;
+  width: 45%;
 }
 .stats table .stat-button:hover {
   outline: none;

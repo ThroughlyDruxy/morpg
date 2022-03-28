@@ -25,8 +25,6 @@ export default class MORPGMonsterSheet extends ActorSheet {
   }
 
   activateListeners(html) {
-    // html.find(cssSelector).event(this._someCallBack.bind(this)); // template
-
     html
       .find('.item-edit')
       .click(morpgUtilities.itemManagement.editItem.bind(this));

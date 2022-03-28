@@ -1,15 +1,10 @@
-<section class='special-section'>
-  <div class='special-content'>
-    <h3 class='special-header'>{{localize config.headers.special}}</h3>
-    <div class='actions-block'>
+<div class='special-content'>
+  <h3 class='special-header'>{{localize config.headers.special}}</h3>
+  <div class='special-block'>
       {{#each actor.items}}
       {{#ifEquals data.type 'Special'}}
         {{> 'systems/morpg/templates/partials/inventory-item.hbs'}}
       {{/ifEquals}}
       {{/each}}
     </div>
-  </div>
-</section>
-
-
-    
+</div>

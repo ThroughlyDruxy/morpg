@@ -52,7 +52,6 @@ morpgUtilities.itemManagement = {
     event.preventDefault();
     const element = event.currentTarget;
     const actor = this.actor;
-    const html = await renderTemplate('systems/morpg/templates/dialog.hbs');
 
     Item.createDialog(
       {},

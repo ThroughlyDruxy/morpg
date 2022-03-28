@@ -1,14 +1,12 @@
-<section class='bullshit-section'>
-  <div class='bullshit-content'>
-    <button class='bullshit-button' type='button'>{{localize
-        config.headers.bullshit
-      }}</button>
-    <div class='actions-block'>
+<div class='bullshit-content'>
+  <button class='bullshit-button' type='button'>{{localize
+      config.headers.bullshit
+    }}</button>
+  <div class='bullshit-block'>
       {{#each actor.items}}
       {{#ifEquals data.type 'Bullshit'}}
         {{> 'systems/morpg/templates/partials/inventory-item.hbs'}}
       {{/ifEquals}}
       {{/each}}
     </div>
-  </div>
-</section>
+</div>

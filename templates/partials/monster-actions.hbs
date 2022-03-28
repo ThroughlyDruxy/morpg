@@ -1,14 +1,12 @@
-<section class='actions-section'>
-  <div class='actions-content'>
-    <button class='actions-button' type='button'>{{localize
-        config.headers.actions
-      }}</button>
-    <div class='actions-block'>
+<div class='actions-content'>
+  <button class='actions-button' type='button'>{{localize
+      config.headers.actions
+    }}</button>
+  <div class='actions-block'>
   {{#each actor.items}}
     {{#ifEquals data.type 'Action'}}
       {{> 'systems/morpg/templates/partials/inventory-item.hbs'}}
       {{/ifEquals}}
   {{/each}}
   </div>
-  </div>
-</section>
+</div>

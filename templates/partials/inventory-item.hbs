@@ -1,4 +1,4 @@
-<ul class='item' id=''>
+<ul class='item'>
   <li class='item-content'>
     {{#if data.data.triggerRange}}
       <button
@@ -22,13 +22,9 @@
       </a>
     </div>
   </li>
-  <div class='toggle-editor'>
-    {{editor
-      content=data.data.description
-      target='data.data.description'
-      button=true
-      owner=isOwner
-      editable=false
-    }}
-  </div>
+  <li class='toggle-editor'>
+    <div>
+      {{{data.data.description}}}
+    </div>
+  </li>
 </ul>

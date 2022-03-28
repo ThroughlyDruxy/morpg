@@ -1,4 +1,8 @@
 export default class MORPGItem extends Item {
+  chatTemplate = {
+    action: 'systems/morpg/templates/chat/action.hbs',
+  };
+
   /** @override */
   async _preCreate(createData, options, userId) {
     await super._preCreate(createData, options, userId);
@@ -14,10 +18,6 @@ export default class MORPGItem extends Item {
 
     await this.data.update(updateData);
   }
-
-  chatTemplate = {
-    action: 'systems/morpg/templates/chat/action.hbs',
-  };
 
   async roll() {
     let chatData = {
