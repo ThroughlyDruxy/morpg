@@ -4,7 +4,8 @@
       "delete": "Delete",
       "edit": "Edit",
       "new": "New Item",
-      "newItemDialog": "Create New Item"
+      "newItemDialog": "Create New Item",
+      "roll": "Roll Special"
     },
     "placeholder": "Placeholder",
     "items": {

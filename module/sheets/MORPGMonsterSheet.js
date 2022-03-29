@@ -52,16 +52,20 @@ export default class MORPGMonsterSheet extends ActorSheet {
 
   _statRoll(event) {
     const statName = event.currentTarget.innerHTML.toLowerCase();
+    // const actor = this.actor;
 
     if (statName === 'health') {
       Dice.StatRoll({
+        actor: this.actor,
         statModifier: this.actor.data.data.health.value,
+        statName: statName,
         halfRoll: event.shiftKey,
-        maxHealth: event.altKey,
       });
     } else {
       Dice.StatRoll({
+        actor: this.actor,
         statModifier: this.actor.data.data[statName],
+        statName: statName,
         halfRoll: event.shiftKey,
       });
     }

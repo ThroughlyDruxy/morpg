@@ -10,6 +10,8 @@ async function preloadHandlebarsTemplates() {
     // Chat
     'systems/morpg/templates/chat/action.hbs',
     'systems/morpg/templates/chat/stat-roll.hbs',
+    'systems/morpg/templates/dice/roll.hbs',
+    'templates/dice/roll.html',
     // Monster sheet
     'systems/morpg/templates/partials/monster-stats.hbs',
     'systems/morpg/templates/partials/monster-actions.hbs',

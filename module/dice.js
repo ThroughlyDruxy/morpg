@@ -1,10 +1,12 @@
-export function StatRoll({
+export async function StatRoll({
+  actor = null,
   statModifier = null,
+  statName = null,
   halfRoll = false,
-  maxHealth = false,
 } = {}) {
-  let rollFormula = '1d6 + @statModifier';
+  const messageTemplate = 'systems/morpg/templates/chat/stat-roll.hbs';
 
+  let rollFormula = '1d6 + @statModifier';
   if (halfRoll) {
     rollFormula = 'ceil((1d6 + @statModifier)/2)';
   }
@@ -12,10 +14,25 @@ export function StatRoll({
   let rollData = {
     statModifier: statModifier,
   };
-  const messageData = {
-    speaker: ChatMessage.getSpeaker(),
+
+  let rollResult = new Roll(rollFormula, rollData).roll({ async: false });
+  let renderedRoll = await rollResult.render();
+  console.log('rollResult', rollResult);
+  console.log('renderedRoll', renderedRoll);
+
+  let templateData = {
+    ...actor.data,
+    statName: statName,
+    roll: renderedRoll,
   };
-  new Roll(rollFormula, rollData).roll({ async: false }).toMessage(messageData);
+
+  let chatData = {
+    user: game.user._id,
+    speaker: ChatMessage.getSpeaker(),
+    content: await renderTemplate(messageTemplate, templateData),
+  };
+
+  ChatMessage.create(chatData);
 }
 
 export function ActionRoll() {

@@ -1,13 +1,26 @@
-<ul class='item'>
+<ul class='inventory-item'>
   <li class='item-content'>
-    {{#if data.data.triggerRange}}
-      <button
-        class='range-button'
-        type='button'
-      >{{data.data.triggerRange.min}}-{{data.data.triggerRange.max}}:</button>
+    {{#ifEquals data.type 'Special'}}
+      <a
+        class='item-roll-special action range-button'
+        data-type='roll-special'
+        title={{localize 'morpg.sheet.roll'}}
+      >
+        <i class='fas fa-dice-six'></i>
+      </a>
     {{else}}
-      <button class='range-button' type='button'>{{data.data.trigger}}:</button>
-    {{/if}}
+      {{#if data.data.triggerRange}}
+        <button
+          class='range-button'
+          type='button'
+        >{{data.data.triggerRange.min}}-{{data.data.triggerRange.max}}:</button>
+      {{else}}
+        <button
+          class='range-button'
+          type='button'
+        >{{data.data.trigger}}:</button>
+      {{/if}}
+    {{/ifEquals}}
     <p class='name' id='{{data._id}}'>{{name}}</p>
     <div class='delete-edit-actions'>
       <a
@@ -23,8 +36,6 @@
     </div>
   </li>
   <li class='toggle-editor'>
-    <div>
-      {{{data.data.description}}}
-    </div>
+    <div>{{{data.data.description}}}</div>
   </li>
 </ul>
