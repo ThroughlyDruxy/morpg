@@ -72,18 +72,34 @@ export default class MORPGMonsterSheet extends ActorSheet {
   }
 
   _onActionRoll(event) {
-    console.log(`_onActionRoll triggered`);
-    Dice.ActionRoll();
+    const actionMap = new Map();
+    const items = this.actor.items;
+
+    items.forEach((item) => {
+      if (item.data.type === 'Action') {
+        const rangeArr = morpgUtilities.rolls.getActionRange(
+          item.data.data.triggerRange.min,
+          item.data.data.triggerRange.max
+        );
+
+        rangeArr.forEach((trigger) => {
+          actionMap.set(trigger, item.data._id);
+        });
+      }
+    });
+
+    const rangeDice = Math.trunc(Math.random() * 6) + 1;
+    this.actor.getEmbeddedDocument('Item', actionMap.get(rangeDice)).roll();
   }
 
   _onBullshitRoll(event) {
-    console.log(`_onBullshitRoll triggered`);
+    Dice.BullshitRoll({ actor: this.actor });
   }
 
   _onItemRoll(event) {
     const element = event.currentTarget;
     const itemID = $(element).siblings('.name')[0].id;
     const item = this.actor.getEmbeddedDocument('Item', itemID);
-    item.roll();
+    item.sendItemToChat();
   }
 }

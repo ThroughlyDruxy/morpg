@@ -15,20 +15,19 @@ export default class MORPGItem extends Item {
     await this.data.update(updateData);
   }
 
-  chatTemplate = {
-    action: 'systems/morpg/templates/chat/action.hbs',
-  };
-
-  async roll() {
-    let chatData = {
-      user: game.user._id,
-      speaker: ChatMessage.getSpeaker(),
-    };
-    let cardData = {
+  async sendItemToChat() {
+    const chatTemplate = 'systems/morpg/templates/chat/action.hbs';
+    let templateData = {
+      actorName: this.parent.data.name,
       ...this.data,
       owner: this.actor.id,
     };
-    chatData.content = await renderTemplate(this.chatTemplate.action, cardData);
+
+    let chatData = {
+      user: game.user._id,
+      speaker: ChatMessage.getSpeaker(),
+      content: await renderTemplate(chatTemplate, templateData),
+    };
     chatData.roll = true;
     return ChatMessage.create(chatData);
   }

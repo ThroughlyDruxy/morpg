@@ -1,3 +1,5 @@
+// import { morpg } from './config';
+
 export const morpgUtilities = {};
 
 function getItemId(element) {
@@ -19,7 +21,7 @@ morpgUtilities.itemManagement = {
     $(editorWrapper).find('.tox-tinymce').hide();
   },
   /**
-   * TDelete item from
+   * Delete item from actor
    * @param event
    * @returns {*}
    */
@@ -62,5 +64,26 @@ morpgUtilities.itemManagement = {
         parent: actor,
       }
     );
+  },
+};
+
+morpgUtilities.rolls = {
+  /**
+   * Get the target Range for an action and put it into an array
+   * @param {number} min
+   * @param {number} max
+   * @returns {array} rangeArr An array with all the numbers that should trigger the action
+   */
+  getActionRange: function (min, max) {
+    let rangeArr = [];
+    if (min === max) {
+      rangeArr.push(min);
+      return rangeArr;
+    } else {
+      for (let i = min; i <= max; i++) {
+        rangeArr.push(i);
+      }
+      return rangeArr;
+    }
   },
 };
