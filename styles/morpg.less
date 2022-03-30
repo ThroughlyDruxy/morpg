@@ -14,14 +14,16 @@
 
 // Rogue Sheets
 @import './sheets/actors/rogue-sheet.less';
+@import './sheets/actors/rogue-stats.less';
+@import './sheets/actors/rogue-actions-bullshit.less';
 
 // Monster sheet stuff
-@import './sheets/actors/actions-bullshit.less';
+@import './sheets/actors/monster-actions-bullshit.less';
 @import './sheets/actors/monster-sheet.less';
-// @import './sheets/actors/monster-special.less';
 @import './sheets/actors/monster-stats.less';
 
-.morpg.sheet.monster {
+.morpg.sheet.monster,
+.morpg.sheet.rogue {
   background-color: black;
 
   .toggle-editor {

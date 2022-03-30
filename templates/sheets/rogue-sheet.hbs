@@ -1,25 +1,47 @@
-<form class="actor-sheet {{cssClass}}" autocomplete="off">
-    <header class="sheet-header">
-        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
-        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'Name' }}"/></h1>
-    </header>
+<form class='actor-sheet {{cssClass}}' autocomplete='off'>
+  <header class='sheet-header'>
+    <h1 class='charname'><input
+        name='name'
+        type='text'
+        value='{{actor.name}}'
+        placeholder='{{localize "Name"}}'
+      /></h1>
+  </header>
+  <div class='stats-row'>
+    <div class='stats-row left-column'>
+      {{> "systems/morpg/templates/partials/rogue-stats.hbs" leftColumn=true}}
+    </div>
+    <div class='stats-row center-column'>
+      <img
+        src='{{actor.img}}'
+        data-edit='img'
+        title='{{actor.name}}'
+        height='350px'
+        width='262px'
+      />
+    </div>
+    <div class='stats-row right-column'>
+      {{> "systems/morpg/templates/partials/rogue-stats.hbs" rightColumn=true}}
+    </div>
+  </div>
 
-    <section class="items">
-        <h3>Owned Items</h3>
-        <ol class="actor-items">
-        {{#each actor.items as |item id|}}
-            <li class="actor-item" data-item-id="{{id}}">
-                <div class="item-name">
-                  <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-                    <h4>{{item.name}}</h4>
-                </div>
-                <div class="item-controls">
-                    <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                    <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                </div>
-            </li>
-        {{/each}}
-        </ol>
-    </section>
+  {{!-- Sheet Tab Navigation --}}
+  {{!-- <nav class="sheet-tabs tabs" data-group="primary">
+      <a class="tab" data-tab="actions">{{localize "morpg.sheet.actionsTab"}}</a>
+      <a class="tab" data-tab="equipment">{{localize "morpg.sheet.equipmentTab"}}</a>
+  </nav> --}}
+
+  <section class="sheet-body">
+    <div class='actions-body' data-group="primary" data-tab="actions">
+      <div class='actions'>
+        {{> "systems/morpg/templates/partials/rogue-actions.hbs"}}
+      </div>
+      <div class="bullshit">
+        {{> "systems/morpg/templates/partials/rogue-bullshit.hbs"}}
+      </div>
+    </div>
+    {{!-- <div class="equipment" data-group="primary" data-tab="equipment">
+      Equipment
+    </div> --}}
+  </section>
 </form>
-

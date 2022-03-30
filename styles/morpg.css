@@ -157,8 +157,120 @@
   height: 100%;
   background-color: rgba(85, 85, 85, 0.2);
 }
-.morpg.sheet.rogue {
-  background-color: aqua;
+.morpg.sheet.rogue form.actor-sheet {
+  display: flex;
+  flex-direction: column;
+}
+.morpg.sheet.rogue form.actor-sheet .sheet-header {
+  text-align: center;
+}
+.morpg.sheet.rogue form.actor-sheet .stats-row {
+  display: flex;
+  height: 350px;
+}
+.morpg.sheet.rogue form.actor-sheet .stats-row .stats-row.left-column {
+  flex-direction: column;
+  border: none;
+  border: 2px solid black;
+}
+.morpg.sheet.rogue form.actor-sheet .stats-row .stats-row.center-column img {
+  border: none;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+}
+.morpg.sheet.rogue form.actor-sheet .stats-row .stats-row.right-column {
+  flex-direction: column;
+  border: none;
+  border: 2px solid black;
+}
+.morpg.sheet.rogue form.actor-sheet .sheet-body {
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+}
+.morpg.sheet.rogue form.actor-sheet .sheet-body .actions-body {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.morpg.sheet.rogue form.actor-sheet .sheet-body .actions-body .actions,
+.morpg.sheet.rogue form.actor-sheet .sheet-body .actions-body .bullshit {
+  width: 50%;
+  border: 2px solid black;
+}
+.morpg.sheet.rogue form.actor-sheet .sheet-body .actions-body .actions {
+  margin-right: 2px;
+}
+.morpg.sheet.rogue form.actor-sheet .sheet-body .actions-body .bullshit {
+  margin-left: 2px;
+}
+.rogue-stats {
+  width: 100px;
+}
+.rogue-stats .stats {
+  border: none;
+  text-align: center;
+}
+.rogue-stats .stats .coin {
+  column-span: 2;
+}
+.rogue-stats .stats .roll-value {
+  width: 40px;
+}
+.rogue-stats .stats .stat-button,
+.rogue-stats .stats .coin-label {
+  font-size: 14px;
+}
+.rogue-stats .stats .stat-button:hover {
+  outline: none;
+  text-shadow: 0 0 5px black;
+}
+.morpg.sheet.rogue .bullshit-button,
+.morpg.sheet.rogue .actions-button {
+  pointer-events: none;
+  font-size: 18px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+  width: 100%;
+  margin: 0px;
+}
+.morpg.sheet.rogue .actions-block {
+  overflow-y: scroll;
+  min-height: 150px;
+  max-height: 293px;
+}
+.morpg.sheet.rogue .bullshit-block {
+  overflow-y: scroll;
+  min-height: 150px;
+  max-height: 293px;
+}
+ul.rogue-inventory-item {
+  background-color: #c0c0c0;
+  list-style: none;
+  padding-left: 0px;
+  vertical-align: middle;
+}
+ul.rogue-inventory-item .item-content {
+  display: flex;
+  margin: 0px;
+}
+ul.rogue-inventory-item .item-content .cooldown-block {
+  align-self: center;
+  margin-right: 5px;
+}
+ul.rogue-inventory-item .item-content .cooldown-block .cooldown-input {
+  width: 25px;
+  text-align: center;
+}
+ul.rogue-inventory-item .item-content .name {
+  width: 70%;
+  font-size: 16px;
+  font-weight: bold;
+}
+ul.rogue-inventory-item .toggle-editor div {
+  word-wrap: break-word;
 }
 .morpg.sheet.monster .special-content .special-header {
   font-size: 18px;
@@ -197,30 +309,30 @@
   min-height: 140px;
   max-height: 125px;
 }
-ul.inventory-item {
+ul.monster-inventory-item {
   background-color: #c0c0c0;
   list-style: none;
   padding-left: 0px;
 }
-ul.inventory-item .item-content {
+ul.monster-inventory-item .item-content {
   display: flex;
   margin: 0px;
 }
-ul.inventory-item .item-content .item-roll-special {
+ul.monster-inventory-item .item-content .item-roll-special {
   width: 50px;
 }
-ul.inventory-item .item-content .item-roll-special .fa-dice-six {
+ul.monster-inventory-item .item-content .item-roll-special .fa-dice-six {
   font-size: 40px;
 }
-ul.inventory-item .item-content .header {
+ul.monster-inventory-item .item-content .header {
   width: 100%;
 }
-ul.inventory-item .item-content .name {
+ul.monster-inventory-item .item-content .name {
   width: 70%;
   font-size: 16px;
   font-weight: bold;
 }
-ul.inventory-item .toggle-editor div {
+ul.monster-inventory-item .toggle-editor div {
   word-wrap: break-word;
 }
 .morpg.sheet.monster form.actor-sheet {
@@ -243,12 +355,16 @@ ul.inventory-item .toggle-editor div {
   border-bottom: 2px solid black;
 }
 .morpg.sheet.monster form.actor-sheet .left-column .utility-buttons {
-  border-top: 2px solid black;
   display: flex;
+  border-top: 2px solid black;
+  height: 100%;
+  align-items: center;
 }
-.morpg.sheet.monster form.actor-sheet .left-column .utility-buttons h4,
-.morpg.sheet.monster form.actor-sheet .left-column .utility-buttons a {
-  margin: 5px 5px 0px 0px;
+.morpg.sheet.monster form.actor-sheet .left-column .utility-buttons .item-new {
+  margin: 0px 5px 0px 5px;
+}
+.morpg.sheet.monster form.actor-sheet .left-column .utility-buttons .item-new:hover {
+  text-shadow: 0 0 5px black;
 }
 .morpg.sheet.monster form.actor-sheet .right-column {
   width: calc(100% - 205px);
@@ -289,26 +405,32 @@ ul.inventory-item .toggle-editor div {
   outline: none;
   text-shadow: 0 0 5px black;
 }
-.morpg.sheet.monster {
+.morpg.sheet.monster,
+.morpg.sheet.rogue {
   background-color: black;
 }
-.morpg.sheet.monster .toggle-editor {
+.morpg.sheet.monster .toggle-editor,
+.morpg.sheet.rogue .toggle-editor {
   display: none;
 }
-.morpg.sheet.monster .active {
+.morpg.sheet.monster .active,
+.morpg.sheet.rogue .active {
   display: initial;
 }
-.morpg.sheet.monster .delete-edit-actions {
+.morpg.sheet.monster .delete-edit-actions,
+.morpg.sheet.rogue .delete-edit-actions {
   align-self: center;
 }
-.morpg.sheet.monster .range-button {
+.morpg.sheet.monster .range-button,
+.morpg.sheet.rogue .range-button {
   text-align: center;
   background-color: transparent;
   border: none;
   margin-right: 5px;
   width: 50px;
 }
-.morpg.sheet.monster .range-button:hover {
+.morpg.sheet.monster .range-button:hover,
+.morpg.sheet.rogue .range-button:hover {
   outline: none;
   box-shadow: 0 0 5px black;
 }

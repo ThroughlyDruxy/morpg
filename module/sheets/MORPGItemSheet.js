@@ -1,7 +1,7 @@
 export default class MORPGItemSheet extends ItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      width: 580,
+      width: 585,
       height: 300,
       classes: ['morpg', 'sheet', 'item'],
     });

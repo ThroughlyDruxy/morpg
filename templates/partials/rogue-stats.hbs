@@ -1,0 +1,179 @@
+<section class='rogue-stats'>
+  {{#if leftColumn}}
+    <table class='stats'>
+      <tr>
+        <td class='coin'><input
+            class='input roll-value'
+            name='data.coin'
+            title='{{localize "morpg.baseStats.coin"}}'
+            type='number'
+            value='{{data.coin}}'
+            data-dtype='Number'
+          /></td>
+      </tr>
+      <tr><th class='coin-label'>{{localize config.stats.coin}}</th></tr>
+      <tr>
+        <td><input
+            class='input roll-value'
+            name='data.price'
+            title='{{localize "morpg.baseStats.price"}}'
+            type='number'
+            value='{{data.price}}'
+            data-dtype='Number'
+          /></td>
+      </tr>
+      <tr><th
+          class='price-label'
+          title='{{localize "morpg.sheet.roll"}}'
+        >{{localize config.stats.price}}</th></tr>
+      <tr>
+        <td><input
+            class='input roll-value'
+            name='data.physical'
+            title={{localize 'morpg.baseStats.physical'}}
+            type='number'
+            value='{{data.physical}}'
+            data-dtype='Number'
+          /></td>
+      </tr>
+      <tr><th
+          class='stat-button'
+          title='{{localize "morpg.sheet.roll"}}'
+        >{{localize config.stats.physical}}</th></tr>
+      <tr>
+
+        <td><input
+            class='input roll-value'
+            name='data.defense'
+            title={{localize 'morpg.baseStats.defense'}}
+            type='number'
+            value='{{data.defense}}'
+            data-dtype='Number'
+          /></td>
+      </tr>
+      <tr><th
+          class='stat-button'
+          title='{{localize "morpg.sheet.roll"}}'
+        >{{localize config.stats.defense}}</th></tr>
+      <tr>
+        <td class='health'><input
+            class='health-value roll-value'
+            name='data.health.value'
+            title='{{localize "morpg.baseStats.healthCurrent"}}'
+            type='number'
+            value='{{data.health.value}}'
+            data-dtype='Number'
+          />/<input
+            class='health-max roll-value'
+            name='data.health.max'
+            title='{{localize "morpg.baseStats.healthMax"}}'
+            type='number'
+            value='{{data.health.max}}'
+            data-dtype='Number'
+          /></td>
+      </tr>
+      <tr><th
+          class='stat-button'
+          title='{{localize "morpg.sheet.roll"}}'
+        >{{localize config.stats.health}}</th></tr>
+      <tr>
+        <td><input
+            class='input roll-value'
+            name='data.magic'
+            title='{{localize "morpg.baseStats.magic"}}'
+            type='number'
+            value='{{data.magic}}'
+            data-dtype='Number'
+          /></td>
+      </tr>
+      <tr><th
+          class='stat-button'
+          title='{{localize "morpg.sheet.roll"}}'
+        >{{localize config.stats.magic}}</th></tr>
+    </table>
+  {{/if}}
+  {{#if rightColumn}}
+    <table class='stats'>
+      <tr>
+        <td><input
+            class='input roll-value'
+            name='data.luck.value'
+            title='{{localize "morpg.baseStats.luckCurrent"}}'
+            type='number'
+            value='{{data.luck.value}}'
+            data-dtype='Number'
+          /></td>
+      </tr>
+      <tr><th class='stat-button'>{{localize
+            config.stats.luckCurrent
+          }}</th></tr>
+      <tr>
+        <td><input
+            class='input roll-value'
+            name='data.tinker'
+            title='{{localize "morpg.baseStats.tinker"}}'
+            type='number'
+            value='{{data.tinker}}'
+            data-dtype='Number'
+          /></td>
+      </tr>
+      <tr><th
+          class='stat-button'
+          title='{{localize "morpg.sheet.roll"}}'
+        >{{localize config.stats.tinker}}</th></tr>
+      <tr>
+        <td><input
+            class='input roll-value'
+            name='data.aware'
+            title={{localize 'morpg.baseStats.aware'}}
+            type='number'
+            value='{{data.aware}}'
+            data-dtype='Number'
+          /></td>
+      </tr>
+      <tr><th
+          class='stat-button'
+          title='{{localize "morpg.sheet.roll"}}'
+        >{{localize config.stats.aware}}</th></tr>
+      <tr>
+        <td><input
+            class='input roll-value'
+            name='data.escape'
+            title={{localize 'morpg.baseStats.escape'}}
+            type='number'
+            value='{{data.escape}}'
+            data-dtype='Number'
+          /></td>
+      </tr>
+      <tr><th
+          class='stat-button'
+          title='{{localize "morpg.sheet.roll"}}'
+        >{{localize config.stats.escape}}</th></tr>
+      <tr>
+        <td class='luck'><input
+            class='input roll-value'
+            name='data.luck.max'
+            title='{{localize "morpg.baseStats.luckMax"}}'
+            type='number'
+            value='{{data.luck.max}}'
+            data-dtype='Number'
+          /></td>
+      </tr>
+      <tr><th class='luck-label'>{{localize config.stats.luckMax}}</th></tr>
+      <tr>
+        <td><input
+            class='input roll-value'
+            name='data.resolve'
+            title='{{localize "morpg.baseStats.resolve"}}'
+            type='number'
+            value='{{data.resolve}}'
+            data-dtype='Number'
+          /></td>
+      </tr>
+      <tr><th
+          class='stat-button'
+          title='{{localize "morpg.sheet.roll"}}'
+        >{{localize config.stats.resolve}}</th></tr>
+    </table>
+  {{/if}}
+</section>

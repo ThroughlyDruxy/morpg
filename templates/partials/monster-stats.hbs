@@ -2,18 +2,24 @@
   <div class='stats'>
     <table>
       <tr>
-        <th class='stat-button'>{{localize config.stats.physical}}</th>
+        <th
+          class='stat-button'
+          title='{{localize "morpg.sheet.roll"}}'
+        >{{localize config.stats.physical}}</th>
         <td><input
             class='input roll-value'
             name='data.physical'
-            title={{localize 'morpg.baseStats.physical'}}
+            title='{{localize "morpg.baseStats.physical"}}'
             type='number'
             value='{{data.physical}}'
             data-dtype='Number'
           /></td>
       </tr>
       <tr>
-        <th class='stat-button'>{{localize config.stats.defense}}</th>
+        <th
+          class='stat-button'
+          title='{{localize "morpg.sheet.roll"}}'
+        >{{localize config.stats.defense}}</th>
         <td><input
             class='input roll-value'
             name='data.defense'
@@ -24,40 +30,49 @@
           /></td>
       </tr>
       <tr>
-        <th class='stat-button'>{{localize config.stats.health}}</th>
+        <th
+          class='stat-button'
+          title='{{localize "morpg.sheet.roll"}}'
+        >{{localize config.stats.health}}</th>
         <td class='health'><input
             class='health-value roll-value'
             name='data.health.value'
-            title={{localize 'morpg.baseStats.healthCurrent'}}
+            title='{{localize "morpg.baseStats.healthCurrent"}}'
             type='number'
             value='{{data.health.value}}'
             data-dtype='Number'
           />/<input
             class='health-max roll-value'
             name='data.health.max'
-            title={{localize 'morpg.baseStats.healthMax'}}
+            title='{{localize "morpg.baseStats.healthMax"}}'
             type='number'
             value='{{data.health.max}}'
             data-dtype='Number'
           /></td>
       </tr>
       <tr>
-        <th class='stat-button'>{{localize config.stats.magic}}</th>
+        <th
+          class='stat-button'
+          title='{{localize "morpg.sheet.roll"}}'
+        >{{localize config.stats.magic}}</th>
         <td><input
             class='input roll-value'
             name='data.magic'
-            title={{localize 'morpg.baseStats.magic'}}
+            title='{{localize "morpg.baseStats.magic"}}'
             type='number'
             value='{{data.magic}}'
             data-dtype='Number'
           /></td>
       </tr>
       <tr>
-        <th class='stat-button'>{{localize config.stats.resolve}}</th>
+        <th
+          class='stat-button'
+          title='{{localize "morpg.sheet.roll"}}'
+        >{{localize config.stats.resolve}}</th>
         <td><input
             class='input roll-value'
             name='data.resolve'
-            title={{localize 'morpg.baseStats.resolve'}}
+            title='{{localize "morpg.baseStats.resolve"}}'
             type='number'
             value='{{data.resolve}}'
             data-dtype='Number'

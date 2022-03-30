@@ -22,15 +22,26 @@ morpg.items = {
 };
 
 morpg.stats = {
-  physical: 'morpg.baseStats.physical',
+  aware: 'morpg.baseStats.aware',
+  coin: 'morpg.baseStats.coin',
   defense: 'morpg.baseStats.defense',
+  escape: 'morpg.baseStats.escape',
   health: 'morpg.baseStats.health',
+  luckCurrent: 'morpg.baseStats.luckCurrent',
+  luckMax: 'morpg.baseStats.luckMax',
   magic: 'morpg.baseStats.magic',
+  physical: 'morpg.baseStats.physical',
+  price: 'morpg.baseStats.price',
   resolve: 'morpg.baseStats.resolve',
+  tinker: 'morpg.baseStats.tinker',
 };
 
 morpg.headers = {
   special: 'morpg.special',
   actions: 'morpg.actions',
   bullshit: 'morpg.bullshit',
+};
+
+morpg.sheet = {
+  createItem: 'morpg.sheet.createItem',
 };

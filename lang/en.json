@@ -1,11 +1,17 @@
 {
   "morpg": {
     "sheet": {
-      "delete": "Delete",
-      "edit": "Edit",
-      "new": "New Item",
+      "actionButton": "Randomly determine action",
+      "actionsTab": "Actions",
+      "cooldownCurrent": "Current",
+      "cooldownStart": "Start",
+      "createItem": "Create Item",
+      "deleteItem": "Delete",
+      "editItem": "Edit",
+      "equipmentTab": "Equipment",
       "newItemDialog": "Create New Item",
-      "roll": "Roll Special"
+      "roll": "Roll stat",
+      "sendToChat": "Send to chat without roll"
     },
     "placeholder": "Placeholder",
     "items": {
@@ -32,13 +38,20 @@
       }
     },
     "baseStats": {
-      "physical": "Physical",
+      "aware": "Aware",
+      "coin": "Coin",
       "defense": "Defense",
+      "escape": "Escape",
       "health": "Health",
-      "healthMax": "Max",
       "healthCurrent": "Current",
+      "healthMax": "Max",
+      "luckMax": "Max Luck",
+      "luckCurrent": "Current Luck",
       "magic": "Magic",
-      "resolve": "Resolve"
+      "physical": "Physical",
+      "price": "Price",
+      "resolve": "Resolve",
+      "tinker": "Tinker"
     },
     "special": "SPECIAL",
     "actions": "ACTIONS",

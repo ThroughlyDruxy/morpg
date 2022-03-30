@@ -1,10 +1,10 @@
-<ul class='inventory-item'>
+<ul class='monster-inventory-item'>
   <li class='item-content'>
     {{#ifEquals data.type 'Special'}}
       <a
         class='item-roll-special action range-button'
         data-type='roll-special'
-        title={{localize 'morpg.sheet.roll'}}
+        title='{{localize "morpg.sheet.sendToChat"}}'
       >
         <i class='fas fa-dice-six'></i>
       </a>
@@ -13,11 +13,13 @@
         <button
           class='range-button'
           type='button'
+          title='{{localize "morpg.sheet.sendToChat"}}'
         >{{data.data.triggerRange.min}}-{{data.data.triggerRange.max}}:</button>
       {{else}}
         <button
           class='range-button'
           type='button'
+          title='{{localize "morpg.sheet.sendToChat"}}'
         >{{data.data.trigger}}:</button>
       {{/if}}
     {{/ifEquals}}
@@ -26,11 +28,14 @@
       <a
         class='item-edit action'
         data-type='edit'
-        title={{localize 'morpg.sheet.edit'}}
+        title='{{localize "morpg.sheet.editItem"}}'
       >
         <i class='fas fa-edit'></i>
       </a>
-      <a class='item-delete action' title={{localize 'morpg.sheet.delete'}}>
+      <a
+        class='item-delete action'
+        title='{{localize "morpg.sheet.deleteItem"}}'
+      >
         <i class='fas fa-trash'></i>
       </a>
     </div>

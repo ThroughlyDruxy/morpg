@@ -13,7 +13,12 @@ async function preloadHandlebarsTemplates() {
     'systems/morpg/templates/partials/monster-bullshit.hbs',
     'systems/morpg/templates/partials/monster-special.hbs',
     // Inventory item
-    'systems/morpg/templates/partials/inventory-item.hbs',
+    'systems/morpg/templates/partials/monster-inventory-item.hbs',
+    'systems/morpg/templates/partials/rogue-inventory-item.hbs',
+    // Rogue sheet
+    'systems/morpg/templates/partials/rogue-stats.hbs',
+    'systems/morpg/templates/partials/rogue-actions.hbs',
+    'systems/morpg/templates/partials/rogue-bullshit.hbs',
   ];
 
   return loadTemplates(templatePaths);
