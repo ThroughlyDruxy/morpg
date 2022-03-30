@@ -50,6 +50,10 @@ export default class MORPGMonsterSheet extends ActorSheet {
     super.activateListeners(html);
   }
 
+  /**
+   * Calls Dice.StatRoll() when a stat is clicked for a roll.
+   * @param {*} event HTML element that is clicked
+   */
   _statRoll(event) {
     const statName = event.currentTarget.innerHTML.toLowerCase();
     // const actor = this.actor;
@@ -71,31 +75,26 @@ export default class MORPGMonsterSheet extends ActorSheet {
     }
   }
 
+  /**
+   * Calls Dice.ActionRoll
+   * @param {*} event HTML element that is clicked
+   */
   _onActionRoll(event) {
-    const actionMap = new Map();
-    const items = this.actor.items;
-
-    items.forEach((item) => {
-      if (item.data.type === 'Action') {
-        const rangeArr = morpgUtilities.rolls.getActionRange(
-          item.data.data.triggerRange.min,
-          item.data.data.triggerRange.max
-        );
-
-        rangeArr.forEach((trigger) => {
-          actionMap.set(trigger, item.data._id);
-        });
-      }
-    });
-
-    const rangeDice = Math.trunc(Math.random() * 6) + 1;
-    this.actor.getEmbeddedDocument('Item', actionMap.get(rangeDice)).roll();
+    Dice.ActionRoll({ actor: this.actor });
   }
 
+  /**
+   * Calls Dice.ActionRoll
+   * @param {*} event HTML element that is clicked
+   */
   _onBullshitRoll(event) {
     Dice.BullshitRoll({ actor: this.actor });
   }
 
+  /**
+   * gets item ID, and prints it to chat via sendItemToChat();
+   * @param {*} event HTML element that is clicked
+   */
   _onItemRoll(event) {
     const element = event.currentTarget;
     const itemID = $(element).siblings('.name')[0].id;

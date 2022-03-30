@@ -1,29 +1,40 @@
 <form class='chat-card action-card' data-owner-id='{{owner}}'>
-  <div class='card-header'>
-    <img
-      src='{{item.img}}'
-      data-edit='img'
-      title='{{item.name}}'
-      height='40'
-      width='40'
-    />
-    <p class='name'>{{item.name}}</p>
-  </div>
-  <div class='card-body'>
-    {{editor
-      content=item.data.data.description
-      target='item.data.data.description'
-      button=false
-      owner=false
-      editable=false
-    }}</div>
-  {{#if item.data.data.isAttack}}
-    <div class='attack-roll'>
-      <button class='attack-button rollable' type='button'>Attack</button>
+  {{#if isBullshitResult}}
+    <div class='card-header'>
+      <img
+        src='{{item.img}}'
+        data-edit='img'
+        title='{{item.name}}'
+        height='40'
+        width='40'
+      />
+      <p class='name'>{{item.name}}</p>
     </div>
+    <div class='card-body'>
+      {{editor
+        content=item.data.data.description
+        target='item.data.data.description'
+        button=false
+        owner=false
+        editable=false
+      }}</div>
+    {{#if item.data.data.isAttack}}
+      <div class='attack-roll'>
+        <button class='attack-button rollable' type='button'>Attack</button>
+      </div>
+    {{/if}}
+    <div class='card-type'><span style='font-weight: bold;'>{{item.type}}</span>
+      action rolled by
+      <span style='font-weight: bold;'>{{actorName}}</span></div>
+  {{else}}
+    <div>
+      No Bullshit action for this roll.
+    </div>
+    <div class='card-type'><span
+        style='font-weight: bold;'
+      >{{actionType}}</span>
+      action rolled by
+      <span style='font-weight: bold;'>{{actorName}}</span></div>
   {{/if}}
-  <div class='card-type'><span style='font-weight: bold;'>{{item.type}}</span>
-    action rolled by
-    <span style='font-weight: bold;'>{{actorName}}</span></div>
   {{{roll}}}
 </form>

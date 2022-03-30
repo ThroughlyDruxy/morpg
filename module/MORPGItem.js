@@ -1,5 +1,11 @@
 export default class MORPGItem extends Item {
-  /** @override */
+  /**
+   * Before item is created determines image based on item type.
+   * @override
+   * @param {*} createData
+   * @param {*} options
+   * @param {*} userId
+   */
   async _preCreate(createData, options, userId) {
     await super._preCreate(createData, options, userId);
     const updateData = {};
@@ -15,6 +21,9 @@ export default class MORPGItem extends Item {
     await this.data.update(updateData);
   }
 
+  /**
+   * Sends template for item to chat without roll
+   */
   async sendItemToChat() {
     const chatTemplate = 'systems/morpg/templates/chat/action.hbs';
     let templateData = {
@@ -29,6 +38,6 @@ export default class MORPGItem extends Item {
       content: await renderTemplate(chatTemplate, templateData),
     };
     chatData.roll = true;
-    return ChatMessage.create(chatData);
+    ChatMessage.create(chatData);
   }
 }
