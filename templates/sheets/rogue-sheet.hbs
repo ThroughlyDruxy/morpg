@@ -7,47 +7,75 @@
         placeholder='{{localize "Name"}}'
       /></h1>
   </header>
-  <div class='stats-row'>
-    <div class='stats-row left-column'>
-      {{> "systems/morpg/templates/partials/rogue-stats.hbs" leftColumn=true}}
+  <div class='top-half'>
+    <div class='stats-row'>
+      <div class='stats-row left-column'>
+        {{> "systems/morpg/templates/partials/rogue-stats.hbs" leftColumn=true}}
+      </div>
+      <div class='stats-row center-column'>
+        <img
+          src='{{actor.img}}'
+          data-edit='img'
+          title='{{actor.name}}'
+          height='350px'
+          width='262px'
+        />
+      </div>
+      <div class='stats-row right-column'>
+        {{> "systems/morpg/templates/partials/rogue-stats.hbs" rightColumn=true}}
+      </div>
     </div>
-    <div class='stats-row center-column'>
-      <img
-        src='{{actor.img}}'
-        data-edit='img'
-        title='{{actor.name}}'
-        height='350px'
-        width='262px'
-      />
-    </div>
-    <div class='stats-row right-column'>
-      {{> "systems/morpg/templates/partials/rogue-stats.hbs" rightColumn=true}}
+    <div class='conditions-torches'>
+      <div class='torches'>
+        <div class="torches-quantity">
+          <label>{{localize 'morpg.sheet.torches'}}:</label>
+          <input name="data.torches.quantity" title="{{localize 'morpg.sheet.torchesQuantity'}}" type="number" value="{{data.torches.quantity}}" data-dtype="Number"/>
+        </div>
+        <div class="torch-duration-boxes">
+          <label>{{localize 'morpg.sheet.duration'}}:</label>
+          <a class="torch-duration torch1" title="{{localize 'morpg.sheet.torchDuration'}}"><i class="far fa-square"></i></a>
+          <a class="torch-duration torch2" title="{{localize 'morpg.sheet.torchDuration'}}"><i class="far fa-square"></i></a>
+          <a class="torch-duration torch3" title="{{localize 'morpg.sheet.torchDuration'}}"><i class="far fa-square"></i></a>
+          <a class="torch-duration torch4" title="{{localize 'morpg.sheet.torchDuration'}}"><i class="far fa-square"></i></a>
+        </div>
+      </div>
+      <div class='conditions'>
+        conditions
+      </div>
     </div>
   </div>
 
-  {{!-- Sheet Tab Navigation --}}
-  <nav class="sheet-tabs tabs" data-group="primary">
-      <a class="item" data-tab="actions" title="{{localize 'morpg.sheet.actionsTabTitle'}}">{{localize 'morpg.sheet.actionsTab'}}</a>
-      <a class="item" data-tab="equipment" title="{{localize 'morpg.sheet.equipmentTabTitle'}}">{{localize 'morpg.sheet.equipmentTab'}}</a>
+  {{! Sheet Tab Navigation }}
+  <nav class='sheet-tabs tabs' data-group='primary'>
+    <a
+      class='item'
+      data-tab='actions'
+      title='{{localize "morpg.sheet.actionsTabTitle"}}'
+    >{{localize 'morpg.sheet.actionsTab'}}</a>
+    <a
+      class='item'
+      data-tab='equipment'
+      title='{{localize "morpg.sheet.equipmentTabTitle"}}'
+    >{{localize 'morpg.sheet.equipmentTab'}}</a>
   </nav>
 
-  {{!-- Sheet Body --}}
-  <section class="sheet-body">
-    
-    {{!-- Actions and Bullshit Tab --}}
-    <div class='tab' data-group="primary" data-tab="actions">
-      <div class="actions-body">
-      <div class='actions'>
-        {{> "systems/morpg/templates/partials/rogue-actions.hbs"}}
-      </div>
-      <div class="bullshit">
-        {{> "systems/morpg/templates/partials/rogue-bullshit.hbs"}}
-      </div>
+  {{! Sheet Body }}
+  <section class='sheet-body'>
+
+    {{! Actions and Bullshit Tab }}
+    <div class='tab' data-group='primary' data-tab='actions'>
+      <div class='actions-body'>
+        <div class='actions'>
+          {{> "systems/morpg/templates/partials/rogue-actions.hbs"}}
+        </div>
+        <div class='bullshit'>
+          {{> "systems/morpg/templates/partials/rogue-bullshit.hbs"}}
+        </div>
       </div>
     </div>
 
-    {{!-- iInventory Tab --}}
-    <div class="tab equipment" data-group="primary" data-tab="equipment">
+    {{! iInventory Tab }}
+    <div class='tab equipment' data-group='primary' data-tab='equipment'>
       Equipment
     </div>
   </section>

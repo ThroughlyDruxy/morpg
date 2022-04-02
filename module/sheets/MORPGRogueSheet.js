@@ -32,8 +32,6 @@ export default class MORPGRogueSheet extends ActorSheet {
   }
 
   activateListeners(html) {
-    // html.find('.tab').click(this._navigateTab.bind(this));
-
     html
       .find('.item-edit')
       .click(morpgUtilities.itemManagement.editItem.bind(this));
@@ -55,11 +53,6 @@ export default class MORPGRogueSheet extends ActorSheet {
     //-------------------------------------//
     super.activateListeners(html);
   }
-
-  // _navigateTab(event) {
-  //   console.log(`navigation`);
-  // }
-
   /**
    * Calls Dice.StatRoll() when a stat is clicked for a roll.
    * @param {*} event HTML element that is clicked

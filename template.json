@@ -18,7 +18,10 @@
       "aware": 0,
       "escape": 0,
       "luck": { "value": 0, "min": 0, "max": 10 },
-      "torches": 0,
+      "torches": {
+        "quantity": 0,
+        "currentTorch": 0
+      },
       "attributes": {},
       "groups": {}
     },

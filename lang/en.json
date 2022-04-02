@@ -9,12 +9,16 @@
       "cooldownStart": "Start",
       "createItem": "Create Item",
       "deleteItem": "Delete",
+      "duration": "Duration",
       "editItem": "Edit",
       "equipmentTab": "Equipment",
       "equipmentTabTitle": "Equipment tab",
       "newItemDialog": "Create New Item",
       "roll": "Roll stat",
-      "sendToChat": "Send to chat without roll"
+      "sendToChat": "Send to chat without roll",
+      "torches": "Quantity",
+      "torchesQuantity": "Number of torches",
+      "torchDuration": "Torch duration"
     },
     "placeholder": "Placeholder",
     "items": {
