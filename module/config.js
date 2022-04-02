@@ -19,6 +19,11 @@ morpg.items = {
     cooldown: 'morpg.items.actions.cooldown',
     triggerRange: 'morpg.items.actions.triggerRange',
   },
+  attackTypes: {
+    none: 'morpg.sheet.noAttackMod',
+    physical: 'morpg.baseStats.physical',
+    magic: 'morpg.baseStats.magic',
+  },
 };
 
 morpg.stats = {

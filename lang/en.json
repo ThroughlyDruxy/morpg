@@ -2,13 +2,16 @@
   "morpg": {
     "sheet": {
       "actionButton": "Randomly determine action",
+      "actionsTabTitle": "Actions tab",
       "actionsTab": "Actions",
+      "noAttackMod": "-",
       "cooldownCurrent": "Current",
       "cooldownStart": "Start",
       "createItem": "Create Item",
       "deleteItem": "Delete",
       "editItem": "Edit",
       "equipmentTab": "Equipment",
+      "equipmentTabTitle": "Equipment tab",
       "newItemDialog": "Create New Item",
       "roll": "Roll stat",
       "sendToChat": "Send to chat without roll"

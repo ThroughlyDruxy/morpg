@@ -8,6 +8,13 @@ export default class MORPGRogueSheet extends ActorSheet {
       height: 800,
       template: `systems/morpg/templates/sheets/rogue-sheet.hbs`,
       classes: ['morpg', 'sheet', 'rogue'],
+      tabs: [
+        {
+          navSelector: '.sheet-tabs',
+          contentSelector: '.sheet-body',
+          initial: 'actions',
+        },
+      ],
     });
   }
 
@@ -40,8 +47,8 @@ export default class MORPGRogueSheet extends ActorSheet {
     // Owner only
     if (this.actor.isOwner) {
       html.find('.range-button').click(this._onItemRoll.bind(this));
+      html.find('.item-roll').click(this._onItemRoll.bind(this));
       html.find('.stat-button').click(this._statRoll.bind(this));
-      html.find('.actions-button').click(this._onActionRoll.bind(this));
       html.find('.bullshit-button').click(this._onBullshitRoll.bind(this));
     }
 
@@ -58,32 +65,24 @@ export default class MORPGRogueSheet extends ActorSheet {
    * @param {*} event HTML element that is clicked
    */
   _statRoll(event) {
-    const statName = event.currentTarget.innerHTML.toLowerCase();
-    // const actor = this.actor;
+    let statName = event.currentTarget.innerHTML.toLowerCase();
+    let statMod = 0;
 
     if (statName === 'health') {
-      Dice.StatRoll({
-        actor: this.actor,
-        statModifier: this.actor.data.data.health.value,
-        statName: statName,
-        halfRoll: event.shiftKey,
-      });
+      statMod = this.actor.data.data.health.value;
+    } else if (statName === 'current luck') {
+      statName = 'luck';
+      statMod = this.actor.data.data.luck.value;
     } else {
-      Dice.StatRoll({
-        actor: this.actor,
-        statModifier: this.actor.data.data[statName],
-        statName: statName,
-        halfRoll: event.shiftKey,
-      });
+      statMod = this.actor.data.data[statName];
     }
-  }
 
-  /**
-   * Calls Dice.ActionRoll
-   * @param {*} event HTML element that is clicked
-   */
-  _onActionRoll(event) {
-    Dice.ActionRoll({ actor: this.actor });
+    Dice.StatRoll({
+      actor: this.actor,
+      statModifier: statMod,
+      statName: statName,
+      halfRoll: event.shiftKey,
+    });
   }
 
   /**
@@ -99,8 +98,7 @@ export default class MORPGRogueSheet extends ActorSheet {
    * @param {*} event HTML element that is clicked
    */
   _onItemRoll(event) {
-    const element = event.currentTarget;
-    const itemID = $(element).siblings('.name')[0].id;
+    const itemID = event.currentTarget.closest('.item').dataset.id;
     const item = this.actor.getEmbeddedDocument('Item', itemID);
     item.sendItemToChat();
   }

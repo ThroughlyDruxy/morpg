@@ -47,7 +47,7 @@ export async function StatRoll({
  * Rolls and prints to chat the correct chat card with the result from the Bullshit die
  * @param {object} actor the actor that is rolling the bullshit die
  */
-export async function ActionRoll({ actor = null }) {
+export async function ActionRoll({ actor = null, event = null }) {
   const chatTemplate = 'systems/morpg/templates/chat/action-roll.hbs';
   const rollResult = new Roll('1d6').roll({ async: false });
   const renderedRoll = await rollResult.render();
@@ -64,23 +64,16 @@ export async function ActionRoll({ actor = null }) {
     speaker: ChatMessage.getSpeaker(),
   };
 
-  const actionMap = new Map();
   const items = actor.items;
+  let itemID = '';
 
-  items.forEach((item) => {
-    if (item.data.type === 'Action') {
-      const rangeArr = morpgUtilities.rolls.getActionRange(
-        item.data.data.triggerRange.min,
-        item.data.data.triggerRange.max
-      );
+  if (actor.type === 'Monster') {
+    itemID = morpgUtilities.rolls.randomAction(items).get(rollResult._total);
+  } else if (actor.type === 'Rogue') {
+    const element = event.currentTarget;
+    itemID = $(element).closest('.delete-edit-actions').siblings('.name')[0].id;
+  }
 
-      rangeArr.forEach((trigger) => {
-        actionMap.set(trigger, item.data._id);
-      });
-    }
-  });
-
-  const itemID = actionMap.get(rollResult._total);
   templateData.item = actor.getEmbeddedDocument('Item', itemID);
   chatData.content = await renderTemplate(chatTemplate, templateData);
   ChatMessage.create(chatData);

@@ -6,6 +6,25 @@ function getItemId(element) {
   return $(element).closest('.delete-edit-actions').siblings('.name')[0].id;
 }
 
+/**
+ * Get the target Range for an action and put it into an array
+ * @param {number} min
+ * @param {number} max
+ * @returns {array} rangeArr An array with all the numbers that should trigger the action
+ */
+function getActionRange(min, max) {
+  let rangeArr = [];
+  if (min === max) {
+    rangeArr.push(min);
+    return rangeArr;
+  } else {
+    for (let i = min; i <= max; i++) {
+      rangeArr.push(i);
+    }
+    return rangeArr;
+  }
+}
+
 morpgUtilities.itemManagement = {
   /**
    * Toggle the visibility of the block show/hide
@@ -69,21 +88,23 @@ morpgUtilities.itemManagement = {
 
 morpgUtilities.rolls = {
   /**
-   * Get the target Range for an action and put it into an array
-   * @param {number} min
-   * @param {number} max
-   * @returns {array} rangeArr An array with all the numbers that should trigger the action
+   *
+   * @param {*} items array of items from actor
    */
-  getActionRange: function (min, max) {
-    let rangeArr = [];
-    if (min === max) {
-      rangeArr.push(min);
-      return rangeArr;
-    } else {
-      for (let i = min; i <= max; i++) {
-        rangeArr.push(i);
+  randomAction: function (items) {
+    const actionMap = new Map();
+    items.forEach((item) => {
+      if (item.data.type === 'Action') {
+        const rangeArr = getActionRange(
+          item.data.data.triggerRange.min,
+          item.data.data.triggerRange.max
+        );
+
+        rangeArr.forEach((trigger) => {
+          actionMap.set(trigger, item.data._id);
+        });
       }
-      return rangeArr;
-    }
+    });
+    return actionMap;
   },
 };

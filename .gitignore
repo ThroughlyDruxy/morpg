@@ -1,4 +1,5 @@
 // IDE stuff
+.obsidian
 .prettierrc
 .vscode/
 jsconfig.json
@@ -11,4 +12,4 @@ morpg.zip
 morpg.lock
 
 
-TODO.txt
+TODO.md

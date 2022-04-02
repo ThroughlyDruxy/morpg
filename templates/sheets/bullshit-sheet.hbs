@@ -1,4 +1,8 @@
-<form class='bullshit-sheet {{cssClass}}' autocomplete='off'>
+<form
+  class='bullshit-sheet {{cssClass}} item'
+  data-id='{{item.data._id}}'
+  autocomplete='off'
+>
   <link rel='stylesheet' href='systems/morpg/styles/morpg.css' />
   <header class='sheet-header'>
     <img
@@ -29,7 +33,7 @@
             {{/each}}
           {{/select}}
         </select></th>
-      <th><h3 class='label'>{{localize
+      {{!-- <th><h3 class='label'>{{localize
             'morpg.items.bullshit.isAttack'
           }}:</h3></th>
       <th><h3><input
@@ -43,7 +47,7 @@
               <option value='data.physical'>Physical</option>
               <option value='data.magic'>Magic</option>
             </select></h3></th>
-      {{/if}}
+      {{/if}} --}}
       <th><h3 class='label'>{{localize
             'morpg.items.bullshit.trigger'
           }}:</h3></th>

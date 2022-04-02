@@ -1,24 +1,26 @@
-<ul class='rogue-inventory-item'>
+<ul class='rogue-inventory-item item' data-id='{{data._id}}'>
   <li class='item-content'>
     {{#if data.data.cooldown}}
       <div class='cooldown-block'>
-        <input
+        {{!-- <input
           class='cooldown-value cooldown-input'
           name='data.cooldown.value'
           title='{{localize "morpg.sheet.cooldownCurrent"}}'
           type='number'
           value='{{data.data.cooldown.value}}'
           data-dtype='Number'
-        />
+        /> --}}
+        <label
+          class='cooldown-value cooldown-input'
+          name='data.cooldown.value'
+          title='{{localize "morpg.sheet.cooldownCurrent"}}'
+        >{{data.data.cooldown.value}}</label>
         /
-        <input
+        <label
           class='cooldown-max cooldown-input'
           name='data.cooldown.max'
           title='{{localize "morpg.sheet.cooldownStart"}}'
-          type='number'
-          value='{{data.data.cooldown.max}}'
-          data-dtype='Number'
-        />
+        >{{data.data.cooldown.max}}</label>
       </div>
     {{else}}
       <button
@@ -31,6 +33,15 @@
     {{/if}}
     <p class='name' id='{{data._id}}'>{{name}}</p>
     <div class='delete-edit-actions'>
+      {{#ifEquals data.type 'Action'}}
+        <a
+          class='item-roll action'
+          data-type='roll'
+          title='{{localize "morpg.sheet.rollItem"}}'
+        >
+          <i class='fas fa-dice-six'></i>
+        </a>
+      {{/ifEquals}}
       <a
         class='item-edit action'
         data-type='edit'

@@ -26,22 +26,29 @@
   </div>
 
   {{!-- Sheet Tab Navigation --}}
-  {{!-- <nav class="sheet-tabs tabs" data-group="primary">
-      <a class="tab" data-tab="actions">{{localize "morpg.sheet.actionsTab"}}</a>
-      <a class="tab" data-tab="equipment">{{localize "morpg.sheet.equipmentTab"}}</a>
-  </nav> --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+      <a class="item" data-tab="actions" title="{{localize 'morpg.sheet.actionsTabTitle'}}">{{localize 'morpg.sheet.actionsTab'}}</a>
+      <a class="item" data-tab="equipment" title="{{localize 'morpg.sheet.equipmentTabTitle'}}">{{localize 'morpg.sheet.equipmentTab'}}</a>
+  </nav>
 
+  {{!-- Sheet Body --}}
   <section class="sheet-body">
-    <div class='actions-body' data-group="primary" data-tab="actions">
+    
+    {{!-- Actions and Bullshit Tab --}}
+    <div class='tab' data-group="primary" data-tab="actions">
+      <div class="actions-body">
       <div class='actions'>
         {{> "systems/morpg/templates/partials/rogue-actions.hbs"}}
       </div>
       <div class="bullshit">
         {{> "systems/morpg/templates/partials/rogue-bullshit.hbs"}}
       </div>
+      </div>
     </div>
-    {{!-- <div class="equipment" data-group="primary" data-tab="equipment">
+
+    {{!-- iInventory Tab --}}
+    <div class="tab equipment" data-group="primary" data-tab="equipment">
       Equipment
-    </div> --}}
+    </div>
   </section>
 </form>

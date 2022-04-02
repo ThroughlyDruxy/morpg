@@ -1,4 +1,8 @@
-<form class='action-sheet {{cssClass}}' autocomplete='off'>
+<form
+  class='action-sheet {{cssClass}} item-sheet'
+  data-id='{{item.data._id}}'
+  autocomplete='off'
+>
   <link rel='stylesheet' href='systems/morpg/styles/morpg.css' />
   <header class='sheet-header'>
     <img
@@ -36,7 +40,7 @@
             value='{{data.cooldown.max}}'
             data-dtype='Number'
           /></h3></th>
-      <th><h3 class='label'>{{localize
+      {{!-- <th><h3 class='label'>{{localize
             'morpg.items.bullshit.isAttack'
           }}:</h3></th>
       <th><h3><input
@@ -47,11 +51,13 @@
           /></h3></th>
       {{#if data.isAttack}}
         <th><h3><select>
-              <option value=''>-</option>
-              <option value='data.physical'>Physical</option>
-              <option value='data.magic'>Magic</option>
+              {{#select data.attackType}}
+                {{#each config.items.attackTypes as |name type|}}
+                  <option value='{{type}}'>{{localize name}}</option>
+                {{/each}}
+              {{/select}}
             </select></h3></th>
-      {{/if}}
+      {{/if}} --}}
       <th><h3 class='label'>{{localize
             'morpg.items.actions.triggerRange'
           }}:</h3></th>

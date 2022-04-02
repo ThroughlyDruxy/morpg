@@ -43,12 +43,14 @@
         "min": null,
         "max": null
       },
-      "isAttack": false
+      "isAttack": false,
+      "attackType": ""
     },
     "bullshit": {
       "description": "",
       "type": "-",
       "isAttack": false,
+      "attackType": "",
       "trigger": 0
     },
     "equipment": {
@@ -59,7 +61,8 @@
     },
     "special": {
       "description": "",
-      "isAttack": false
+      "isAttack": false,
+      "attackType": ""
     }
   }
 }

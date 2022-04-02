@@ -1,24 +1,21 @@
 .morpg.sheet.rogue {
   .bullshit-button,
   .actions-button {
-    pointer-events: none;
-    font-size: 18px;
-    text-align: center;
-    background-color: transparent;
     border: none;
     border-bottom: @thinBorder;
-    width: 100%;
-    margin: 0px;
+  }
+  .actions-button {
+    pointer-events: none;
   }
   .actions-block {
     overflow-y: scroll;
     min-height: 150px;
-    max-height: 293px;
+    max-height: 260px;
   }
   .bullshit-block {
     overflow-y: scroll;
     min-height: 150px;
-    max-height: 293px;
+    max-height: 285px;
   }
 }
 // rogue-inventory-item.hbs
@@ -29,6 +26,7 @@ ul.rogue-inventory-item {
   vertical-align: middle;
   .item-content {
     display: flex;
+    justify-content: flex-start;
     margin: 0px;
     .cooldown-block {
       align-self: center;
@@ -37,9 +35,12 @@ ul.rogue-inventory-item {
         width: 25px;
         text-align: center;
       }
+      .cooldown-value {
+        margin-left: 5px;
+      }
     }
     .name {
-      width: 70%;
+      flex-grow: 2;
       font-size: 16px;
       font-weight: bold;
     }
