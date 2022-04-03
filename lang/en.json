@@ -1,26 +1,25 @@
 {
   "morpg": {
-    "sheet": {
-      "actionButton": "Randomly determine action",
-      "actionsTabTitle": "Actions tab",
-      "actionsTab": "Actions",
-      "noAttackMod": "-",
-      "cooldownCurrent": "Current",
-      "cooldownStart": "Start",
-      "createItem": "Create Item",
-      "deleteItem": "Delete",
-      "duration": "Duration",
-      "editItem": "Edit",
-      "equipmentTab": "Equipment",
-      "equipmentTabTitle": "Equipment tab",
-      "newItemDialog": "Create New Item",
-      "roll": "Roll stat",
-      "sendToChat": "Send to chat without roll",
-      "torches": "Quantity",
-      "torchesQuantity": "Number of torches",
-      "torchDuration": "Torch duration"
-    },
+    "actions": "ACTIONS",
+    "bullshit": "BULLSHIT",
     "placeholder": "Placeholder",
+    "special": "SPECIAL",
+    "baseStats": {
+      "aware": "Aware",
+      "coin": "Coin",
+      "defense": "Defense",
+      "escape": "Escape",
+      "health": "Health",
+      "healthCurrent": "Current",
+      "healthMax": "Max",
+      "luckMax": "Max Luck",
+      "luckCurrent": "Current Luck",
+      "magic": "Magic",
+      "physical": "Physical",
+      "price": "Price",
+      "resolve": "Resolve",
+      "tinker": "Tinker"
+    },
     "items": {
       "equipment": {
         "cost": "Cost",
@@ -44,24 +43,31 @@
         "triggerRange": "Trigger range"
       }
     },
-    "baseStats": {
-      "aware": "Aware",
-      "coin": "Coin",
-      "defense": "Defense",
-      "escape": "Escape",
-      "health": "Health",
-      "healthCurrent": "Current",
-      "healthMax": "Max",
-      "luckMax": "Max Luck",
-      "luckCurrent": "Current Luck",
-      "magic": "Magic",
-      "physical": "Physical",
-      "price": "Price",
-      "resolve": "Resolve",
-      "tinker": "Tinker"
+    "notifications": {
+      "outOfTorches": " is out of torches!"
     },
-    "special": "SPECIAL",
-    "actions": "ACTIONS",
-    "bullshit": "BULLSHIT"
+    "sheet": {
+      "actionButton": "Randomly determine action",
+      "actionsTabTitle": "Actions tab",
+      "actionsTab": "Actions",
+      "burnTorch": "Burn torch",
+      "burnOneTorch": "Burn 1 box off current torch",
+      "cooldownCurrent": "Current",
+      "cooldownStart": "Start",
+      "createItem": "Create Item",
+      "deleteItem": "Delete",
+      "duration": "Duration",
+      "editItem": "Edit",
+      "equipmentTab": "Equipment",
+      "equipmentTabTitle": "Equipment tab",
+      "newItemDialog": "Create New Item",
+      "newTorch": "Light new torch",
+      "noAttackMod": "-",
+      "roll": "Roll stat",
+      "sendToChat": "Send to chat without roll",
+      "torches": "Quantity",
+      "torchesQuantity": "Number of torches",
+      "torchDuration": "Torch duration"
+    }
   }
 }

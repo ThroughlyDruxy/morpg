@@ -8,28 +8,6 @@
     .top-half {
       display: flex;
       width: 100%;
-      .stats-row {
-        display: flex;
-        height: 350px;
-        .stats-row.left-column {
-          flex-direction: column;
-          border: none;
-          border: @thinBorder;
-        }
-        .stats-row.center-column {
-          width: 262px;
-          img {
-            border: none;
-            border-bottom: @thinBorder;
-            border-top: @thinBorder;
-          }
-        }
-        .stats-row.right-column {
-          flex-direction: column;
-          border: none;
-          border: @thinBorder;
-        }
-      }
       .conditions-torches {
         width: 100%;
         margin-left: 5px;
@@ -37,29 +15,39 @@
         flex-direction: column;
         .torches {
           display: flex;
-          flex-direction: wrap;
+          flex-direction: column;
           justify-content: space-between;
-          align-items: center;
           margin: 5px;
-
-          input {
-            width: 25px;
-            // border: 2.5px solid black;
-            text-align: center;
-          }
-          .torch-duration-boxes {
-            vertical-align: middle;
-            // margin-left: 5px;
-            a {
-              i {
-                font-size: 15px;
+          .torch-row-1 {
+            display: flex;
+            align-items: center;
+            .torches-quantity-input {
+              width: 25px;
+              text-align: center;
+              margin-right: 5px;
+            }
+            .torch-duration-boxes {
+              .torch-duration {
+                vertical-align: middle;
+                margin: -1px;
+                width: 15px;
               }
             }
           }
+          .torch-row-2 {
+            display: flex;
+            width: 100%;
+            margin-top: 5px;
+            .new-torch {
+              width: 60%;
+              border: @thinBorder;
+            }
+            .burn-torch {
+              width: 40%;
+              border: @thinBorder;
+            }
+          }
         }
-        // .conditions {
-        //   width: 100%;
-        // }
       }
     }
     nav.sheet-tabs.tabs {

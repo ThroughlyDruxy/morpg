@@ -46,18 +46,75 @@ export default class MORPGRogueSheet extends ActorSheet {
     if (this.actor.isOwner) {
       html.find('.range-button').click(this._onItemRoll.bind(this));
       html.find('.item-roll').click(this._onItemRoll.bind(this));
-      html.find('.stat-button').click(this._statRoll.bind(this));
+      html.find('.stat-button').click(this._onStatRoll.bind(this));
       html.find('.bullshit-button').click(this._onBullshitRoll.bind(this));
+      html.find('.new-torch').click(this._onLightNewTorch.bind(this));
+      html.find('.burn-torch').click(this._onBurnTorch.bind(this));
     }
 
     //-------------------------------------//
     super.activateListeners(html);
   }
+
+  /**
+   * Calls Dice.ActionRoll
+   * @param {*} event HTML element that is clicked
+   */
+  _onBullshitRoll(event) {
+    Dice.BullshitRoll({ actor: this.actor });
+  }
+
+  /**
+   * Reduces torch quantity by 1 and refills torch duration.
+   * @param {*} event HTML element that is clicked
+   */
+  _onLightNewTorch(event) {
+    // decrease torch quantity by 1 and update actor
+    const updateData = {
+      data: {
+        torches: {
+          quantity: this.actor.data.data.torches.quantity,
+          duration: {
+            one: this.actor.data.data.torches.duration.one,
+            two: this.actor.data.data.torches.duration.two,
+            three: this.actor.data.data.torches.duration.three,
+            four: this.actor.data.data.torches.duration.four,
+          },
+        },
+      },
+    };
+
+    updateData.data.torches.quantity = this.actor.data.data.torches.quantity;
+
+    if (updateData.data.torches.quantity > 0) {
+      --updateData.data.torches.quantity;
+      updateData.data.torches.duration.one = true;
+      updateData.data.torches.duration.two = true;
+      updateData.data.torches.duration.three = true;
+      updateData.data.torches.duration.four = true;
+    } else {
+      ui.notifications.warn(
+        `${this.actor.name}` +
+          game.i18n.localize(`morpg.notifications.outOfTorches`)
+      );
+    }
+
+    this.actor.update(updateData);
+  }
+
+  /**
+   * Reduces torch duration by one or sacrifices whole torch on alt+click
+   * @param {*} event HTML element that is clicked
+   */
+  _onBurnTorch(event) {
+    console.log(`onBurnTorch triggered`);
+  }
+
   /**
    * Calls Dice.StatRoll() when a stat is clicked for a roll.
    * @param {*} event HTML element that is clicked
    */
-  _statRoll(event) {
+  _onStatRoll(event) {
     let statName = event.currentTarget.innerHTML.toLowerCase();
     let statMod = 0;
 
@@ -76,14 +133,6 @@ export default class MORPGRogueSheet extends ActorSheet {
       statName: statName,
       halfRoll: event.shiftKey,
     });
-  }
-
-  /**
-   * Calls Dice.ActionRoll
-   * @param {*} event HTML element that is clicked
-   */
-  _onBullshitRoll(event) {
-    Dice.BullshitRoll({ actor: this.actor });
   }
 
   /**

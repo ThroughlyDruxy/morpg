@@ -16,6 +16,7 @@
 @import './sheets/actors/rogue-sheet.less';
 @import './sheets/actors/rogue-stats.less';
 @import './sheets/actors/rogue-actions-bullshit.less';
+@import './sheets/actors/rogue-torches-conditions.less';
 
 // Monster sheet stuff
 @import './sheets/actors/monster-actions-bullshit.less';
@@ -42,10 +43,6 @@
     margin-right: 5px;
     width: 50px;
   }
-  .range-button:hover {
-    outline: none;
-    box-shadow: 0 0 5px black;
-  }
   .bullshit-button,
   .actions-button {
     font-size: 18px;
@@ -58,5 +55,8 @@
   .actions-button:hover {
     outline: none;
     box-shadow: 0 0 10px black;
+  }
+  button:hover {
+    box-shadow: 0 0 5px black;
   }
 }

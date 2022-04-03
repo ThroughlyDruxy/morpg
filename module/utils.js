@@ -108,3 +108,7 @@ morpgUtilities.rolls = {
     return actionMap;
   },
 };
+
+// morpgUtilities.torches = {
+//   setTorches: function ({ actor = null, event = null }) {},
+// };

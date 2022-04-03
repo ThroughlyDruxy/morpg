@@ -7,15 +7,14 @@
       height='40'
       width='40'
     />
-    {{#ifEquals type 'Special'}}{{else}}
-      {{#if data.triggerRange}}
-        <p
-          class='range'
-        >{{data.triggerRange.min}}-{{data.triggerRange.max}}:</p>
-      {{else}}
+    {{!-- {{#unless data.triggerRange.min}}<p>Example</p>{{/unless}} --}}
+    {{#if data.triggerRange.max}}
+      <p class='range'>{{data.triggerRange.min}}-{{data.triggerRange.max}}:</p>
+    {{else}}
+      {{#if data.trigger}}
         <p class='range'>{{data.trigger}}:</p>
-      {{/if}}
-    {{/ifEquals}}
+      {{else}}{{/if}}
+    {{/if}}
     <p class='name'>{{name}}</p>
   </div>
   <div class='card-body'>

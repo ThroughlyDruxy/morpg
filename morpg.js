@@ -19,6 +19,7 @@ async function preloadHandlebarsTemplates() {
     'systems/morpg/templates/partials/rogue-stats.hbs',
     'systems/morpg/templates/partials/rogue-actions.hbs',
     'systems/morpg/templates/partials/rogue-bullshit.hbs',
+    'systems/morpg/templates/partials/rogue-torches-conditions.hbs',
   ];
 
   return loadTemplates(templatePaths);

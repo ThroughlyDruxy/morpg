@@ -20,7 +20,12 @@
       "luck": { "value": 0, "min": 0, "max": 10 },
       "torches": {
         "quantity": 0,
-        "currentTorch": 0
+        "torchDuration": {
+          "one": false,
+          "two": false,
+          "three": false,
+          "four": false
+        }
       },
       "attributes": {},
       "groups": {}
