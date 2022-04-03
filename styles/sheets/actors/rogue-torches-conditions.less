@@ -20,3 +20,80 @@
     border: @thinBorder;
   }
 }
+.conditions-torches {
+  width: 100%;
+  margin-left: 5px;
+  border: @thinBorder;
+  flex-direction: column;
+  .torches {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 5px;
+    .torch-row-1 {
+      display: flex;
+      align-items: center;
+      .torches-quantity-input {
+        width: 25px;
+        text-align: center;
+        margin-right: 5px;
+      }
+      .torch-duration-boxes {
+        .torch-duration {
+          vertical-align: middle;
+          margin: -1px;
+          width: 15px;
+        }
+      }
+    }
+    .torch-row-2 {
+      display: flex;
+      width: 100%;
+      margin-top: 5px;
+      .new-torch {
+        width: 60%;
+        border: @thinBorder;
+      }
+      .burn-torch {
+        width: 40%;
+        border: @thinBorder;
+      }
+    }
+  }
+  .conditions-wrapper {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    .condition {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-bottom: 5px;
+      input {
+        width: 15px;
+        text-align: center;
+        margin-right: 5px;
+      }
+      .condition-textarea {
+        resize: none;
+        height: 75px;
+        width: 100%;
+      }
+    }
+  }
+  .utility-buttons {
+    border-top: @thinBorder;
+    display: flex;
+    align-items: center;
+    height: 26px;
+    a {
+      margin-left: 5px;
+    }
+    .item-new {
+      margin: 0px 5px 0px 5px;
+    }
+    .item-new:hover {
+      text-shadow: 0 0 5px black;
+    }
+  }
+}

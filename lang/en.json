@@ -44,7 +44,8 @@
       }
     },
     "notifications": {
-      "outOfTorches": " is out of torches!"
+      "outOfTorches": "is out of torches!",
+      "torchedBurnedOut": "torch has burned out"
     },
     "sheet": {
       "actionButton": "Randomly determine action",
@@ -54,6 +55,8 @@
       "burnOneTorch": "Burn 1 box off current torch",
       "cooldownCurrent": "Current",
       "cooldownStart": "Start",
+      "conditionDuration": "Turns until condition ends",
+      "conditionTitle": "Condition",
       "createItem": "Create Item",
       "deleteItem": "Delete",
       "duration": "Duration",

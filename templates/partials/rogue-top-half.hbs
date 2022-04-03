@@ -1,0 +1,128 @@
+<div class='stats-row'>
+  <div class='stats-row left-column'>
+    {{> "systems/morpg/templates/partials/rogue-stats.hbs" leftColumn=true}}
+  </div>
+  <div class='stats-row center-column'>
+    <img
+      src='{{actor.img}}'
+      data-edit='img'
+      title='{{actor.name}}'
+      height='350px'
+      width='262px'
+    />
+  </div>
+  <div class='stats-row right-column'>
+    {{> "systems/morpg/templates/partials/rogue-stats.hbs" rightColumn=true}}
+  </div>
+</div>
+<div class='conditions-torches'>
+  <div class='torches'>
+    <div class='torch-row-1'>
+      <div class='torches-quantity'>
+        <label>{{localize 'morpg.sheet.torches'}}:</label>
+        <input
+          class='torches-quantity-input'
+          name='data.torches.quantity'
+          title='{{localize "morpg.sheet.torchesQuantity"}}'
+          type='number'
+          value='{{data.torches.quantity}}'
+          data-dtype='Number'
+        />
+      </div>
+      <div class='torch-duration-boxes'>
+        <label>{{localize 'morpg.sheet.duration'}}:</label>
+        <input
+          class='torch-duration torch1'
+          name='data.torches.duration.one'
+          {{checked data.torches.duration.one}}
+          type='checkbox'
+          title='{{localize "morpg.sheet.torchDuration"}}'
+        />
+        <input
+          class='torch-duration torch2'
+          name='data.torches.duration.two'
+          {{checked data.torches.duration.two}}
+          type='checkbox'
+          title='{{localize "morpg.sheet.torchDuration"}}'
+        />
+        <input
+          class='torch-duration torch3'
+          name='data.torches.duration.three'
+          {{checked data.torches.duration.three}}
+          type='checkbox'
+          title='{{localize "morpg.sheet.torchDuration"}}'
+        />
+        <input
+          class='torch-duration torch4'
+          name='data.torches.duration.four'
+          {{checked data.torches.duration.four}}
+          type='checkbox'
+          title='{{localize "morpg.sheet.torchDuration"}}'
+        />
+      </div>
+    </div>
+    <div class='torch-row-2'>
+      <button
+        class='new-torch'
+        title='{{localize "morpg.sheet.newTorch"}}'
+      >{{localize 'morpg.sheet.newTorch'}}</button>
+      <button
+        class='burn-torch'
+        title='{{localize "morpg.sheet.burnOneTorch"}}'
+      >{{localize 'morpg.sheet.burnTorch'}}</button>
+    </div>
+  </div>
+  <div class='conditions-wrapper'>
+    <div class='condition'>
+      <input
+        name='data.conditions.condition1.duration'
+        title='{{localize "morpg.sheet.conditionDuration"}}'
+        type='number'
+        value='{{data.conditions.condition1.duration}}'
+        data-dtype='Number'
+      />
+      <textarea
+        class='condition-textarea condition1'
+        name='data.conditions.condition1.description'
+        title='{{localize "morpg.sheet.conditionTitle"}} 1'
+      >{{data.conditions.condition1.description}}</textarea>
+    </div>
+    <div class='condition'>
+      <input
+        name='data.conditions.condition2.duration'
+        title='{{localize "morpg.sheet.conditionDuration"}}'
+        type='number'
+        value='{{data.conditions.condition2.duration}}'
+        data-dtype='Number'
+      />
+      <textarea
+        class='condition-textarea condition2'
+        name='data.conditions.condition2.description'
+        title='{{localize "morpg.sheet.conditionTitle"}} 2'
+      >{{data.conditions.condition2.description}}</textarea>
+    </div>
+    <div class='condition'>
+      <input
+        name='data.conditions.condition3.duration'
+        title='{{localize "morpg.sheet.conditionDuration"}}'
+        type='number'
+        value='{{data.conditions.condition3.duration}}'
+        data-dtype='Number'
+      />
+      <textarea
+        class='condition-textarea condition3'
+        name='data.conditions.condition3.description'
+        title='{{localize "morpg.sheet.conditionTitle"}} 3'
+      >{{data.conditions.condition3.description}}</textarea>
+    </div>
+  </div>
+  <div class='utility-buttons'>
+    <a
+      class='item-new action'
+      data-type='new'
+      title='{{localize "morpg.sheet.createItem"}}'
+    >
+      <i class='fas fa-plus'></i>
+    </a>
+  </div>
+</div>

@@ -8,10 +8,24 @@
         "magic": 0,
         "physical": 0,
         "resolve": 0
+      },
+      "conditions": {
+        "condition1": {
+          "duration": 0,
+          "description": ""
+        },
+        "condition2": {
+          "duration": 0,
+          "description": ""
+        },
+        "condition3": {
+          "duration": 0,
+          "description": ""
+        }
       }
     },
     "rogue": {
-      "templates": ["baseStats"],
+      "templates": ["baseStats", "conditions"],
       "name": "",
       "price": 0,
       "tinker": 0,
@@ -31,7 +45,7 @@
       "groups": {}
     },
     "monster": {
-      "tempaltes": ["baseStats"],
+      "tempaltes": ["baseStats", "conditions"],
       "name": "",
       "special": {
         "description": ""

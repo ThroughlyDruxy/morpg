@@ -41,15 +41,18 @@ export default class MORPGRogueSheet extends ActorSheet {
     html
       .find('.name')
       .click(morpgUtilities.itemManagement.collapseDescription.bind(this));
+    html
+      .find('.item-new')
+      .click(morpgUtilities.itemManagement.newItem.bind(this));
 
     // Owner only
     if (this.actor.isOwner) {
-      html.find('.range-button').click(this._onItemRoll.bind(this));
-      html.find('.item-roll').click(this._onItemRoll.bind(this));
-      html.find('.stat-button').click(this._onStatRoll.bind(this));
       html.find('.bullshit-button').click(this._onBullshitRoll.bind(this));
-      html.find('.new-torch').click(this._onLightNewTorch.bind(this));
       html.find('.burn-torch').click(this._onBurnTorch.bind(this));
+      html.find('.item-roll').click(this._onItemRoll.bind(this));
+      html.find('.new-torch').click(this._onLightNewTorch.bind(this));
+      html.find('.stat-button').click(this._onStatRoll.bind(this));
+      html.find('.range-button').click(this._onItemRoll.bind(this));
     }
 
     //-------------------------------------//
@@ -94,7 +97,7 @@ export default class MORPGRogueSheet extends ActorSheet {
       updateData.data.torches.duration.four = true;
     } else {
       ui.notifications.warn(
-        `${this.actor.name}` +
+        `${this.actor.name} ` +
           game.i18n.localize(`morpg.notifications.outOfTorches`)
       );
     }
@@ -107,7 +110,36 @@ export default class MORPGRogueSheet extends ActorSheet {
    * @param {*} event HTML element that is clicked
    */
   _onBurnTorch(event) {
-    console.log(`onBurnTorch triggered`);
+    const updateData = {
+      data: {
+        torches: {
+          quantity: this.actor.data.data.torches.quantity,
+          duration: {
+            one: this.actor.data.data.torches.duration.one,
+            two: this.actor.data.data.torches.duration.two,
+            three: this.actor.data.data.torches.duration.three,
+            four: this.actor.data.data.torches.duration.four,
+          },
+        },
+      },
+    };
+
+    if (updateData.data.torches.duration.four) {
+      updateData.data.torches.duration.four = false;
+    } else if (updateData.data.torches.duration.three) {
+      updateData.data.torches.duration.three = false;
+    } else if (updateData.data.torches.duration.two) {
+      updateData.data.torches.duration.two = false;
+    } else if (updateData.data.torches.duration.one) {
+      updateData.data.torches.duration.one = false;
+    } else {
+      ui.notifications.warn(
+        `${this.actor.name}'s ` +
+          game.i18n.localize('morpg.notifications.torchedBurnedOut')
+      );
+    }
+
+    this.actor.update(updateData);
   }
 
   /**
