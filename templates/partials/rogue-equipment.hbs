@@ -1,7 +1,7 @@
-<div class='equipment'>
+<div class='equipment item-list'>
   {{#each actor.items}}
     {{#ifEquals data.type 'Equipment'}}
-      <ul class='rogue-inventory-item equipment' data-id='{{data._id}}'>
+      <ul class='rogue-inventory-item equipment item' data-id='{{data._id}}'>
         <li class='item-content'>
           <p class='name' id='{{data._id}}'>{{name}}
             ({{data.data.quantity}})</p>

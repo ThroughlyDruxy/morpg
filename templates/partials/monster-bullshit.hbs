@@ -2,7 +2,7 @@
   <button class='bullshit-button' type='button' title="{{localize 'morpg.sheet.actionButton'}}">{{localize
       config.headers.bullshit
     }}</button>
-  <div class='bullshit-block'>
+  <div class='bullshit-block item-list'>
       {{#each actor.items}}
       {{#ifEquals data.type 'Bullshit'}}
         {{> 'systems/morpg/templates/partials/monster-inventory-item.hbs'}}

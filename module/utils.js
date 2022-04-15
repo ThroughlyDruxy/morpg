@@ -106,6 +106,18 @@ morpgUtilities.itemManagement = {
     });
     return numberOfTorches;
   },
+
+  inventoryCurrent: function (actor) {
+    let actorItems = actor.items;
+    let occupiedSlots = 0;
+
+    actorItems.forEach((element) => {
+      if (element.type === 'Equipment') {
+        occupiedSlots += element.data.data.quantity * element.data.data.slots;
+      }
+    });
+    return occupiedSlots;
+  },
 };
 
 morpgUtilities.rolls = {

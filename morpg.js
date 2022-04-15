@@ -1,4 +1,6 @@
 import { morpg } from './module/config.js';
+import MORPGCombat from './module/MORPGCcombat.js';
+import MORPGCombatTracker from './module/MORPGCombatTracker.js';
 import MORPGRogueSheet from './module/sheets/MORPGRogueSheet.js';
 import MORPGItemSheet from './module/sheets/MORPGItemSheet.js';
 import MORPGItem from './module/MORPGItem.js';
@@ -26,12 +28,27 @@ async function preloadHandlebarsTemplates() {
   return loadTemplates(templatePaths);
 }
 
+function registerSystemSettings() {
+  //
+  game.settings.register('morpg', 'name of Settings', {
+    //describes setting
+    config: true,
+    scope: 'client', // or world. World is only for GMs and applies to everyone
+    name: 'SETTINGS.placeholder', // start with SETTINGS for localization
+    hint: 'SETTINGS.placeholder', // give smore details
+    type: Boolean, // string, number
+    default: true,
+  });
+}
+
 Hooks.once('init', function () {
   console.log(`MARCHING ORDER | Initialising Marching Order system`);
 
   CONFIG.morpg = morpg;
   CONFIG.Item.documentClass = MORPGItem;
   CONFIG.Actor.documentClass = MORPGActor;
+  CONFIG.Combat.documentClass = MORPGCombat;
+  CONFIG.ui.combat = MORPGCombatTracker;
 
   // Tells system to use custom classes for actors and items
   Items.unregisterSheet('core', ItemSheet);
@@ -51,6 +68,8 @@ Hooks.once('init', function () {
 
   preloadHandlebarsTemplates();
 
+  registerSystemSettings();
+
   Handlebars.registerHelper('ifEquals', function (arg1, arg2, options) {
     return arg1 == arg2 ? options.fn(this) : options.inverse(this);
   });
@@ -59,7 +78,7 @@ Hooks.once('init', function () {
 Hooks.on(
   'dropActorSheetData',
   function (parentActor, sheet, { type, sourceId }) {
-    console.log(`new thing added to sheet`);
-    console.log(parentActor, type, sourceId);
+    // console.log(`new thing added to sheet`);
+    // console.log(parentActor, type, sourceId);
   }
 );

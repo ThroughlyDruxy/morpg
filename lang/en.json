@@ -73,5 +73,8 @@
       "torchesQuantity": "Number of torches",
       "torchDuration": "Torch duration"
     }
+  },
+  "SETTINGS": {
+    "placeholder": "Placeholder"
   }
 }

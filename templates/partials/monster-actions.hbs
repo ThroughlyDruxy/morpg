@@ -2,7 +2,7 @@
   <button class='actions-button' type='button' title="{{localize 'morpg.sheet.actionButton'}}">{{localize
       config.headers.actions
     }}</button>
-  <div class='actions-block'>
+  <div class='actions-block item-list'>
   {{#each actor.items}}
     {{#ifEquals data.type 'Action'}}
       {{> 'systems/morpg/templates/partials/monster-inventory-item.hbs'}}

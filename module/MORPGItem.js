@@ -17,19 +17,10 @@ export default class MORPGItem extends Item {
 
     if (createData.type === 'Action') {
       updateData.img = 'icons/svg/sword.svg';
-      updateData.data.cooldown.min = 0;
-      updateData.data.cooldown.max = 0;
-      updateData.data.cooldown.value = 0;
-      updateData.data.triggerRange.min = 0;
-      updateData.data.triggerRange.max = 0;
     } else if (createData.type === 'Bullshit') {
       updateData.img = 'icons/svg/hazard.svg';
     } else if (createData.type === 'Special') {
       updateData.img = 'icons/svg/explosion.svg';
-    } else if (createData.type === 'Equipment') {
-      updateData.data.quantity = 1;
-      updateData.data.cost = 0;
-      updateData.data.slots = 1;
     }
 
     await this.data.update(updateData);
