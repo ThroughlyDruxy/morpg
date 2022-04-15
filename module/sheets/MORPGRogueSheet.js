@@ -72,11 +72,9 @@ export default class MORPGRogueSheet extends ActorSheet {
    * @param {*} event HTML element that is clicked
    */
   _onLightNewTorch(event) {
-    // decrease torch quantity by 1 and update actor
     const updateData = {
       data: {
         torches: {
-          quantity: this.actor.data.data.torches.quantity,
           duration: {
             one: this.actor.data.data.torches.duration.one,
             two: this.actor.data.data.torches.duration.two,
@@ -87,10 +85,10 @@ export default class MORPGRogueSheet extends ActorSheet {
       },
     };
 
-    updateData.data.torches.quantity = this.actor.data.data.torches.quantity;
+    // this.actor.deleteEmbeddedDocuments('Item', [itemId])
 
-    if (updateData.data.torches.quantity > 0) {
-      --updateData.data.torches.quantity;
+    // Set duration to full
+    if (this.actor.data.data.torches.quantity > 0) {
       updateData.data.torches.duration.one = true;
       updateData.data.torches.duration.two = true;
       updateData.data.torches.duration.three = true;
@@ -102,10 +100,24 @@ export default class MORPGRogueSheet extends ActorSheet {
       );
     }
 
-    // get number or torch items
-    morpgUtilities.itemManagement.torchItemDelete(this.actor);
+    // reduce torch quantity by one
+    this.actor.items.forEach((element) => {
+      let itemName = element.data.name;
+      if (
+        itemName === 'Torch' ||
+        itemName === 'torch' ||
+        itemName === 'Torches' ||
+        itemName === 'torches'
+      ) {
+        if (element.data.data.quantity > 1) {
+          --element.data.data.quantity;
+          --this.actor.data.data.torches.quantity;
+        }
+      }
+    });
 
     this.actor.update(updateData);
+    this.actor.render();
   }
 
   /**
@@ -116,7 +128,6 @@ export default class MORPGRogueSheet extends ActorSheet {
     const updateData = {
       data: {
         torches: {
-          quantity: this.actor.data.data.torches.quantity,
           duration: {
             one: this.actor.data.data.torches.duration.one,
             two: this.actor.data.data.torches.duration.two,

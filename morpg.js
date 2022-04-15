@@ -55,10 +55,3 @@ Hooks.once('init', function () {
     return arg1 == arg2 ? options.fn(this) : options.inverse(this);
   });
 });
-
-Hooks.on('dropActorSheetData', function () {
-  // check if sheet has backpack
-  // check if item slots are greater than 10 (without backpack) or 13 (with backpack)
-  // display error and do not create item.
-  console.log('MORPG');
-});

@@ -19,15 +19,15 @@
   <div class='torches'>
     <div class='torch-row-1'>
       <div class='torches-quantity'>
-        <label>{{localize 'morpg.sheet.torches'}}:</label>
-        <input
+        <label>{{localize 'morpg.sheet.torches'}}: {{data.torches.quantity}}</label>
+        {{!-- <input
           class='torches-quantity-input'
           name='data.torches.quantity'
           title='{{localize "morpg.sheet.torchesQuantity"}}'
           type='number'
           value='{{data.torches.quantity}}'
           data-dtype='Number'
-        />
+        /> --}}
       </div>
       <div class='torch-duration-boxes'>
         <label>{{localize 'morpg.sheet.duration'}}:</label>

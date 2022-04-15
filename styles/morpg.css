@@ -315,10 +315,8 @@ ul.rogue-inventory-item .toggle-editor div {
   display: flex;
   align-items: center;
 }
-.conditions-torches .torches .torch-row-1 .torches-quantity-input {
-  width: 25px;
-  text-align: center;
-  margin-right: 5px;
+.conditions-torches .torches .torch-row-1 .torches-quantity {
+  margin-right: 10px;
 }
 .conditions-torches .torches .torch-row-1 .torch-duration-boxes .torch-duration {
   vertical-align: middle;

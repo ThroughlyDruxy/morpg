@@ -84,14 +84,27 @@ morpgUtilities.itemManagement = {
       }
     );
   },
-  torchItemDelete: function (actor) {
-    console.log(`torchItemDelete called`);
-    console.log(actor.items);
-    const torchItems = new Map();
-    actor.items.forEach((element) => {
-      if (element.data.name === 'Torch')
-        console.log(element.data.data.quantity);
+  /**
+   * Returns number of torches based on quantity of torches in inventory.
+   * @param {*} actor
+   * @returns numberOfTorches
+   */
+  numberOfTorches: function (actor) {
+    let numberOfTorches = 0;
+    let actorItems = actor.items;
+
+    actorItems.forEach((element) => {
+      let itemName = element.data.name;
+      if (
+        itemName === 'Torch' ||
+        itemName === 'torch' ||
+        itemName === 'Torches' ||
+        itemName === 'torches'
+      ) {
+        numberOfTorches += element.data.data.quantity;
+      }
     });
+    return numberOfTorches;
   },
 };
 
