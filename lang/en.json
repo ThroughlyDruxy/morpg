@@ -63,6 +63,7 @@
       "editItem": "Edit",
       "equipmentTab": "Equipment",
       "equipmentTabTitle": "Equipment tab",
+      "hasBackpack": "Check this if this rogue has a backpack",
       "newItemDialog": "Create New Item",
       "newTorch": "Light new torch",
       "noAttackMod": "-",

@@ -1,6 +1,6 @@
 <ul class='rogue-inventory-item item' data-id='{{data._id}}'>
   <li class='item-content'>
-    {{#if data.data.cooldown}}
+    {{#if data.data.cooldown.max includeZero=true}}
       <div class='cooldown-block'>
         {{!-- <input
           class='cooldown-value cooldown-input'

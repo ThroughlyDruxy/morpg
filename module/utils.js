@@ -84,6 +84,15 @@ morpgUtilities.itemManagement = {
       }
     );
   },
+  torchItemDelete: function (actor) {
+    console.log(`torchItemDelete called`);
+    console.log(actor.items);
+    const torchItems = new Map();
+    actor.items.forEach((element) => {
+      if (element.data.name === 'Torch')
+        console.log(element.data.data.quantity);
+    });
+  },
 };
 
 morpgUtilities.rolls = {

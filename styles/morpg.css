@@ -184,7 +184,6 @@
 }
 .morpg.sheet.rogue form.actor-sheet .sheet-body .actions-body {
   display: flex;
-  flex-direction: row;
   height: 100%;
 }
 .morpg.sheet.rogue form.actor-sheet .sheet-body .actions-body .actions,
@@ -203,6 +202,11 @@
 }
 .morpg.sheet.rogue form.actor-sheet .sheet-body .actions-body .bullshit {
   margin-left: 2px;
+}
+.morpg.sheet.rogue form.actor-sheet .sheet-body .equipment-body {
+  overflow-y: scroll;
+  min-height: 150px;
+  max-height: 290px;
 }
 .rogue-stats {
   width: 100px;
@@ -241,7 +245,7 @@
 .morpg.sheet.rogue .bullshit-block {
   overflow-y: scroll;
   min-height: 150px;
-  max-height: 285px;
+  max-height: 260px;
 }
 ul.rogue-inventory-item {
   background-color: #c0c0c0;
@@ -369,6 +373,15 @@ ul.rogue-inventory-item .toggle-editor div {
 }
 .conditions-torches .utility-buttons .item-new:hover {
   text-shadow: 0 0 5px black;
+}
+.rogue-inventory-item.equipment {
+  padding: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.rogue-inventory-item.equipment .name {
+  font-size: 16px;
+  font-weight: bold;
 }
 .morpg.sheet.monster .special-content .special-header {
   font-size: 18px;

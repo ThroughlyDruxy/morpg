@@ -102,6 +102,9 @@ export default class MORPGRogueSheet extends ActorSheet {
       );
     }
 
+    // get number or torch items
+    morpgUtilities.itemManagement.torchItemDelete(this.actor);
+
     this.actor.update(updateData);
   }
 

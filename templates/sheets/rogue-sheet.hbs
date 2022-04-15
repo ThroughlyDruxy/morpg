@@ -40,9 +40,11 @@
       </div>
     </div>
 
-    {{! iInventory Tab }}
-    <div class='tab equipment' data-group='primary' data-tab='equipment'>
-      Equipment
+    {{! Inventory Tab }}
+    <div class='tab' data-group='primary' data-tab='equipment'>
+      <div class="equipment-body">
+        {{> 'systems/morpg/templates/partials/rogue-equipment.hbs'}}
+      </div>
     </div>
   </section>
 </form>

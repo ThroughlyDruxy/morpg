@@ -1,0 +1,30 @@
+<div class='equipment'>
+  {{#each actor.items}}
+    {{#ifEquals data.type 'Equipment'}}
+      <ul class='rogue-inventory-item equipment' data-id='{{data._id}}'>
+        <li class='item-content'>
+          <p class='name' id='{{data._id}}'>{{name}}
+            ({{data.data.quantity}})</p>
+          <div class='delete-edit-actions'>
+            <a
+              class='item-edit action'
+              data-type='edit'
+              title='{{localize "morpg.sheet.editItem"}}'
+            >
+              <i class='fas fa-edit'></i>
+            </a>
+            <a
+              class='item-delete action'
+              title='{{localize "morpg.sheet.deleteItem"}}'
+            >
+              <i class='fas fa-trash'></i>
+            </a>
+          </div>
+        </li>
+        <li class='toggle-editor'>
+          <div>{{{data.data.description}}}</div>
+        </li>
+      </ul>
+    {{/ifEquals}}
+  {{/each}}
+</div>
