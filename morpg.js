@@ -55,3 +55,11 @@ Hooks.once('init', function () {
     return arg1 == arg2 ? options.fn(this) : options.inverse(this);
   });
 });
+
+Hooks.on(
+  'dropActorSheetData',
+  function (parentActor, sheet, { type, sourceId }) {
+    console.log(`new thing added to sheet`);
+    console.log(parentActor, type, sourceId);
+  }
+);

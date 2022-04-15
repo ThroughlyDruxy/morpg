@@ -33,7 +33,6 @@
       "escape": 0,
       "luck": { "value": 0, "min": 0, "max": 10 },
       "torches": {
-        "quantity": 0,
         "torchDuration": {
           "one": false,
           "two": false,

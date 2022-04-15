@@ -75,6 +75,7 @@ export default class MORPGRogueSheet extends ActorSheet {
     const updateData = {
       data: {
         torches: {
+          quantity: this.actor.data.data.torches.quantity,
           duration: {
             one: this.actor.data.data.torches.duration.one,
             two: this.actor.data.data.torches.duration.two,
@@ -82,6 +83,12 @@ export default class MORPGRogueSheet extends ActorSheet {
             four: this.actor.data.data.torches.duration.four,
           },
         },
+      },
+    };
+
+    const itemUpdateData = {
+      data: {
+        quantity: 0,
       },
     };
 
@@ -103,6 +110,8 @@ export default class MORPGRogueSheet extends ActorSheet {
     // reduce torch quantity by one
     this.actor.items.forEach((element) => {
       let itemName = element.data.name;
+      let itemID = element.data._id;
+
       if (
         itemName === 'Torch' ||
         itemName === 'torch' ||
@@ -110,14 +119,13 @@ export default class MORPGRogueSheet extends ActorSheet {
         itemName === 'torches'
       ) {
         if (element.data.data.quantity > 1) {
-          --element.data.data.quantity;
-          --this.actor.data.data.torches.quantity;
+          itemUpdateData.data.quantity = element.data.data.quantity - 1;
+          element.update(itemUpdateData);
         }
       }
     });
 
     this.actor.update(updateData);
-    this.actor.render();
   }
 
   /**

@@ -10,6 +10,9 @@ morpg.zip
 
 // Dev stuff that doesn't need included
 morpg.lock
+package.json
+package-lock.json
+gulpfile.js
 
 
 TODO.md
