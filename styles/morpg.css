@@ -452,6 +452,7 @@ ul.monster-inventory-item .toggle-editor div {
 }
 .morpg.sheet.monster form.actor-sheet .left-column img {
   border-bottom: 2px solid black;
+  min-height: 261px;
 }
 .morpg.sheet.monster form.actor-sheet .left-column .utility-buttons {
   display: flex;
