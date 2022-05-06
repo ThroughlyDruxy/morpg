@@ -2,13 +2,28 @@
   "name": "morpg",
   "title": "Marching Order",
   "description": "A game system which provides a way to play Marching Order in Foundry VTT.",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "minimumCoreVersion": "0.9.0",
-  "compatibleCoreVersion": "9.249",
+  "compatibleCoreVersion": "9.269",
   "author": "ThroughlyDruxy",
   "esmodules": ["morpg.js"],
   "styles": ["styles/morpg.css"],
-  "packs": [],
+  "packs": [
+    {
+      "name": "quickstart-conditions",
+      "label": "Quickstart Conditions",
+      "system": "morpg",
+      "path": "./packs/quickstart-conditions.db",
+      "entity": "JournalEntry"
+    },
+    {
+      "name": "quickstart-rogues-and-monsters",
+      "label": "Quickstart Rogues and Monsters",
+      "system": "morpg",
+      "path": "./packs/quickstart-rogues-and-monsters.db",
+      "entity": "Actor"
+    }
+  ],
   "languages": [
     {
       "lang": "en",
@@ -19,8 +34,8 @@
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "luck",
   "initiative": "1d6",
-  "url": "",
-  "manifest": "",
-  "download": "",
+  "url": "https://github.com/ThroughlyDruxy/morpg",
+  "manifest": "https://raw.githubusercontent.com/ThroughlyDruxy/morpg/main/system.json",
+  "download": "https://github.com/ThroughlyDruxy/morpg/releases/download/v0.1.5/morpg.zip",
   "license": ""
 }
