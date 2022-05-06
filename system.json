@@ -36,6 +36,6 @@
   "initiative": "1d6",
   "url": "https://github.com/ThroughlyDruxy/morpg",
   "manifest": "https://raw.githubusercontent.com/ThroughlyDruxy/morpg/main/system.json",
-  "download": "https://github.com/ThroughlyDruxy/morpg/releases/download/v0.1.5/morpg.zip",
+  "download": "https://github.com/ThroughlyDruxy/morpg/releases/download/v0.1.5-alpha/morpg.zip",
   "license": ""
 }
