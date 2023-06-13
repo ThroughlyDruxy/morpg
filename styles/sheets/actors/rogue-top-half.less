@@ -78,8 +78,9 @@
         margin-right: 5px;
       }
       .condition-textarea {
+        // background-color: teal;
         resize: none;
-        height: 75px;
+        height: 60px;
         width: 100%;
       }
     }
@@ -87,16 +88,24 @@
   .utility-buttons {
     border-top: @thinBorder;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     height: 26px;
-    a {
-      margin-left: 5px;
+    .row1 {
+      .item-new {
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .item-new:hover {
+        text-shadow: 0 0 5px black;
+      }
+      .backpack {
+        vertical-align: middle;
+      }
     }
-    .item-new {
-      margin: 0px 5px 0px 5px;
-    }
-    .item-new:hover {
-      text-shadow: 0 0 5px black;
+    .row2 {
+      select {
+        text-align: center;
+      }
     }
   }
 }

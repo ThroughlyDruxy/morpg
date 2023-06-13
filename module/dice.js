@@ -34,10 +34,15 @@ export async function StatRoll({
     owner: actor.id,
   };
 
+  let r = await new Roll('1d20').roll({ async: true });
+
   let chatData = {
     user: game.user._id,
     speaker: ChatMessage.getSpeaker(),
     content: await renderTemplate(chatTemplate, templateData),
+    sound: CONFIG.sounds.dice,
+    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+    rolls: [r],
   };
 
   ChatMessage.create(chatData);
@@ -62,6 +67,7 @@ export async function ActionRoll({ actor = null, event = null }) {
   let chatData = {
     user: game.user._id,
     speaker: ChatMessage.getSpeaker(),
+    sound: CONFIG.sounds.dice,
   };
 
   const items = actor.items;
@@ -97,6 +103,7 @@ export async function BullshitRoll({ actor = null }) {
   let chatData = {
     user: game.user._id,
     speaker: ChatMessage.getSpeaker(),
+    sound: CONFIG.sounds.dice,
   };
 
   const bullshitMap = new Map();

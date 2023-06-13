@@ -49,4 +49,11 @@ morpg.headers = {
 
 morpg.sheet = {
   createItem: 'morpg.sheet.createItem',
+  position: {
+    // notInMarchingOrder: 'morpg.sheet.notInParty',
+    one: '1',
+    two: '2',
+    three: '3',
+    four: '4',
+  },
 };

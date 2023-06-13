@@ -101,7 +101,7 @@ morpgUtilities.itemManagement = {
         itemName === 'Torches' ||
         itemName === 'torches'
       ) {
-        numberOfTorches += element.data.data.quantity;
+        numberOfTorches += element.system.quantity;
       }
     });
     return numberOfTorches;
@@ -113,7 +113,7 @@ morpgUtilities.itemManagement = {
 
     actorItems.forEach((element) => {
       if (element.type === 'Equipment') {
-        occupiedSlots += element.data.data.quantity * element.data.data.slots;
+        occupiedSlots += element.system.quantity * element.system.slots;
       }
     });
     return occupiedSlots;
@@ -128,14 +128,14 @@ morpgUtilities.rolls = {
   randomAction: function (items) {
     const actionMap = new Map();
     items.forEach((item) => {
-      if (item.data.type === 'Action') {
+      if (item.type === 'Action') {
         const rangeArr = getActionRange(
-          item.data.data.triggerRange.min,
-          item.data.data.triggerRange.max
+          item.system.triggerRange.min,
+          item.system.triggerRange.max
         );
 
         rangeArr.forEach((trigger) => {
-          actionMap.set(trigger, item.data._id);
+          actionMap.set(trigger, item._id);
         });
       }
     });

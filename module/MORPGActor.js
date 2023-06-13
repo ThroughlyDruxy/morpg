@@ -4,17 +4,19 @@ export default class MORPGActor extends Actor {
   async prepareDerivedData() {
     await super.prepareDerivedData();
 
-    let actor = this.data;
+    let actor = this.system;
 
     if (actor.type === 'Rogue') {
       // Get number of torches from all torch items
-      actor.data.torches.quantity =
-        morpgUtilities.itemManagement.numberOfTorches(actor);
+      try {
+        actor.system.torches.quantity =
+          morpgUtilities.itemManagement.numberOfTorches(actor);
+      } catch (error) {}
 
       // sets inventory capacity and gets current cap
-      actor.data.slots = {
+      actor.system.slots = {
         current: morpgUtilities.itemManagement.inventoryCurrent(actor),
-        max: actor.data.hasBackpack ? 13 : 10,
+        max: actor.system.hasBackpack ? 13 : 10,
       };
     }
   }

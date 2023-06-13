@@ -24,7 +24,7 @@ export default class MORPGRogueSheet extends ActorSheet {
       owner: this.actor.isOwner,
       editable: this.isEditable,
       actor: data.actor,
-      data: data.actor.data.data,
+      data: data.actor.system.data,
       config: CONFIG.morpg,
     };
 

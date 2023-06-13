@@ -41,6 +41,7 @@
         }
       },
       "hasBackpack": false,
+      "marchingOrder": "Not in party",
       "attributes": {},
       "groups": {}
     },

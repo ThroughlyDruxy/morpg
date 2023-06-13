@@ -354,23 +354,27 @@ ul.rogue-inventory-item .toggle-editor div {
 }
 .conditions-torches .conditions-wrapper .condition .condition-textarea {
   resize: none;
-  height: 75px;
+  height: 60px;
   width: 100%;
 }
 .conditions-torches .utility-buttons {
   border-top: 2px solid black;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   height: 26px;
 }
-.conditions-torches .utility-buttons a {
+.conditions-torches .utility-buttons .row1 .item-new {
   margin-left: 5px;
+  margin-right: 5px;
 }
-.conditions-torches .utility-buttons .item-new {
-  margin: 0px 5px 0px 5px;
-}
-.conditions-torches .utility-buttons .item-new:hover {
+.conditions-torches .utility-buttons .row1 .item-new:hover {
   text-shadow: 0 0 5px black;
+}
+.conditions-torches .utility-buttons .row1 .backpack {
+  vertical-align: middle;
+}
+.conditions-torches .utility-buttons .row2 select {
+  text-align: center;
 }
 .rogue-inventory-item.equipment {
   padding: 0px;

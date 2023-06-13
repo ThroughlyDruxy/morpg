@@ -109,6 +109,7 @@
     </div>
   </div>
   <div class='utility-buttons'>
+    <div class="row1">
     <a
       class='item-new action'
       data-type='new'
@@ -123,6 +124,17 @@
           type='checkbox'
           title='{{localize "morpg.sheet.hasBackpack"}}'
         />
-        <label>Equipment slots: {{data.slots.current}}/{{data.slots.max}}</label>
+    <label>Equipment slots: {{data.slots.current}}/{{data.slots.max}}</label>
+    </div>
+    <di class="row2">
+    <label style="margin-left: 5px;">Position: {{data.marchingOrder}}</label>
+    <select class="position">
+      {{#select data.marchingOrder}}
+        {{#each config.sheet.position as |name position|}}
+          <option value="{{position}}">{{name}}</option>
+        {{/each}}
+      {{/select}}
+    </select>
+    </div>
   </div>
 </div>
