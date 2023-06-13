@@ -1,6 +1,6 @@
 <form
   class='action-sheet {{cssClass}} item-sheet'
-  data-id='{{item.data._id}}'
+  data-id='{{item._id}}'
   autocomplete='off'
 >
   <link rel='stylesheet' href='systems/morpg/styles/morpg.css' />
@@ -29,15 +29,15 @@
       <th><h3>
           <input
             class='cooldown'
-            name='data.cooldown.value'
+            name='item.system.cooldown.value'
             type='Number'
-            value='{{data.cooldown.value}}'
+            value='{{item.system.cooldown.value}}'
             data-dtype='Number'
           />/<input
             class='cooldown'
-            name='data.cooldown.max'
+            name='item.system.cooldown.max'
             type='Number'
-            value='{{data.cooldown.max}}'
+            value='{{item.system.cooldown.max}}'
             data-dtype='Number'
           /></h3></th>
       {{!-- <th><h3 class='label'>{{localize
@@ -45,13 +45,13 @@
           }}:</h3></th>
       <th><h3><input
             class='isAttack'
-            name='data.isAttack'
+            name='item.system.isAttack'
             type='checkbox'
-            {{checked data.isAttack}}
+            {{checked item.system.isAttack}}
           /></h3></th>
-      {{#if data.isAttack}}
+      {{#if item.system.isAttack}}
         <th><h3><select>
-              {{#select data.attackType}}
+              {{#select item.system.attackType}}
                 {{#each config.items.attackTypes as |name type|}}
                   <option value='{{type}}'>{{localize name}}</option>
                 {{/each}}
@@ -63,21 +63,21 @@
           }}:</h3></th>
       <th><h3><input
             class='triggerRange'
-            name='data.triggerRange.min'
+            name='item.system.triggerRange.min'
             type='number'
-            value='{{data.triggerRange.min}}'
+            value='{{item.system.triggerRange.min}}'
             data-dtype='Number'
           />—<input
             class='triggerRange'
-            name='data.triggerRange.max'
+            name='item.system.triggerRange.max'
             type='number'
-            value='{{data.triggerRange.max}}'
+            value='{{item.system.triggerRange.max}}'
             data-dtype='Number'
           /></h3></th>
     </table>
     {{editor
-      content=data.description
-      target='data.description'
+      item.system.description
+      target='item.system.description'
       button=true
       owner=owner
       editable=editable

@@ -8,7 +8,7 @@ export default class MORPGItemSheet extends ItemSheet {
   }
 
   get template() {
-    return `systems/morpg/templates/sheets/${this.item.data.type}-sheet.hbs`;
+    return `systems/morpg/templates/sheets/${this.item.type}-sheet.hbs`;
   }
 
   getData() {
@@ -17,7 +17,7 @@ export default class MORPGItemSheet extends ItemSheet {
       owner: this.item.isOwner,
       editable: this.isEditable,
       item: data.item,
-      data: data.item.data.data,
+      data: data.item.system,
       config: CONFIG.morpg,
     };
 

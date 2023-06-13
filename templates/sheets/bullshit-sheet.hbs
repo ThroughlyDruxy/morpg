@@ -1,6 +1,6 @@
 <form
   class='bullshit-sheet {{cssClass}} item'
-  data-id='{{item.data._id}}'
+  data-id='{{item._id}}'
   autocomplete='off'
 >
   <link rel='stylesheet' href='systems/morpg/styles/morpg.css' />
@@ -37,15 +37,15 @@
             'morpg.items.bullshit.isAttack'
           }}:</h3></th>
       <th><h3><input
-            name='data.isAttack'
+            name='item.system.isAttack'
             type='checkbox'
-            {{checked data.isAttack}}
+            {{checked item.system.isAttack}}
           /></h3></th>
-      {{#if data.isAttack}}
+      {{#if system.isAttack}}
         <th><h3><select>
               <option value=''>-</option>
-              <option value='data.physical'>Physical</option>
-              <option value='data.magic'>Magic</option>
+              <option value='item.system.physical'>Physical</option>
+              <option value='item.system.magic'>Magic</option>
             </select></h3></th>
       {{/if}} --}}
       <th><h3 class='label'>{{localize
@@ -53,15 +53,15 @@
           }}:</h3></th>
       <th><h3><input
             class='trigger'
-            name='data.trigger'
+            name='item.system.trigger'
             type='Number'
-            value='{{data.trigger}}'
+            value='{{item.system.trigger}}'
             data-dtype='Number'
           /></h3></th>
     </table>
     {{editor
-      content=data.description
-      target='data.description'
+      item.system.description
+      target='item.system.description'
       button=true
       owner=owner
       editable=editable

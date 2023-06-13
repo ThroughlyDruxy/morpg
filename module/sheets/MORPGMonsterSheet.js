@@ -17,7 +17,7 @@ export default class MORPGMonsterSheet extends ActorSheet {
       owner: this.actor.isOwner,
       editable: this.isEditable,
       actor: baseData.actor,
-      data: baseData.actor.data.data,
+      data: baseData.actor.system.data,
       config: CONFIG.morpg,
     };
 
@@ -61,14 +61,14 @@ export default class MORPGMonsterSheet extends ActorSheet {
     if (statName === 'health') {
       Dice.StatRoll({
         actor: this.actor,
-        statModifier: this.actor.data.data.health.value,
+        statModifier: this.actor.system.data.health.value,
         statName: statName,
         halfRoll: event.shiftKey,
       });
     } else {
       Dice.StatRoll({
         actor: this.actor,
-        statModifier: this.actor.data.data[statName],
+        statModifier: this.actor.system.data[statName],
         statName: statName,
         halfRoll: event.shiftKey,
       });

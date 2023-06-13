@@ -6,10 +6,13 @@ export default class MORPGItem extends Item {
    * @param {*} options
    * @param {*} userId
    */
-  async _preCreate(createData, options, userId) {
+
+/*   async _preCreate(createData, options, userId) {
     await super._preCreate(createData, options, userId);
     const updateData = {
-      data: {
+      name: createData.name,
+      _id: createData._id,
+      system: {
         cooldown: {},
         triggerRange: {},
       },
@@ -23,8 +26,12 @@ export default class MORPGItem extends Item {
       updateData.img = 'icons/svg/explosion.svg';
     }
 
-    await this.data.update(updateData);
-  }
+    console.log(createData._id);
+    await this.update(updateData);
+    // await this.update(updateData);
+  } */
+
+  ** try just updating the item with the various stuff returned from another function
 
   /**
    * Sends template for item to chat without roll
@@ -32,8 +39,8 @@ export default class MORPGItem extends Item {
   async sendItemToChat() {
     const chatTemplate = 'systems/morpg/templates/chat/action.hbs';
     let templateData = {
-      actorName: this.parent.data.name,
-      ...this.data,
+      actorName: this.parent.name,
+      ...this,
       owner: this.actor.id,
     };
 
