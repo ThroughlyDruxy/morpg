@@ -24,21 +24,21 @@
           }}:</h3></th>
       <th><h3><input
             class='isAttack'
-            name='data.isAttack'
+            name='system.isAttack'
             type='checkbox'
-            {{checked data.isAttack}}
+            {{checked item.system.isAttack}}
           /></h3></th>
-      {{#if data.isAttack}}
+      {{#if item.system.isAttack}}
         <th><h3><select>
               <option value=''>-</option>
-              <option value='data.physical'>Physical</option>
-              <option value='data.magic'>Magic</option>
+              <option value='system.physical'>Physical</option>
+              <option value='system.magic'>Magic</option>
             </select></h3></th>
       {{/if}} --}}
     </table>
     {{editor
-      content=data.description
-      target='data.description'
+      item.system.description
+      target='system.description'
       button=true
       owner=owner
       editable=editable

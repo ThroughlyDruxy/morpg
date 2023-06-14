@@ -19,35 +19,35 @@
   <div class='torches'>
     <div class='torch-row-1'>
       <div class='torches-quantity'>
-        <label>{{localize 'morpg.sheet.torches'}}: {{data.torches.quantity}}</label>
+        <label>{{localize 'morpg.sheet.torches'}}: {{actor.system.torches.quantity}}</label>
       </div>
       <div class='torch-duration-boxes'>
         <label>{{localize 'morpg.sheet.duration'}}:</label>
         <input
           class='torch-duration torch1'
-          name='data.torches.duration.one'
-          {{checked data.torches.duration.one}}
+          name='system.torches.duration.one'
+          {{checked actor.system.torches.duration.one}}
           type='checkbox'
           title='{{localize "morpg.sheet.torchDuration"}}'
         />
         <input
           class='torch-duration torch2'
-          name='data.torches.duration.two'
-          {{checked data.torches.duration.two}}
+          name='system.torches.duration.two'
+          {{checked actor.system.torches.duration.two}}
           type='checkbox'
           title='{{localize "morpg.sheet.torchDuration"}}'
         />
         <input
           class='torch-duration torch3'
-          name='data.torches.duration.three'
-          {{checked data.torches.duration.three}}
+          name='system.torches.duration.three'
+          {{checked actor.system.torches.duration.three}}
           type='checkbox'
           title='{{localize "morpg.sheet.torchDuration"}}'
         />
         <input
           class='torch-duration torch4'
-          name='data.torches.duration.four'
-          {{checked data.torches.duration.four}}
+          name='system.torches.duration.four'
+          {{checked actor.system.torches.duration.four}}
           type='checkbox'
           title='{{localize "morpg.sheet.torchDuration"}}'
         />
@@ -67,45 +67,45 @@
   <div class='conditions-wrapper'>
     <div class='condition'>
       <input
-        name='data.conditions.condition1.duration'
+        name='system.conditions.condition1.duration'
         title='{{localize "morpg.sheet.conditionDuration"}}'
         type='number'
-        value='{{data.conditions.condition1.duration}}'
+        value='{{actor.system.conditions.condition1.duration}}'
         data-dtype='Number'
       />
       <textarea
         class='condition-textarea condition1'
-        name='data.conditions.condition1.description'
+        name='system.conditions.condition1.description'
         title='{{localize "morpg.sheet.conditionTitle"}} 1'
-      >{{data.conditions.condition1.description}}</textarea>
+      >{{actor.system.conditions.condition1.description}}</textarea>
     </div>
     <div class='condition'>
       <input
-        name='data.conditions.condition2.duration'
+        name='system.conditions.condition2.duration'
         title='{{localize "morpg.sheet.conditionDuration"}}'
         type='number'
-        value='{{data.conditions.condition2.duration}}'
+        value='{{actor.system.conditions.condition2.duration}}'
         data-dtype='Number'
       />
       <textarea
         class='condition-textarea condition2'
-        name='data.conditions.condition2.description'
+        name='system.conditions.condition2.description'
         title='{{localize "morpg.sheet.conditionTitle"}} 2'
-      >{{data.conditions.condition2.description}}</textarea>
+      >{{actor.system.conditions.condition2.description}}</textarea>
     </div>
     <div class='condition'>
       <input
-        name='data.conditions.condition3.duration'
+        name='system.conditions.condition3.duration'
         title='{{localize "morpg.sheet.conditionDuration"}}'
         type='number'
-        value='{{data.conditions.condition3.duration}}'
+        value='{{actor.system.conditions.condition3.duration}}'
         data-dtype='Number'
       />
       <textarea
         class='condition-textarea condition3'
-        name='data.conditions.condition3.description'
+        name='system.conditions.condition3.description'
         title='{{localize "morpg.sheet.conditionTitle"}} 3'
-      >{{data.conditions.condition3.description}}</textarea>
+      >{{actor.system.conditions.condition3.description}}</textarea>
     </div>
   </div>
   <div class='utility-buttons'>
@@ -119,17 +119,17 @@
     </a>
     <input
           class='backpack'
-          name='data.hasBackpack'
-          {{checked data.hasBackpack}}
+          name='system.hasBackpack'
+          {{checked actor.system.hasBackpack}}
           type='checkbox'
           title='{{localize "morpg.sheet.hasBackpack"}}'
         />
-    <label>Equipment slots: {{data.slots.current}}/{{data.slots.max}}</label>
+    <label>Equipment slots: {{actor.system.slots.current}}/{{actor.system.slots.max}}</label>
     </div>
     <di class="row2">
-    <label style="margin-left: 5px;">Position: {{data.marchingOrder}}</label>
+    <label style="margin-left: 5px;">Position: {{actor.system.marchingOrder}}</label>
     <select class="position">
-      {{#select data.marchingOrder}}
+      {{#select actor.system.marchingOrder}}
         {{#each config.sheet.position as |name position|}}
           <option value="{{position}}">{{name}}</option>
         {{/each}}

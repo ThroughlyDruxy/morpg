@@ -8,10 +8,10 @@
         >{{localize config.stats.physical}}</th>
         <td><input
             class='input roll-value'
-            name='data.physical'
+            name='system.physical'
             title='{{localize "morpg.baseStats.physical"}}'
             type='number'
-            value='{{data.physical}}'
+            value='{{actor.system.physical}}'
             data-dtype='Number'
           /></td>
       </tr>
@@ -22,10 +22,10 @@
         >{{localize config.stats.defense}}</th>
         <td><input
             class='input roll-value'
-            name='data.defense'
+            name='system.defense'
             title={{localize 'morpg.baseStats.defense'}}
             type='number'
-            value='{{data.defense}}'
+            value='{{actor.system.defense}}'
             data-dtype='Number'
           /></td>
       </tr>
@@ -36,17 +36,17 @@
         >{{localize config.stats.health}}</th>
         <td class='health'><input
             class='health-value roll-value'
-            name='data.health.value'
+            name='system.health.value'
             title='{{localize "morpg.baseStats.healthCurrent"}}'
             type='number'
-            value='{{data.health.value}}'
+            value='{{actor.system.health.value}}'
             data-dtype='Number'
           />/<input
             class='health-max roll-value'
-            name='data.health.max'
+            name='system.health.max'
             title='{{localize "morpg.baseStats.healthMax"}}'
             type='number'
-            value='{{data.health.max}}'
+            value='{{actor.system.health.max}}'
             data-dtype='Number'
           /></td>
       </tr>
@@ -57,10 +57,10 @@
         >{{localize config.stats.magic}}</th>
         <td><input
             class='input roll-value'
-            name='data.magic'
+            name='system.magic'
             title='{{localize "morpg.baseStats.magic"}}'
             type='number'
-            value='{{data.magic}}'
+            value='{{actor.system.magic}}'
             data-dtype='Number'
           /></td>
       </tr>
@@ -71,10 +71,10 @@
         >{{localize config.stats.resolve}}</th>
         <td><input
             class='input roll-value'
-            name='data.resolve'
+            name='system.resolve'
             title='{{localize "morpg.baseStats.resolve"}}'
             type='number'
-            value='{{data.resolve}}'
+            value='{{actor.system.resolve}}'
             data-dtype='Number'
           /></td>
       </tr>

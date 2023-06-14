@@ -35,7 +35,7 @@ function registerSystemSettings() {
     config: true,
     scope: 'client', // or world. World is only for GMs and applies to everyone
     name: 'SETTINGS.placeholder', // start with SETTINGS for localization
-    hint: 'SETTINGS.placeholder', // give smore details
+    hint: 'SETTINGS.placeholder', // gives more details
     type: Boolean, // string, number
     default: true,
   });

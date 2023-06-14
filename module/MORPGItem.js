@@ -7,11 +7,10 @@ export default class MORPGItem extends Item {
    * @param {*} userId
    */
 
-/*   async _preCreate(createData, options, userId) {
+  async _preCreate(createData, options, userId) {
     await super._preCreate(createData, options, userId);
     const updateData = {
       name: createData.name,
-      _id: createData._id,
       system: {
         cooldown: {},
         triggerRange: {},
@@ -22,16 +21,17 @@ export default class MORPGItem extends Item {
       updateData.img = 'icons/svg/sword.svg';
     } else if (createData.type === 'Bullshit') {
       updateData.img = 'icons/svg/hazard.svg';
+    } else if (createData.type === 'Equipment') {
+      updateData.img = 'icons/svg/combat.svg';
+      updateData.system.quantity = 1;
+      updateData.system.cost = 1;
+      updateData.system.slots = 1;
     } else if (createData.type === 'Special') {
       updateData.img = 'icons/svg/explosion.svg';
     }
 
-    console.log(createData._id);
-    await this.update(updateData);
-    // await this.update(updateData);
-  } */
-
-  ** try just updating the item with the various stuff returned from another function
+    await this.updateSource(updateData); // update() does not work because it is not created yet
+  }
 
   /**
    * Sends template for item to chat without roll

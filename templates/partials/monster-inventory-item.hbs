@@ -1,6 +1,6 @@
 <ul class='monster-inventory-item item'>
   <li class='item-content'>
-    {{#ifEquals data.type 'Special'}}
+    {{#ifEquals type 'Special'}}
       <a
         class='item-roll-special action range-button'
         data-type='roll-special'
@@ -9,21 +9,21 @@
         <i class='fas fa-dice-six'></i>
       </a>
     {{else}}
-      {{#if data.data.triggerRange.min}}
+      {{#if system.triggerRange.min}}
         <button
           class='range-button'
           type='button'
           title='{{localize "morpg.sheet.sendToChat"}}'
-        >{{data.data.triggerRange.min}}-{{data.data.triggerRange.max}}:</button>
+        >{{system.triggerRange.min}}-{{system.triggerRange.max}}:</button>
       {{else}}
         <button
           class='range-button'
           type='button'
           title='{{localize "morpg.sheet.sendToChat"}}'
-        >{{data.data.trigger}}:</button>
+        >{{system.trigger}}:</button>
       {{/if}}
     {{/ifEquals}}
-    <p class='name' id='{{data._id}}'>{{name}}</p>
+    <p class='name' id='{{_id}}'>{{name}}</p>
     <div class='delete-edit-actions'>
       <a
         class='item-edit action'
@@ -41,6 +41,6 @@
     </div>
   </li>
   <li class='toggle-editor'>
-    <div>{{{data.data.description}}}</div>
+    <div>{{{system.description}}}</div>
   </li>
 </ul>

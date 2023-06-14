@@ -20,15 +20,16 @@ export default class MORPGRogueSheet extends ActorSheet {
 
   getData() {
     const data = super.getData();
-    let sheetData = {
+    /* let sheetData = {
       owner: this.actor.isOwner,
       editable: this.isEditable,
       actor: data.actor,
       data: data.actor.system.data,
       config: CONFIG.morpg,
-    };
+    }; */
+    data.config = CONFIG.morpg;
 
-    return sheetData;
+    return data;
   }
 
   activateListeners(html) {
@@ -75,12 +76,12 @@ export default class MORPGRogueSheet extends ActorSheet {
     const updateData = {
       data: {
         torches: {
-          quantity: this.actor.data.data.torches.quantity,
+          quantity: this.actor.system.torches.quantity,
           duration: {
-            one: this.actor.data.data.torches.duration.one,
-            two: this.actor.data.data.torches.duration.two,
-            three: this.actor.data.data.torches.duration.three,
-            four: this.actor.data.data.torches.duration.four,
+            one: this.actor.system.torches.duration.one,
+            two: this.actor.system.torches.duration.two,
+            three: this.actor.system.torches.duration.three,
+            four: this.actor.system.torches.duration.four,
           },
         },
       },
@@ -95,11 +96,11 @@ export default class MORPGRogueSheet extends ActorSheet {
     // this.actor.deleteEmbeddedDocuments('Item', [itemId])
 
     // Set duration to full
-    if (this.actor.data.data.torches.quantity > 0) {
-      updateData.data.torches.duration.one = true;
-      updateData.data.torches.duration.two = true;
-      updateData.data.torches.duration.three = true;
-      updateData.data.torches.duration.four = true;
+    if (this.actor.system.torches.quantity > 0) {
+      updateData.system.torches.duration.one = true;
+      updateData.system.torches.duration.two = true;
+      updateData.system.torches.duration.three = true;
+      updateData.system.torches.duration.four = true;
     } else {
       ui.notifications.warn(
         `${this.actor.name} ` +
@@ -118,8 +119,8 @@ export default class MORPGRogueSheet extends ActorSheet {
         itemName === 'Torches' ||
         itemName === 'torches'
       ) {
-        if (element.data.data.quantity > 1) {
-          itemUpdateData.data.quantity = element.data.data.quantity - 1;
+        if (element.system.quantity > 1) {
+          itemUpdateData.data.quantity = element.system.quantity - 1;
           element.update(itemUpdateData);
         }
       }
@@ -137,10 +138,10 @@ export default class MORPGRogueSheet extends ActorSheet {
       data: {
         torches: {
           duration: {
-            one: this.actor.data.data.torches.duration.one,
-            two: this.actor.data.data.torches.duration.two,
-            three: this.actor.data.data.torches.duration.three,
-            four: this.actor.data.data.torches.duration.four,
+            one: this.actor.system.torches.duration.one,
+            two: this.actor.system.torches.duration.two,
+            three: this.actor.system.torches.duration.three,
+            four: this.actor.system.torches.duration.four,
           },
         },
       },
@@ -173,12 +174,12 @@ export default class MORPGRogueSheet extends ActorSheet {
     let statMod = 0;
 
     if (statName === 'health') {
-      statMod = this.actor.data.data.health.value;
+      statMod = this.actor.system.health.value;
     } else if (statName === 'current luck') {
       statName = 'luck';
-      statMod = this.actor.data.data.luck.value;
+      statMod = this.actor.system.luck.value;
     } else {
-      statMod = this.actor.data.data[statName];
+      statMod = this.actor.system[statName];
     }
 
     Dice.StatRoll({

@@ -29,13 +29,13 @@
       <th><h3>
           <input
             class='cooldown'
-            name='item.system.cooldown.value'
+            name='system.cooldown.value'
             type='Number'
             value='{{item.system.cooldown.value}}'
             data-dtype='Number'
           />/<input
             class='cooldown'
-            name='item.system.cooldown.max'
+            name='system.cooldown.max'
             type='Number'
             value='{{item.system.cooldown.max}}'
             data-dtype='Number'
@@ -45,7 +45,7 @@
           }}:</h3></th>
       <th><h3><input
             class='isAttack'
-            name='item.system.isAttack'
+            name='system.isAttack'
             type='checkbox'
             {{checked item.system.isAttack}}
           /></h3></th>
@@ -63,13 +63,13 @@
           }}:</h3></th>
       <th><h3><input
             class='triggerRange'
-            name='item.system.triggerRange.min'
+            name='system.triggerRange.min'
             type='number'
             value='{{item.system.triggerRange.min}}'
             data-dtype='Number'
           />—<input
             class='triggerRange'
-            name='item.system.triggerRange.max'
+            name='system.triggerRange.max'
             type='number'
             value='{{item.system.triggerRange.max}}'
             data-dtype='Number'
@@ -77,7 +77,7 @@
     </table>
     {{editor
       item.system.description
-      target='item.system.description'
+      target='system.description'
       button=true
       owner=owner
       editable=editable

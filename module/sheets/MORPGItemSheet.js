@@ -13,14 +13,15 @@ export default class MORPGItemSheet extends ItemSheet {
 
   getData() {
     const data = super.getData();
-    let sheetData = {
+    /* let sheetData = {
       owner: this.item.isOwner,
       editable: this.isEditable,
       item: data.item,
-      data: data.item.system,
+      system: data.item.system,
       config: CONFIG.morpg,
-    };
+    }; */
+    data.config = CONFIG.morpg;
 
-    return sheetData;
+    return data;
   }
 }

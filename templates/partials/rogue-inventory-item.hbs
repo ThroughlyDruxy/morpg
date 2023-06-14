@@ -1,18 +1,18 @@
-<ul class='rogue-inventory-item item' data-id='{{data._id}}'>
+<ul class='rogue-inventory-item item' data-id='{{_id}}'>
   <li class='item-content'>
-    {{#if data.data.cooldown.max includeZero=true}}
+    {{#if system.cooldown.max includeZero=true}}
       <div class='cooldown-block'>
         <label
           class='cooldown-value cooldown-input'
-          name='data.cooldown.value'
+          name='cooldown.value'
           title='{{localize "morpg.sheet.cooldownCurrent"}}'
-        >{{data.data.cooldown.value}}</label>
+        >{{system.cooldown.value}}</label>
         /
         <label
           class='cooldown-max cooldown-input'
-          name='data.cooldown.max'
+          name='cooldown.max'
           title='{{localize "morpg.sheet.cooldownStart"}}'
-        >{{data.data.cooldown.max}}</label>
+        >{{system.cooldown.max}}</label>
       </div>
     {{else}}
       <button
@@ -20,12 +20,12 @@
         type='button'
         title='{{localize "morpg.sheet.sendToChat"}}'
       >
-        {{data.data.trigger}}:
+        {{system.trigger}}:
       </button>
     {{/if}}
-    <p class='name' id='{{data._id}}'>{{name}}</p>
+    <p class='name' id='{{_id}}'>{{name}}</p>
     <div class='delete-edit-actions'>
-      {{#ifEquals data.type 'Action'}}
+      {{#ifEquals type 'Action'}}
         <a
           class='item-roll action'
           data-type='roll'
@@ -50,6 +50,6 @@
     </div>
   </li>
   <li class='toggle-editor'>
-    <div>{{{data.data.description}}}</div>
+    <div>{{{system.description}}}</div>
   </li>
 </ul>

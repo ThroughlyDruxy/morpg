@@ -4,7 +4,7 @@
     }}</button>
   <div class='bullshit-block item-list'>
   {{#each actor.items}}
-    {{#ifEquals data.type 'Bullshit'}}
+    {{#ifEquals type 'Bullshit'}}
       {{> 'systems/morpg/templates/partials/rogue-inventory-item.hbs'}}
       {{/ifEquals}}
   {{/each}}

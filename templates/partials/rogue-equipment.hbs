@@ -1,10 +1,10 @@
 <div class='equipment item-list'>
   {{#each actor.items}}
-    {{#ifEquals data.type 'Equipment'}}
-      <ul class='rogue-inventory-item equipment item' data-id='{{data._id}}'>
+    {{#ifEquals type 'Equipment'}}
+      <ul class='rogue-inventory-item equipment item' data-id='{{_id}}'>
         <li class='item-content'>
-          <p class='name' id='{{data._id}}'>{{name}}
-            ({{data.data.quantity}})</p>
+          <p class='name' id='{{_id}}'>{{name}}
+            ({{system.quantity}})</p>
           <div class='delete-edit-actions'>
             <a
               class='item-edit action'
@@ -22,7 +22,7 @@
           </div>
         </li>
         <li class='toggle-editor'>
-          <div>{{{data.data.description}}}</div>
+          <div>{{{system.description}}}</div>
         </li>
       </ul>
     {{/ifEquals}}

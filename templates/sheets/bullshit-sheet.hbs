@@ -14,7 +14,7 @@
     />
     <h1>
       <input
-        name='name'
+        name='item.name'
         type='text'
         value='{{item.name}}'
         placeholder={{localize 'morpg.placeholder'}}
@@ -26,8 +26,8 @@
       <th><h3 class='type-label'>{{localize
             'morpg.items.bullshit.type.label'
           }}:</h3></th>
-      <th><select name='data.type'>
-          {{#select data.type}}
+      <th><select name='system.type'>
+          {{#select item.system.type}}
             {{#each config.items.bullshit.type as |name type|}}
               <option value='{{type}}'>{{localize name}}</option>
             {{/each}}
@@ -37,15 +37,15 @@
             'morpg.items.bullshit.isAttack'
           }}:</h3></th>
       <th><h3><input
-            name='item.system.isAttack'
+            name='system.isAttack'
             type='checkbox'
             {{checked item.system.isAttack}}
           /></h3></th>
-      {{#if system.isAttack}}
+      {{#if item.system.isAttack}}
         <th><h3><select>
               <option value=''>-</option>
-              <option value='item.system.physical'>Physical</option>
-              <option value='item.system.magic'>Magic</option>
+              <option value='system.physical'>Physical</option>
+              <option value='system.magic'>Magic</option>
             </select></h3></th>
       {{/if}} --}}
       <th><h3 class='label'>{{localize
@@ -53,7 +53,7 @@
           }}:</h3></th>
       <th><h3><input
             class='trigger'
-            name='item.system.trigger'
+            name='system.trigger'
             type='Number'
             value='{{item.system.trigger}}'
             data-dtype='Number'
@@ -61,7 +61,7 @@
     </table>
     {{editor
       item.system.description
-      target='item.system.description'
+      target='system.description'
       button=true
       owner=owner
       editable=editable

@@ -28,7 +28,7 @@ export async function StatRoll({
   let renderedRoll = await rollResult.render();
 
   let templateData = {
-    ...actor.data,
+    ...actor.system,
     statName: statName,
     roll: renderedRoll,
     owner: actor.id,
@@ -111,7 +111,7 @@ export async function BullshitRoll({ actor = null }) {
 
   items.forEach((item) => {
     if (item.data.type === 'Bullshit') {
-      bullshitMap.set(item.data.data.trigger, item.data._id);
+      bullshitMap.set(item.system.trigger, item.data._id);
     }
   });
 

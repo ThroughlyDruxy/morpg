@@ -23,31 +23,31 @@
             'morpg.items.equipment.quantity'
           }}:</h3></th>
       <th><h3><input
-            name='data.quantity'
+            name='system.quantity'
             type='text'
-            value='{{data.quantity}}'
+            value='{{item.system.quantity}}'
             data-dtype='Number'
           /></h3></th>
       <th><h3 class='label'>{{localize 'morpg.items.equipment.cost'}}:</h3></th>
       <th><h3><input
-            name='data.cost'
+            name='system.cost'
             type='text'
-            value='{{data.cost}}'
+            value='{{item.system.cost}}'
             data-dtype='Number'
           /></h3></th>
       <th><h3 class='label'>{{localize
             'morpg.items.equipment.slots'
           }}:</h3></th>
       <th><h3><input
-            name='data.slots'
+            name='system.slots'
             type='text'
-            value='{{data.slots}}'
+            value='{{item.system.slots}}'
             data-dtype='Number'
           /></h3></th>
     </table>
     {{editor
-      content=data.description
-      target='data.description'
+      item.system.description
+      target='system.description'
       button=true
       owner=owner
       editable=editable

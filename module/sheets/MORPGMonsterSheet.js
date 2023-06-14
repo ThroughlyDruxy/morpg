@@ -12,16 +12,17 @@ export default class MORPGMonsterSheet extends ActorSheet {
   }
 
   getData() {
-    const baseData = super.getData();
-    let sheetData = {
+    const data = super.getData();
+    /* let sheetData = {
       owner: this.actor.isOwner,
       editable: this.isEditable,
       actor: baseData.actor,
-      data: baseData.actor.system.data,
+      data: baseData.actor.system,
       config: CONFIG.morpg,
-    };
+    }; */
+    data.config = CONFIG.morpg;
 
-    return sheetData;
+    return data;
   }
 
   activateListeners(html) {
@@ -61,14 +62,14 @@ export default class MORPGMonsterSheet extends ActorSheet {
     if (statName === 'health') {
       Dice.StatRoll({
         actor: this.actor,
-        statModifier: this.actor.system.data.health.value,
+        statModifier: this.actor.system.health.value,
         statName: statName,
         halfRoll: event.shiftKey,
       });
     } else {
       Dice.StatRoll({
         actor: this.actor,
-        statModifier: this.actor.system.data[statName],
+        statModifier: this.actor.system[statName],
         statName: statName,
         halfRoll: event.shiftKey,
       });

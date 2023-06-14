@@ -23,14 +23,14 @@
       "label": "Quickstart Conditions",
       "system": "morpg",
       "path": "./packs/quickstart-conditions.db",
-      "entity": "JournalEntry"
+      "type": "Item"
     },
     {
       "name": "quickstart-rogues-and-monsters",
       "label": "Quickstart Rogues and Monsters",
       "system": "morpg",
       "path": "./packs/quickstart-rogues-and-monsters.db",
-      "entity": "Actor"
+      "type": "Actor"
     }
   ],
   "languages": [
