@@ -3,10 +3,10 @@
       config.headers.bullshit
     }}</button>
   <div class='bullshit-block item-list'>
-      {{#each actor.items}}
-      {{#ifEquals type 'Bullshit'}}
-        {{> 'systems/morpg/templates/partials/monster-inventory-item.hbs'}}
-      {{/ifEquals}}
-      {{/each}}
-    </div>
+  {{#each actor.items}}
+    {{#ifEquals type 'Bullshit'}}
+      {{> 'systems/morpg/templates/partials/monster-inventory-item.hbs'}}
+    {{/ifEquals}}
+  {{/each}}
+  </div>
 </div>

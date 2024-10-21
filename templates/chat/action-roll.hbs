@@ -12,8 +12,8 @@
     </div>
     <div class='card-body'>
       {{editor
-        content=item.data.data.description
-        target='item.data.data.description'
+        item.system.description
+        target='system.description'
         button=false
         owner=false
         editable=false
@@ -25,7 +25,7 @@
     {{/if}} --}}
     <div class='card-type'><span style='font-weight: bold;'>{{item.type}}</span>
       action rolled by
-      <span style='font-weight: bold;'>{{actorName}}</span></div>
+      <span style='font-weight: bold;'>{{name}}</span></div>
   {{else}}
     <div>
       No Bullshit action for this roll.
@@ -34,7 +34,6 @@
         style='font-weight: bold;'
       >{{actionType}}</span>
       action rolled by
-      <span style='font-weight: bold;'>{{actorName}}</span></div>
+      <span style='font-weight: bold;'>{{name}}</span></div>
   {{/if}}
-  {{{roll}}}
 </form>

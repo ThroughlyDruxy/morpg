@@ -17,3 +17,5 @@ Always leaves one torch in inventory even after clicking "Light new torch". Also
 At some point I'd also like to be able to automate attacks and be able to "target" a rogue or monster, roll the attack and have it compare and automatically deal damage.
 
 **Cooldown Dice**: Currently after using an ability with a non-zero cooldown, you'll need to set the timer to max and reduce it each turn. Again, I plan to integrate this with the combat tracker to automatically reduce when their turn comes.
+
+**Half Rolls**: Hold the Shift key. This totals the result before halfing so this doesn't work quite well for damage rolls that are supposed to be halfed as I understand those are compared to the result, then the actual damage delt is halved.

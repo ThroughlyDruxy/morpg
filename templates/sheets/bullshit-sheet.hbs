@@ -27,11 +27,11 @@
             'morpg.items.bullshit.type.label'
           }}:</h3></th>
       <th><select name='system.type'>
-          {{#select item.system.type}}
-            {{#each config.items.bullshit.type as |name type|}}
-              <option value='{{type}}'>{{localize name}}</option>
-            {{/each}}
-          {{/select}}
+          {{selectOptions
+            config.items.bullshit.type
+            selected=item.system.type
+            localize=true
+          }}
         </select></th>
       {{!-- <th><h3 class='label'>{{localize
             'morpg.items.bullshit.isAttack'

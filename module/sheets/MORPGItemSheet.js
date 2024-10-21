@@ -1,6 +1,6 @@
 export default class MORPGItemSheet extends ItemSheet {
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       width: 585,
       height: 300,
       classes: ['morpg', 'sheet', 'item'],

@@ -222,6 +222,8 @@
   width: 40px;
 }
 .rogue-stats .stats .stat-button,
+.rogue-stats .stats .price-label,
+.rogue-stats .stats .luck-label,
 .rogue-stats .stats .coin-label {
   font-size: 14px;
 }
@@ -279,7 +281,7 @@ ul.rogue-inventory-item .toggle-editor div {
 }
 .stats-row {
   display: flex;
-  height: 350px;
+  height: 365px;
 }
 .stats-row .stats-row.left-column {
   flex-direction: column;

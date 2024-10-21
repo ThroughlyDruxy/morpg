@@ -127,13 +127,9 @@
     <label>Equipment slots: {{actor.system.slots.current}}/{{actor.system.slots.max}}</label>
     </div>
     <di class="row2">
-    <label style="margin-left: 5px;">Position: {{actor.system.marchingOrder}}</label>
-    <select class="position">
-      {{#select actor.system.marchingOrder}}
-        {{#each config.sheet.position as |name position|}}
-          <option value="{{position}}">{{name}}</option>
-        {{/each}}
-      {{/select}}
+    <label style="margin-left: 5px;">{{localize 'morpg.sheet.positionLabel'}}</label>
+    <select class="position" name='system.marchingOrder'>
+      {{selectOptions config.sheet.position selected=actor.system.marchingOrder localize=true}}
     </select>
     </div>
   </div>

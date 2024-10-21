@@ -3,9 +3,9 @@ import * as Dice from '../dice.js';
 
 export default class MORPGRogueSheet extends ActorSheet {
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       width: 715,
-      height: 800,
+      height: 820,
       template: `systems/morpg/templates/sheets/rogue-sheet.hbs`,
       classes: ['morpg', 'sheet', 'rogue'],
       tabs: [

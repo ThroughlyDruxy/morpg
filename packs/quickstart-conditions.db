@@ -1,8 +1,0 @@
-{"name":"Doped Up","content":"<p>Roll a die. On a roll of 1-2, the Rogue skips the rest of their turn this round.</p>","folder":null,"sort":0,"permission":{"default":0,"cfgAwrxXf1jeRWgS":3},"flags":{},"_id":"32ZdLpbmjQvLY9iG"}
-{"name":"Speedy","content":"<p>This creature gains an additional action this turn.</p>","folder":null,"sort":0,"permission":{"default":0,"cfgAwrxXf1jeRWgS":3},"flags":{},"_id":"b3YAEQonJdwMwS7i"}
-{"name":"Batshit","content":"<p>This Rogue makes a physical attack roll against a random adjacent ally's defense. If successful, the ally suffers half damage.</p>","folder":null,"sort":0,"permission":{"default":0,"cfgAwrxXf1jeRWgS":3},"flags":{},"_id":"hadJ1HSM9de1iCDe"}
-{"name":"Hungover","content":"<p>When rolling to perform any actions this turn, roll twice and take the worse result.</p>","folder":null,"sort":0,"permission":{"default":0,"cfgAwrxXf1jeRWgS":3},"flags":{},"_id":"iBf8HMRO11ZsVo5s"}
-{"name":"Magical Tingles","content":"<p>This creature adds a +2 to their first dice roll made this turn.</p>","folder":null,"sort":0,"permission":{"default":0,"cfgAwrxXf1jeRWgS":3},"flags":{},"_id":"qcqRusoMgG4UPFNN"}
-{"name":"Armored","content":"<p>The creature has +2 to their defense.</p>","folder":null,"sort":0,"permission":{"default":0,"cfgAwrxXf1jeRWgS":3},"flags":{},"_id":"tGOQrzWTTtkMewNw"}
-{"name":"Tricked","content":"<p>The creature suffers a -2 penalty to their defense.</p>","folder":null,"sort":0,"permission":{"default":0,"cfgAwrxXf1jeRWgS":3},"flags":{},"_id":"ulCTwg2QnShwKZ3Z"}
-{"name":"Poisoned","content":"<p>The creature loses 1 health each round.</p>","folder":null,"sort":0,"permission":{"default":0,"cfgAwrxXf1jeRWgS":3},"flags":{},"_id":"xpBCRnenPxJUOQGA"}

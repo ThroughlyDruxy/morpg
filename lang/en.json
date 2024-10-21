@@ -67,8 +67,17 @@
       "newItemDialog": "Create New Item",
       "newTorch": "Light new torch",
       "noAttackMod": "-",
-      "notInParty": "Not in party",
+      "positionLabel": "Position",
+      "position": {
+        "notInParty": "Not in party",
+        "one": "1",
+        "two": "2",
+        "three": "3",
+        "four": "4",
+        "five": "5"
+      },
       "roll": "Roll stat",
+      "rollItem": "Send to Chat",
       "sendToChat": "Send to chat without roll",
       "torches": "Quantity",
       "torchesQuantity": "Number of torches",

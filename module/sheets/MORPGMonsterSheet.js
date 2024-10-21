@@ -3,7 +3,7 @@ import * as Dice from '../dice.js';
 
 export default class MORPGMonsterSheet extends ActorSheet {
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       width: 650,
       height: 600,
       template: `systems/morpg/templates/sheets/monster-sheet.hbs`,

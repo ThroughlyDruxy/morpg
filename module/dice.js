@@ -13,6 +13,8 @@ export async function StatRoll({
   statName = null,
   halfRoll = false,
 } = {}) {
+  statName = statName.charAt(0).toUpperCase() + statName.slice(1);
+  console.log('statName:' + statName);
   const chatTemplate = 'systems/morpg/templates/chat/stat-roll.hbs';
 
   let rollFormula = '1d6 + @statModifier';
@@ -24,25 +26,21 @@ export async function StatRoll({
     statModifier: statModifier,
   };
 
-  let rollResult = new Roll(rollFormula, rollData).roll({ async: false });
-  let renderedRoll = await rollResult.render();
+  let rollResult = await new Roll(rollFormula, rollData);
+  await rollResult.evaluate();
 
   let templateData = {
     ...actor.system,
     statName: statName,
-    roll: renderedRoll,
     owner: actor.id,
   };
-
-  let r = await new Roll('1d20').roll({ async: true });
 
   let chatData = {
     user: game.user._id,
     speaker: ChatMessage.getSpeaker(),
-    content: await renderTemplate(chatTemplate, templateData),
+    flavor: await renderTemplate(chatTemplate, templateData),
     sound: CONFIG.sounds.dice,
-    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
-    rolls: [r],
+    rolls: [rollResult],
   };
 
   ChatMessage.create(chatData);
@@ -54,12 +52,12 @@ export async function StatRoll({
  */
 export async function ActionRoll({ actor = null, event = null }) {
   const chatTemplate = 'systems/morpg/templates/chat/action-roll.hbs';
-  const rollResult = new Roll('1d6').roll({ async: false });
-  const renderedRoll = await rollResult.render();
+  let rollResult = await new Roll('1d6');
+  await rollResult.evaluate();
 
   let templateData = {
-    actorName: actor.data.name,
-    roll: renderedRoll,
+    actorName: actor.system.name,
+    //roll: renderedRoll,
     owner: actor.id,
     isBullshitResult: true, // required to show correct data and reuse template with Bullshit rolls
   };
@@ -68,6 +66,7 @@ export async function ActionRoll({ actor = null, event = null }) {
     user: game.user._id,
     speaker: ChatMessage.getSpeaker(),
     sound: CONFIG.sounds.dice,
+    rolls: [rollResult],
   };
 
   const items = actor.items;
@@ -91,12 +90,11 @@ export async function ActionRoll({ actor = null, event = null }) {
  */
 export async function BullshitRoll({ actor = null }) {
   const chatTemplate = 'systems/morpg/templates/chat/action-roll.hbs';
-  const rollResult = new Roll('1d6').roll({ async: false });
-  const renderedRoll = await rollResult.render();
+  let rollResult = await new Roll('1d6');
+  await rollResult.evaluate();
 
   let templateData = {
-    actorName: actor.data.name,
-    roll: renderedRoll,
+    ...actor,
     owner: actor.id,
   };
 
@@ -104,26 +102,27 @@ export async function BullshitRoll({ actor = null }) {
     user: game.user._id,
     speaker: ChatMessage.getSpeaker(),
     sound: CONFIG.sounds.dice,
+    rolls: [rollResult],
   };
 
   const bullshitMap = new Map();
   const items = actor.items;
 
   items.forEach((item) => {
-    if (item.data.type === 'Bullshit') {
-      bullshitMap.set(item.system.trigger, item.data._id);
+    if (item.type === 'Bullshit') {
+      bullshitMap.set(item.system.trigger, item._id);
     }
   });
 
-  const itemID = bullshitMap.get(rollResult._total);
+  const itemID = bullshitMap.get(rollResult.total);
   templateData.item = actor.getEmbeddedDocument('Item', itemID);
-  if (bullshitMap.has(rollResult._total)) {
+  if (bullshitMap.has(rollResult.total)) {
     templateData.isBullshitResult = true;
-    chatData.content = await renderTemplate(chatTemplate, templateData);
+    chatData.flavor = await renderTemplate(chatTemplate, templateData);
   } else {
     templateData.isBullshitResult = false;
     templateData.actionType = 'Bullshit';
-    chatData.content = await renderTemplate(chatTemplate, templateData);
+    chatData.flavor = await renderTemplate(chatTemplate, templateData);
   }
   ChatMessage.create(chatData);
 }
