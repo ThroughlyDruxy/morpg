@@ -1,0 +1,7 @@
+2024/12/24-13:10:57.185 2bec Recovering log #83
+2024/12/24-13:10:57.296 2bec Delete type=0 #83
+2024/12/24-13:10:57.296 2bec Delete type=3 #81
+2024/12/24-14:01:29.824 1238 Level-0 table #88: started
+2024/12/24-14:01:29.824 1238 Level-0 table #88: 0 bytes OK
+2024/12/24-14:01:29.846 1238 Delete type=0 #86
+2024/12/24-14:01:30.002 1238 Manual compaction at level-0 from '!items!32ZdLpbmjQvLY9iG' @ 72057594037927935 : 1 .. '!items!xpBCRnenPxJUOQGA' @ 0 : 0; will stop at (end)

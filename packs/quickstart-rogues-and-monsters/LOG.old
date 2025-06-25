@@ -1,0 +1,7 @@
+2024/11/18-10:21:13.264 1978 Recovering log #80
+2024/11/18-10:21:13.381 1978 Delete type=0 #80
+2024/11/18-10:21:13.381 1978 Delete type=3 #79
+2024/11/18-15:03:24.108 44c8 Level-0 table #84: started
+2024/11/18-15:03:24.124 44c8 Level-0 table #84: 0 bytes OK
+2024/11/18-15:03:24.152 44c8 Delete type=0 #82
+2024/11/18-15:03:24.197 44c8 Manual compaction at level-0 from '!actors!3tVALVHV768FMjtD' @ 72057594037927935 : 1 .. '!actors.items!kYstlPxlUEbL60tD.iXt6HZGjWrESQS9H' @ 0 : 0; will stop at (end)
